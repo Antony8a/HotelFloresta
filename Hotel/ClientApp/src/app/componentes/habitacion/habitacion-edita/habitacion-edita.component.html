@@ -1,0 +1,81 @@
+<div class="body">
+    <div class="return">
+        <button class="button type1" [routerLink]="['/habitacionConsulta']">Atras</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <br><h2>Actualizar informacion | Eliminar Habitacion</h2><br>
+    
+                <form [formGroup]="formGroup">
+    
+                    <div class="form-group">
+                        <label>Codigo</label>
+                        <input type="text" formControlName="idHabitacion" class="form-control" readonly value={{idn}}
+                            [ngClass]="{ 'is-invalid':  control.idHabitacion.errors }" />
+                        <div *ngIf=" control.idHabitacion.errors" class="invalid-feedback">
+                            <div *ngIf="control.idHabitacion.errors.required">La Codigo es requerido</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo</label>
+                        <select class="custom-select" id="Tipo" formControlName="tipo" class="form-control" value={{_tipo}}
+                            [ngClass]="{'is-invalid':control.tipo.errors}">
+                            <option selected>Seleccionar...</option>                            
+                            <option value="King Doble">King Doble cama</option>
+                            <option value="Sencilla Doble">Sencilla Doble cama</option>
+                            <option value="King">King</option>
+                            <option value="Sencilla">Sencilla</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="precio">precio</label>
+                        <input type="number" name="precio" formControlName="precio" placeholder="digite el precio" value={{_precio}}
+                            class="form-control" [ngClass]="{'is-invalid':control.precio.errors}" />
+    
+                        <div *ngIf="control.precio.errors" class="invalid-feedback">
+                        <div *ngIf="control.precio.errors.required">El precio es requerido</div>
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>descripcion</label>
+                            <input type="text" formControlName="descripcion" class="form-control" placeholder="describa..." value={{_descripcion}}
+                                [ngClass]="{ 'is-invalid':  control.descripcion.errors }" />
+                            <div *ngIf=" control.descripcion.errors" class="invalid-feedback">
+                                <div *ngIf="control.descripcion.errors.required">Agregue una descripción</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="aire">aire</label>
+                            <select class="custom-select" id="aire" formControlName="aire" class="form-control" value={{_aire}}
+                                [ngClass]="{'is-invalid':control.aire.errors}">
+                                <option selected>Seleccionar...</option>                            
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="ventilador">ventilador</label>
+                            <select class="custom-select" id="ventilador" formControlName="ventilador" class="form-control" value={{_ventilador}}
+                                [ngClass]="{'is-invalid':control.ventilador.errors}">
+                                <option selected>Seleccionar...</option>                            
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                          </div>
+    
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-1" (click)=" onSubmit()"
+                            [disabled]="formGroup.invalid">Actualizar</button>
+                        <button class="btn btn-secondary" type="reset" (click)=" delete()">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

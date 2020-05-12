@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="return">
+        <button class="button type1" [routerLink]="['/reservaInicioProvisional']">Atrás</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <input [(ngModel)]="searchText" type="number" class="form-control" placeholder="Type to filter">
+            </div>
+        </div>
+        <hr>
+        
+        <table class="table table-striped" *ngIf='reservas && reservas.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">fecha de inicio </th>
+                    <th scope="col">fecha fin</th>
+                    <th scope="col">cantidad personas</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Habitacion</th>
+                    <th scope="col">VER</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reserva of reservas|filtroReserva:searchText; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ reserva.idReserva }} </td>
+                    <td>{{ reserva.fechaInicio }}</td>
+                    <td>{{ reserva.fechaFin }}</td>
+                    <td>{{ reserva.cantidadPersonas }}</td>
+                    <td>{{ reserva.idCliente }}</td>
+                    <td>{{ reserva.idHabitacion }}</td>
+                    <td><a [routerLink]="['/reservaEdita', reserva.idReserva ]">Ver</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

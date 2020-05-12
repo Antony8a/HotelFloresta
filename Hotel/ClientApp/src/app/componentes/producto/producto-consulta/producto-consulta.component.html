@@ -1,0 +1,36 @@
+<div class="body">
+    <div class="return">
+        <button class="button type1" [routerLink]="['/productoInicioProvisional']">Inicio Producto</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+            </div>
+        </div>
+        <hr>
+        
+        <table class="table table-striped" *ngIf='productos && productos.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre </th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productos|filtroProducto:searchText; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ producto.idProducto }} </td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.tipo }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td><a [routerLink]="['/productoEdita', producto.idProducto ]">Ver</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

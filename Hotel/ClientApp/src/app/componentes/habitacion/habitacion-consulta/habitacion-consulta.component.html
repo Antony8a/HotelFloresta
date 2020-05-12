@@ -1,0 +1,42 @@
+<div class="body">
+    <div class="return">
+        <button class="button type1" [routerLink]="['/habitacionInicioProvisional']">Inicio Habitacion</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+            </div>
+        </div>
+        <hr>
+        
+        <table class="table table-striped" *ngIf='habitaciones && habitaciones.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">codigo</th>
+                    <th scope="col">tipo </th>
+                    <th scope="col">precio</th>
+                    <th scope="col">descripcion</th>
+                    <th scope="col">aire</th>
+                    <th scope="col">ventilador</th>
+                    <th scope="col">disponibilidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let habitacion of habitaciones|filtroHabitacion:searchText; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ habitacion.idHabitacion }} </td>
+                    <td>{{ habitacion.tipo }}</td>
+                    <td>{{ habitacion.precio }}</td>
+                    <td>{{ habitacion.descripcion }}</td>
+                    <td>{{ habitacion.aire }}</td>
+                    <td>{{ habitacion.ventilador }}</td>
+                    <td>{{ habitacion.disponibilidad }}</td>
+                    <td><a [routerLink]="['/habitacionEdita', habitacion.idHabitacion ]">Ver</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

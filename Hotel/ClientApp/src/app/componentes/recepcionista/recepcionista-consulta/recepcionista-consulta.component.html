@@ -1,0 +1,45 @@
+<div class="body">
+    <div class="return">
+        <button class="button type1" [routerLink]="['/recepcionistaInicioProvisional']">Inicio Recepcionista</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+            </div>
+        </div>
+        <hr>
+        
+        <table class="table table-striped" *ngIf='recepcionistas && recepcionistas.length'>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">identificación</th>
+                    <th scope="col">Nombre </th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">sexo</th>
+                    <th scope="col">direccion</th>
+                    <th scope="col">celular</th>
+                    <th scope="col">correo</th>
+                    <th scope="col">usuario</th>
+                    <th scope="col">VER</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recepcionista of recepcionistas|filtroRecepcionista:searchText; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ recepcionista.identificacion }} </td>
+                    <td>{{ recepcionista.nombre }}</td>
+                    <td>{{ recepcionista.edad }}</td>
+                    <td>{{ recepcionista.sexo }}</td>
+                    <td>{{ recepcionista.direccion }}</td>
+                    <td>{{ recepcionista.celular }}</td>
+                    <td>{{ recepcionista.correo }}</td>
+                    <td>{{ recepcionista.usuario }}</td>
+                    <td><a [routerLink]="['/recepcionistaEdita', recepcionista.identificacion ]">Ver</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
