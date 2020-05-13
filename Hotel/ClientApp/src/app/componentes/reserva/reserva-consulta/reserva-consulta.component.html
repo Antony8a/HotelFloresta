@@ -34,7 +34,8 @@
                     <td class="text-center" >{{ reserva.cantidadPersonas }}</td>
                     <td class="text-center" >{{ reserva.idCliente }}</td>
                     <td class="text-center" >{{ reserva.idHabitacion }}</td>
-                    <td class="text-center" ><button class="btn btn-outline-dark" [routerLink]="['/reservaEdita', reserva.idReserva ]">Ver</button></td>
+                    <td class="text-center" ><button class="btn btn-outline-dark" placement="top" popoverTitle="Editar en desarrollo"
+                        ngbPopover="En desarrollo, nos veremos proximamente.">Ver</button></td>
                     <td class="text-center" ><button class="btn btn-outline-dark" (click)=" openSm(content)">Eliminar</button></td>
 
                     <ng-template #content let-modal>
