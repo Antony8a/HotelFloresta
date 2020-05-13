@@ -40,7 +40,7 @@ export class RecepcionistaService {
       const url = `${this.baseUrl + 'api/Recepcionista'}/${id}`;
         return this.http.get<Recepcionista>(url, httpOptions)
         .pipe(
-          tap(_ => this.handleErrorService.log('datos enviados')),
+  
           catchError(this.handleErrorService.handleError<Recepcionista>('Buscar Recepcionista', null))
         );
     }
@@ -48,7 +48,7 @@ export class RecepcionistaService {
     post(Recepcionista: Recepcionista): Observable<Recepcionista> {
       return this.http.post<Recepcionista>(this.baseUrl + 'api/Recepcionista', Recepcionista)
         .pipe(
-          tap(_ => this.handleErrorService.log('datos enviados')),
+  
           catchError(this.handleErrorService.handleError<Recepcionista>('Registrar Recepcionista', null))
         );
     }
@@ -58,7 +58,7 @@ export class RecepcionistaService {
       const url = `${this.baseUrl}api/Recepcionista/${recepcionista.identificacion}`;
       return this.http.put(url, recepcionista, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
+
         catchError(this.handleErrorService.handleError<any>('Editar Recepcionista'))
       );
     }
@@ -69,7 +69,6 @@ export class RecepcionistaService {
     const id = typeof recepcionista === 'string' ? recepcionista : recepcionista.identificacion;
     return this.http.delete<string>(this.baseUrl + 'api/recepcionista/'+ id)
     .pipe(
-      tap(_ => this.handleErrorService.log('datos enviados')),
       catchError(this.handleErrorService.handleError<string>('Elimiar Recepcionista', null))
     );
   }

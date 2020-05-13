@@ -1,11 +1,13 @@
 <div class="body">
-    <div class="return">
-        <button class="button type1" [routerLink]="['/recepcionistaConsulta']">Inicio Recepcionista</button>
+    <div class="return"><br>
+        <div class="return-1">
+            <button class="button type1" id="boton-registrar-atras"  [routerLink]="['/recepcionistaConsulta']">Atrás</button>
+        </div>
     </div>
-    <div class="container">
+    <div class="container-1">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <br><h2>Registro de Recepcionista</h2><br>
+                <br><h2 class="text-center" >Registro de Recepcionista</h2><br>
     
                 <form [formGroup]="formGroup">
     
@@ -92,9 +94,9 @@
                     </div>
     
                     <div class="text-center">
-                        <button class="btn btn-primary mr-1" (click)=" onSubmit()"
-                            [disabled]="formGroup.invalid">Registrar</button>
-                        <button class="btn btn-secondary" type="reset">Limpiar</button>
+                        <button class="btn btn-outline-dark" (click)=" onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
+                        <label> - </label>
+                        <button class="btn btn-outline-dark" type="reset">Limpiar</button>
                     </div>
                 </form>
             </div>

@@ -40,7 +40,6 @@ export class ProductoService {
       const url = `${this.baseUrl + 'api/producto'}/${id}`;
         return this.http.get<Producto>(url, httpOptions)
         .pipe(
-          tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Producto>('Buscar Producto', null))
         );
     }
@@ -48,7 +47,6 @@ export class ProductoService {
     post(Producto: Producto): Observable<Producto> {
       return this.http.post<Producto>(this.baseUrl + 'api/Producto', Producto)
         .pipe(
-          tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Producto>('Registrar Producto', null))
         );
     }
@@ -58,7 +56,6 @@ export class ProductoService {
       const url = `${this.baseUrl}api/Producto/${producto.idProducto}`;
       return this.http.put(url, producto, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<any>('Editar Persona'))
       );
     }
@@ -69,7 +66,6 @@ export class ProductoService {
     const id = typeof producto === 'string' ? producto : producto.idProducto;
     return this.http.delete<string>(this.baseUrl + 'api/producto/'+ id)
     .pipe(
-      tap(_ => this.handleErrorService.log('datos enviados')),
       catchError(this.handleErrorService.handleError<string>('Elimiar Persona', null))
     );
   }

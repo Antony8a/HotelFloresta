@@ -51,19 +51,15 @@ export class ProductoEditaComponent implements OnInit {
     });
   }
 
+  openSm(content) {
+    this.modalService.open(content, { size: 'sm' ,centered: true });
+  }
+
   onSubmit() {
     if (this.formGroup.invalid) {
       return;
     }
     this.add();
-  }
-
-  delete() {
-    this.productoService.delete(this.idn).subscribe(p => {
-      const messageBox = this.modalService.open(AlertModalComponent)
-      messageBox.componentInstance.title = "Resultado Operación";
-      messageBox.componentInstance.message = 'Producto Eliminado!!! :)';
-    });
   }
 
   add() {

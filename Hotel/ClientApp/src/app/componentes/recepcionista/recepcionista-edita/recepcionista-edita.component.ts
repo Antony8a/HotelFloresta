@@ -69,12 +69,8 @@ if (this.formGroup.invalid) {
 this.add();
 }
 
-delete() {
-this.recepcionistaService.delete(this.idn).subscribe(p => {
-    const messageBox = this.modalService.open(AlertModalComponent)
-    messageBox.componentInstance.title = "Resultado Operación";
-    messageBox.componentInstance.message = 'Recepcionista Eliminado!!! :)';
-});
+openSm(content) {
+  this.modalService.open(content, { size: 'sm' ,centered: true });
 }
 
 add() {
