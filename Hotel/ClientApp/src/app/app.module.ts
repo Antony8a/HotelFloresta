@@ -35,6 +35,11 @@ import { HabitacionConsultaComponent } from './componentes/habitacion/habitacion
 import { HabitacionRegistroComponent } from './componentes/habitacion/habitacion-registro/habitacion-registro.component';
 import { HabitacionEditaComponent } from './componentes/habitacion/habitacion-edita/habitacion-edita.component';
 import { HabitacionInicioProvicionalComponent } from './componentes/habitacion/habitacion-inicio-provicional/habitacion-inicio-provicional.component';
+import { BannerAdminComponent } from './componentes/banners/banner-admin/banner-admin.component';
+import { BannerClienteComponent } from './componentes/banners/banner-cliente/banner-cliente.component';
+import { BannerRecepcionistaComponent } from './componentes/banners/banner-recepcionista/banner-recepcionista.component';
+import { InicioHotelComponent } from './componentes/inicio-hotel/inicio-hotel.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +72,11 @@ import { HabitacionInicioProvicionalComponent } from './componentes/habitacion/h
     FiltroHabitacionPipe,
     FiltroProductoPipe,
     FiltroReservaPipe,
+    BannerAdminComponent,
+    BannerClienteComponent,
+    BannerRecepcionistaComponent,
+    InicioHotelComponent,
+    LoginComponent,
   ],
   imports: [
     ReactiveFormsModule,
