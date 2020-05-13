@@ -15,6 +15,7 @@ export class HabitacionEditaComponent implements OnInit {
 
   formGroup: FormGroup;
   habitacion: Habitacion;
+  closeResult: string;
   idn: string; public _tipo: string; public _precio: number; public _descripcion: string; public _aire: string;
     public _ventilador: string; public _disponibilidad: string;
   constructor(
@@ -57,20 +58,16 @@ export class HabitacionEditaComponent implements OnInit {
         disponibilidad:this._disponibilidad,
       });
     }
+
+    openSm(content) {
+      this.modalService.open(content, { size: 'sm' ,centered: true });
+    }
   
     onSubmit() {
       if (this.formGroup.invalid) {
         return;
       }
       this.add();
-    }
-
-    delete() {
-      this.habitacionService.delete(this.idn).subscribe(p => {
-        const messageBox = this.modalService.open(AlertModalComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'Habitacion Eliminada!!! :)';
-      });
     }
   
     add() {
