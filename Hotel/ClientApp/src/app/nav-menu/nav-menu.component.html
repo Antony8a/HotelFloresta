@@ -1,7 +1,5 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']">Hotel</a>
       <button
@@ -11,29 +9,26 @@
         data-target=".navbar-collapse"
         aria-label="Toggle navigation"
         [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+        (click)="toggle()" >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-        [ngClass]="{ show: isExpanded }"
-      >
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/clienteInicioProvisional']">Clientes</a>
+            <a class="nav-link text-dark" [routerLink]="['/clienteConsulta']">Clientes</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/recepcionistaInicioProvisional']">Recepcionistas</a>
+            <a class="nav-link text-dark" [routerLink]="['/recepcionistaConsulta']">Recepcionistas</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/habitacionInicioProvisional']">Habitaciones</a>
+            <a class="nav-link text-dark" [routerLink]="['/habitacionConsulta']">Habitaciones</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/productoInicioProvisional']">Productos</a>
+            <a class="nav-link text-dark" [routerLink]="['/productoConsulta']">Productos</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/reservaInicioProvisional']">Reservas</a>
+            <a class="nav-link text-dark" [routerLink]="['/reservaConsulta']">Reservas</a>
           </li>
 
         </ul>

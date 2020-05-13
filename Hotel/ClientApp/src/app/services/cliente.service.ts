@@ -39,7 +39,6 @@ export class ClienteService {
     const url = `${this.baseUrl + 'api/cliente'}/${id}`;
     return this.http.get<Cliente>(url, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Cliente>('Buscar Cliente', null))
       );
   }
@@ -47,7 +46,6 @@ export class ClienteService {
   post(Cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.baseUrl + 'api/Cliente', Cliente)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Cliente>('Registrar Cliente', null))
       );
   }
@@ -57,7 +55,6 @@ export class ClienteService {
     const url = `${this.baseUrl}api/Cliente/${cliente.identificacion}`;
     return this.http.put(url, cliente, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<any>('Editar Persona'))
       );
   }
@@ -68,7 +65,6 @@ export class ClienteService {
     const id = typeof cliente === 'string' ? cliente : cliente.identificacion;
     return this.http.delete<string>(this.baseUrl + 'api/cliente/' + id)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<string>('Elimiar Persona', null))
       );
   }
