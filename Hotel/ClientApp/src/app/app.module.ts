@@ -11,7 +11,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClienteConsultaComponent } from './componentes/cliente/cliente-consulta/cliente-consulta.component';
 import { ClienteRegistroComponent } from './componentes/cliente/cliente-registro/cliente-registro.component';
 import { ClienteEditaComponent } from './componentes/cliente/cliente-edita/cliente-edita.component';
-import { ClienteInicioProvicionalComponent } from './componentes/cliente/cliente-inicio-provicional/cliente-inicio-provicional.component';
 import { ProductoConsultaComponent } from './componentes/producto/producto-consulta/producto-consulta.component';
 import { ProductoRegistroComponent } from './componentes/producto/producto-registro/producto-registro.component';
 import { ProductoEditaComponent } from './componentes/producto/producto-edita/producto-edita.component';
@@ -49,7 +48,6 @@ import { LoginComponent } from './componentes/login/login.component';
     ClienteConsultaComponent,
     ClienteRegistroComponent,
     ClienteEditaComponent,
-    ClienteInicioProvicionalComponent,
     RecepcionistaConsultaComponent,
     RecepcionistaRegistroComponent,
     RecepcionistaEditaComponent,

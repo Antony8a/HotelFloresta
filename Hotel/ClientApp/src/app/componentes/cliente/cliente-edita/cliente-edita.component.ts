@@ -15,6 +15,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
     formGroup: FormGroup;
     cliente: Cliente;
+    closeResult: string;
     idn: string; public _nombre: string; public _edad: number; public _sexo: string; public _direccion: string;
     public _celular: string; public _correo: string; public _usuario: string; public _password: string;
     constructor(
@@ -61,6 +62,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
         password: [this._password, Validators.required],
       });
     }
+
+    openSm(content) {
+      this.modalService.open(content, { size: 'sm' ,centered: true });
+    }
   
     onSubmit() {
       if (this.formGroup.invalid) {
@@ -68,15 +73,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
       }
       this.add();
     }
-  
-    delete() {
-      this.clienteService.delete(this.idn).subscribe(p => {
-        const messageBox = this.modalService.open(AlertModalComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'Cliente Eliminado!!! :)';
-      });
-    }
-  
+    
     add() {
       this.cliente = this.formGroup.value;
       this.clienteService.put(this.cliente).subscribe(p => {

@@ -1,11 +1,13 @@
 <div class="body">
     <div class="return"><br>
-        <button class="button type1" [routerLink]="['/clienteConsulta']">Atrás</button>
+        <div class="return-1">
+            <button class="button type1" id="boton-registrar-atras"  [routerLink]="['/clienteConsulta']">Atrás</button>
+        </div>
     </div>
-    <div class="container">
+    <div class="container-1">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <br><h2>Actualizar informacion | Eliminar cliente</h2><br>
+                <br><h4>Actualizar informacion | Eliminar cliente</h4><br>
     
                 <form [formGroup]="formGroup">
     
@@ -92,9 +94,24 @@
                     </div>
     
                     <div class="text-center">
-                        <button class="btn btn-primary mr-1" (click)=" onSubmit()"
+                        <button class="btn btn-outline-dark" (click)=" openSm(content)"
                             [disabled]="formGroup.invalid">Actualizar</button>
-                        <button class="btn btn-secondary" type="reset" (click)=" delete()">Eliminar</button>
+                        
+                            <ng-template #content let-modal>
+                                <div class="modal-header">
+                                  <h4 class="modal-title">Modificar cliente?</h4>
+                                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p>seguro que desea modificar a {{idn}}&hellip;</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-outline-dark" (click)=" onSubmit()" (click)="modal.close('Close click')">Modificar</button>
+                                </div>
+                              </ng-template>
+
                     </div>
                 </form>
             </div>

@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ClienteRegistroComponent } from './componentes/cliente/cliente-registro/cliente-registro.component';
 import { ClienteConsultaComponent } from './componentes/cliente/cliente-consulta/cliente-consulta.component';
 import { ClienteEditaComponent } from './componentes/cliente/cliente-edita/cliente-edita.component';
-import { ClienteInicioProvicionalComponent } from './componentes/cliente/cliente-inicio-provicional/cliente-inicio-provicional.component';
 import { RecepcionistaRegistroComponent } from './componentes/recepcionista/recepcionista-registro/recepcionista-registro.component';
 import { RecepcionistaConsultaComponent } from './componentes/recepcionista/recepcionista-consulta/recepcionista-consulta.component';
 import { RecepcionistaEditaComponent } from './componentes/recepcionista/recepcionista-edita/recepcionista-edita.component';
@@ -42,10 +41,6 @@ const routes: Routes = [
   {
     path: 'clienteEdita/:id',
     component: ClienteEditaComponent
-  },
-  {
-    path: 'clienteInicioProvisional',
-    component: ClienteInicioProvicionalComponent
   },
 
   // recepcionista--------------------------------------------------------------------------------------
