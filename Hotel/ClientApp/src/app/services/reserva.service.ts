@@ -40,7 +40,6 @@ export class ReservaService {
       const url = `${this.baseUrl + 'api/Reserva'}/${id}`;
         return this.http.get<Reserva>(url, httpOptions)
         .pipe(
-          tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Reserva>('Buscar Reserva', null))
         );
     }
@@ -48,7 +47,6 @@ export class ReservaService {
     post(Reserva: Reserva): Observable<Reserva> {
       return this.http.post<Reserva>(this.baseUrl + 'api/Reserva', Reserva)
         .pipe(
-          tap(_ => this.handleErrorService.log('datos enviados')),
           catchError(this.handleErrorService.handleError<Reserva>('Registrar Reserva', null))
         );
     }
@@ -58,19 +56,17 @@ export class ReservaService {
       const url = `${this.baseUrl}api/Reserva/${reserva.idReserva}`;
       return this.http.put(url, reserva, httpOptions)
       .pipe(
-        tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<any>('Editar reserva'))
       );
     }
 
     
   /** DELETE: delete the hero from the server */
-  delete (reserva: Reserva | string): Observable<string> {
-    const id = typeof reserva === 'string' ? reserva : reserva.idReserva;
-    return this.http.delete<string>(this.baseUrl + 'api/reserva/'+ id)
+  delete (reserva: Reserva | number): Observable<number> {
+    const id = typeof reserva === 'number' ? reserva : reserva.idReserva;
+    return this.http.delete<number>(this.baseUrl + 'api/reserva/'+ id)
     .pipe(
-      tap(_ => this.handleErrorService.log('datos enviados')),
-      catchError(this.handleErrorService.handleError<string>('Elimiar reserva', null))
+      catchError(this.handleErrorService.handleError<number>('Elimiar reserva', null))
     );
   }
 }
