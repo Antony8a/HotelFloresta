@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-banner-admin',
-  templateUrl: './banner-admin.component.html',
-  styleUrls: ['./banner-admin.component.css']
+  selector: 'app-inicio-admin',
+  templateUrl: './inicio-admin.component.html',
+  styleUrls: ['./inicio-admin.component.css']
 })
-export class BannerAdminComponent implements OnInit {
+export class InicioAdminComponent implements OnInit {
 
   productoc: boolean;
   clientec: boolean;
@@ -13,14 +13,13 @@ export class BannerAdminComponent implements OnInit {
   habitacionc:boolean;
   reservasc:boolean;
   clienteRegistroc:boolean;
-
   alternkey:boolean=false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  
+
   Close(){
     this.recepcionistac=false;
       this.clientec=false;
@@ -35,7 +34,7 @@ export class BannerAdminComponent implements OnInit {
 
       this.recepcionistac=false;
       this.clientec=false;
-      this.productoc=false;
+      this.productoc=true;
       this.habitacionc=false;
       this.reservasc=false;
     }
@@ -53,7 +52,7 @@ export class BannerAdminComponent implements OnInit {
     if(this.clientec){
 
       this.recepcionistac=false;
-      this.clientec=false;
+      this.clientec=true;
       this.productoc=false;
       this.habitacionc=false;
       this.reservasc=false;
@@ -70,7 +69,7 @@ export class BannerAdminComponent implements OnInit {
     
     if(this.recepcionistac){
 
-      this.recepcionistac=false;
+      this.recepcionistac=true;
       this.clientec=false;
       this.productoc=false;
       this.habitacionc=false;
@@ -88,7 +87,7 @@ export class BannerAdminComponent implements OnInit {
 
     if(this.recepcionistac){
 
-      this.recepcionistac=false;
+      this.recepcionistac=true;
       this.clientec=false;
       this.productoc=false;
       this.habitacionc=false;
@@ -108,7 +107,7 @@ export class BannerAdminComponent implements OnInit {
       this.recepcionistac=false;
       this.clientec=false;
       this.productoc=false;
-      this.habitacionc=false;
+      this.habitacionc=true;
       this.reservasc=false;
     }  
     else
@@ -121,7 +120,7 @@ export class BannerAdminComponent implements OnInit {
 
   changeRegistroCiente(){
     if(this.clienteRegistroc){
-      this.clienteRegistroc=false;
+      this.clienteRegistroc=true;
       this.recepcionistac=false;
       this.clientec=false;
       this.productoc=false;
@@ -144,6 +143,5 @@ export class BannerAdminComponent implements OnInit {
       this.alternkey = true;
     }
   }
-
 
 }

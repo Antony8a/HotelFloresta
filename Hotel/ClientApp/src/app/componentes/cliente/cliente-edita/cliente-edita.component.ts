@@ -16,6 +16,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
     formGroup: FormGroup;
     cliente: Cliente;
     closeResult: string;
+    
     idn: string; public _nombre: string; public _edad: number; public _sexo: string; public _direccion: string;
     public _celular: string; public _correo: string; public _usuario: string; public _password: string;
     constructor(

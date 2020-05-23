@@ -36,5 +36,7 @@ export class ClienteConsultaComponent implements OnInit {
   openSm(content) {
     this.modalService.open(content, { size: 'sm' ,centered: true });
   }
+  
+  
 
 }
