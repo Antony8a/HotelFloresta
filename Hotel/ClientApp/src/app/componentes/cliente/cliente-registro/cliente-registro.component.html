@@ -1,25 +1,21 @@
 <div class="body">
-    <div class="return"><br>
-        <!--<div class="return-1">
-            <button class="button type1" id="boton-registrar-atras"  [routerLink]="['/clienteConsulta']">Atrás</button>
-        </div>-->
-    </div>
-    <div class="container-1">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <br><h2>Registro de clientes</h2><br>
-    
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Registro</h4>
+                <p class="card-category">Formulario de registro de clientes</p>
+            </div>
+            <div class="card-body">
                 <form [formGroup]="formGroup">
-    
                     <div class="form-group">
-                        <label>Identificación</label>
+                        <label class="bmd-label-floating">Identificación</label>
                         <input type="text" formControlName="identificacion" class="form-control"
                             [ngClass]="{ 'is-invalid':  control.identificacion.errors }" />
                         <div *ngIf=" control.identificacion.errors" class="invalid-feedback">
                             <div *ngIf="control.identificacion.errors.required">La Identificación es requerido</div>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <label>Nombre</label>
                         <input type="text" formControlName="nombre" class="form-control"
@@ -28,17 +24,17 @@
                             <div *ngIf="control.nombre.errors.required">El nombre es requerido</div>
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="edad">edad</label>
-                        <input type="number" name="edad" formControlName="edad" placeholder="digite su edad"
-                            class="form-control" [ngClass]="{'is-invalid':control.edad.errors}" />
-    
-                       <div *ngIf="control.edad.errors" class="invalid-feedback">
-                       <div *ngIf="control.edad.errors.required">La edad es requerida</div>
+                        <input type="number" name="edad" formControlName="edad" class="form-control"
+                            [ngClass]="{'is-invalid':control.edad.errors}" />
+
+                        <div *ngIf="control.edad.errors" class="invalid-feedback">
+                            <div *ngIf="control.edad.errors.required">La edad es requerida</div>
+                        </div>
                     </div>
-                    </div>
-    
+
                     <div class="form-group">
                         <label>Sexo</label>
                         <input type="text" formControlName="sexo" class="form-control"
@@ -47,7 +43,7 @@
                             <div *ngIf="control.sexo.errors.required">El sexo es requerido</div>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <label>Direccion</label>
                         <input type="text" formControlName="direccion" class="form-control"
@@ -56,7 +52,7 @@
                             <div *ngIf="control.direccion.errors.required">La direccion es requerido</div>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <label>Celular</label>
                         <input type="text" formControlName="celular" class="form-control"
@@ -65,7 +61,7 @@
                             <div *ngIf="control.celular.errors.required">El celular es requerido</div>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <label>Correo</label>
                         <input type="text" formControlName="correo" class="form-control"
@@ -74,7 +70,7 @@
                             <div *ngIf="control.correo.errors.required">El correo es requerido</div>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <label>Usuario</label>
                         <input type="text" formControlName="usuario" class="form-control"
@@ -83,7 +79,7 @@
                             <div *ngIf="control.usuario.errors.required">El usuario es requerido</div>
                         </div>
                     </div>
-    
+
                     <div class="form-group">
                         <label>Contraseña:</label>
                         <input type="password" formControlName="password" class="form-control"
@@ -92,9 +88,10 @@
                             <div *ngIf="control.password.errors.required">La contraseña es requerida</div>
                         </div>
                     </div>
-    
+
                     <div class="text-center">
-                        <button class="btn btn-outline-dark" (click)=" onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
+                        <button class="btn btn-outline-dark" (click)=" onSubmit()"
+                            [disabled]="formGroup.invalid">Registrar</button>
                         <label> - </label>
                         <button class="btn btn-outline-dark" type="reset">Limpiar</button>
                     </div>
