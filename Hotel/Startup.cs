@@ -30,8 +30,8 @@ namespace Hotel
                     c.SwaggerDoc("v1", new OpenApiInfo
                     {
                         Version = "v1",
-                        Title = "Cleinte API",
-                        Description = "Cliente API - ASP.NET Core Web API",
+                        Title = "Hotel Floresta API",
+                        Description = "Hotel la floresta API - ASP.NET Core Web API",
                         TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
                         Contact = new OpenApiContact
                         {
