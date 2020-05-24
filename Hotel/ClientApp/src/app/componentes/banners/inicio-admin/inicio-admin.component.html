@@ -100,8 +100,11 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="javascript:;">
-                                    <i class="material-icons">notifications</i> Notificationes
+                                    <i class="material-icons">notifications</i>Notificationes
+                                    <i> || </i>
+                                    <i class="material-icons">power_settings_new</i>session
                                 </a>
+                                
                             </li>
                             <!-- your navbar here -->
                         </ul>
@@ -116,7 +119,7 @@
                         <div class="clic" *ngIf="clientec">
                             <div class="return-1">
                                 <button class="button type1" id="boton-registrar-atras"
-                                    (click)=altern()>Registrar-Consultar</button>
+                                    (click)=altern()>Registrar / Consultar</button>
                             </div>
                             
                             <div class="reg" *ngIf="alternkey">
@@ -130,16 +133,54 @@
                             <app-inicio-inicio></app-inicio-inicio>
                         </div>
                         <div class="proc" *ngIf="productoc">
-                            <app-producto-consulta></app-producto-consulta>
+                            <div class="return-1">
+                                <button class="button type1" id="boton-registrar-atras"
+                                    (click)=altern()>Registrar / Consultar</button>
+                            </div>
+                            <div class="reg" *ngIf="alternkey">
+                                <app-producto-registro></app-producto-registro>
+                            </div>
+                            <div class="search" *ngIf="!alternkey">
+                                <app-producto-consulta></app-producto-consulta>
+                            </div>
                         </div>
                         <div class="recc" *ngIf="recepcionistac">
-                            <app-recepcionista-consulta></app-recepcionista-consulta>
+                            <div class="return-1">
+                                <button class="button type1" id="boton-registrar-atras"
+                                    (click)=altern()>Registrar / Consultar</button>
+                            </div>
+                            <div class="reg" *ngIf="alternkey">
+                                <app-recepcionista-registro></app-recepcionista-registro>
+                            </div>
+                            <div class="search" *ngIf="!alternkey">
+                                <app-recepcionista-consulta></app-recepcionista-consulta>
+                            </div>
                         </div>
                         <div class="habc" *ngIf="habitacionc">
-                            <app-habitacion-consulta></app-habitacion-consulta>
+                            <div class="return-1">
+                                <button class="button type1" id="boton-registrar-atras"
+                                    (click)=altern()>Registrar / Consultar</button>
+                            </div>
+                            <div class="reg" *ngIf="alternkey">
+                                <app-habitacion-registro></app-habitacion-registro>
+                            </div>
+                            <div class="search" *ngIf="!alternkey">
+                                <app-habitacion-consulta></app-habitacion-consulta>
+                            </div>
+                            
                         </div>
                         <div class="resc" *ngIf="reservasc">
-                            <app-reserva-consulta></app-reserva-consulta>
+                            <div class="return-1">
+                                <button class="button type1" id="boton-registrar-atras"
+                                    (click)=altern()>Registrar / Consultar</button>
+                            </div>
+                            <div class="reg" *ngIf="alternkey">
+                                <app-reserva-registro></app-reserva-registro>
+                            </div>
+                            <div class="search" *ngIf="!alternkey">
+                                <app-reserva-consulta></app-reserva-consulta>
+                            </div>
+                            
                         </div>
                         <div class="cliRec" *ngIf="clienteRegistroc">
                             <app-cliente-registro></app-cliente-registro>

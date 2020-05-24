@@ -58,6 +58,7 @@ export class InicioAdminComponent implements OnInit {
       this.productoc = true;
       this.habitacionc = false;
       this.reservasc = false;
+      this.inicioo = false;
     }
 
     else
@@ -72,6 +73,7 @@ export class InicioAdminComponent implements OnInit {
     this.recepcionistac = false;
     this.habitacionc = false;
     this.reservasc = false;
+    this.inicioo = false;
   }
 
   changeCliente() {
@@ -87,6 +89,7 @@ export class InicioAdminComponent implements OnInit {
       this.productoc = false;
       this.habitacionc = false;
       this.reservasc = false;
+      this.inicioo = false;
     }
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
@@ -100,6 +103,7 @@ export class InicioAdminComponent implements OnInit {
     this.recepcionistac = false;
     this.habitacionc = false;
     this.reservasc = false;
+    this.inicioo = false;
   }
 
   changeRecepcionista() {
@@ -115,6 +119,7 @@ export class InicioAdminComponent implements OnInit {
       this.productoc = false;
       this.habitacionc = false;
       this.reservasc = false;
+      this.inicioo = false;
     }
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
@@ -128,6 +133,7 @@ export class InicioAdminComponent implements OnInit {
     this.productoc = false;
     this.habitacionc = false;
     this.reservasc = false;
+    this.inicioo = false;
   }
 
   changeReserva() {
@@ -143,6 +149,7 @@ export class InicioAdminComponent implements OnInit {
       this.productoc = false;
       this.habitacionc = false;
       this.reservasc = false;
+      this.inicioo = false;
     }
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
@@ -156,6 +163,7 @@ export class InicioAdminComponent implements OnInit {
     this.productoc = false;
     this.habitacionc = false;
     this.reservasc = true;
+    this.inicioo = false;
   }
 
   changeHabitacion() {
@@ -170,6 +178,7 @@ export class InicioAdminComponent implements OnInit {
       this.productoc = false;
       this.habitacionc = true;
       this.reservasc = false;
+      this.inicioo = false;
     }
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
@@ -183,6 +192,7 @@ export class InicioAdminComponent implements OnInit {
     this.productoc = false;
     this.habitacionc = true;
     this.reservasc = false;
+    this.inicioo = false;
   }
 
   changeRegistroCiente() {
@@ -193,6 +203,7 @@ export class InicioAdminComponent implements OnInit {
       this.productoc = false;
       this.habitacionc = false;
       this.reservasc = false;
+      this.inicioo = false;
     }
     else
       this.clienteRegistroc = true;
@@ -201,6 +212,7 @@ export class InicioAdminComponent implements OnInit {
     this.productoc = false;
     this.habitacionc = true;
     this.reservasc = false;
+    this.inicioo = false;
   }
 
   altern(): void {
