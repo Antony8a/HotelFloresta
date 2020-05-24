@@ -22,7 +22,6 @@ export class InicioAdminComponent implements OnInit {
   }
 
   
-
   Close() {
     
     if (this.inicioo = true) {
