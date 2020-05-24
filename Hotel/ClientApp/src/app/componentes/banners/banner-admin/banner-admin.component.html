@@ -18,9 +18,17 @@
                     <div class="p-1 bd-highlight" style="margin-top: -15px;">Admin</div>
                 </div>
             </div>
-        </div>
+        </div>       
         <div class="clic" *ngIf="clientec">
-            <app-cliente-consulta></app-cliente-consulta>
+            <div class="return-1">
+                <button class="button type1" id="boton-registrar-atras" (click)=altern()>Registrar-Consultar</button>
+            </div>
+            <div class="reg" *ngIf="alternkey">
+                <app-cliente-registro></app-cliente-registro>
+            </div>
+            <div class="search" *ngIf="!alternkey">
+                <app-cliente-consulta></app-cliente-consulta>
+            </div>
         </div>
         <div class="proc" *ngIf="productoc">
             <app-producto-consulta></app-producto-consulta>
@@ -33,6 +41,9 @@
         </div>
         <div class="resc" *ngIf="reservasc">
             <app-reserva-consulta></app-reserva-consulta>
+        </div>
+        <div class="cliRec" *ngIf="clienteRegistroc">
+            <app-cliente-registro></app-cliente-registro>
         </div>
 </div>
     

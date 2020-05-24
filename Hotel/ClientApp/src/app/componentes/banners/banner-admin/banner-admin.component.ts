@@ -12,6 +12,10 @@ export class BannerAdminComponent implements OnInit {
   recepcionistac:boolean;
   habitacionc:boolean;
   reservasc:boolean;
+  clienteRegistroc:boolean;
+
+  alternkey:boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -113,6 +117,32 @@ export class BannerAdminComponent implements OnInit {
     this.productoc=false;
     this.habitacionc=true;
     this.reservasc=false;
+  }
+
+  changeRegistroCiente(){
+    if(this.clienteRegistroc){
+      this.clienteRegistroc=false;
+      this.recepcionistac=false;
+      this.clientec=false;
+      this.productoc=false;
+      this.habitacionc=false;
+      this.reservasc=false;
+    }  
+    else
+    this.clienteRegistroc=true;
+    this.recepcionistac=false;
+    this.clientec=false;
+    this.productoc=false;
+    this.habitacionc=true;
+    this.reservasc=false;
+  }
+
+  altern():void{
+    if(this.alternkey==true)
+      this.alternkey = false;
+    else{
+      this.alternkey = true;
+    }
   }
 
 

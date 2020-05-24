@@ -10,3 +10,27 @@ C:\Users\Acer\Documents\UNIVERSIDAD\programacion web - 2\Proyecto\Hotel\Datos\ob
 C:\Users\Acer\Documents\UNIVERSIDAD\programacion web - 2\Proyecto\Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
 C:\Users\Acer\Documents\UNIVERSIDAD\programacion web - 2\Proyecto\Hotel\Datos\obj\Debug\netstandard2.0\Datos.dll
 C:\Users\Acer\Documents\UNIVERSIDAD\programacion web - 2\Proyecto\Hotel\Datos\obj\Debug\netstandard2.0\Datos.pdb
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.deps.json
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.dll
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.pdb
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfoInputs.cache
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfo.cs
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.dll
+C:\Users\anton\Desktop\ahorarsi\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.deps.json
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfoInputs.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfo.cs
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.pdb
