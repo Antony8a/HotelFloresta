@@ -39,9 +39,9 @@
                   <td class="text-center">{{ cliente.celular }}</td>
                   <td class="text-center">{{ cliente.correo }}</td>
                   <td class="text-center">{{ cliente.usuario }}</td>
-                  <td class="text-center"><button class="btn btn-outline-dark" 
+                  <td class="text-center"><i class="material-icons"
                     (click)="openScrollableContent(longContent)" 
-                    (click)="consultaId(cliente.identificacion)" >Ver</button></td>
+                    (click)="consultaId(cliente.identificacion)" >visibility</i></td>
 
                   <!----------------------------------------------Modal Ver----------------------------------------------->
                   <ng-template #longContent let-modal>
@@ -173,7 +173,7 @@
                     </ng-template>
                   <!--------------------------------------------Fin modal ver--------------------------------------------->
 
-                  <td class="text-center"><button class="btn btn-outline-dark" (click)=" openSm(content)">Eliminar</button></td>
+                  <td class="text-center"><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
 
                   <!-----------------------------------Modal confirmación de eliminación---------------------------------->
                   <ng-template #content let-modal>
