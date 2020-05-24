@@ -26,3 +26,6 @@
  .table{
      border-radius: 1%;
  }
+ .material-icons{
+     cursor: pointer;
+ }

@@ -7,7 +7,7 @@
         </div><br>
         
         <div class="col-md-12">
-            <div class="card">
+            <div class="card">i class="material-icons"i
                 <div class="card-header card-header-primary">
                     <h4 class="card-title ">Productos</h4>
                     <p class="card-category">Productos registrados en el hotel la floresta</p>
@@ -31,8 +31,8 @@
                                     <td class="text-center">{{ producto.nombre }}</td>
                                     <td class="text-center">{{ producto.tipo }}</td>
                                     <td class="text-center">{{ producto.precio }}</td>
-                                    <td class="text-center"><button class="btn btn-outline-dark" [routerLink]="['/productoEdita', producto.idProducto ]">Ver</button></td>
-                                    <td class="text-center"><button class="btn btn-outline-dark" (click)=" openSm(content)">Eliminar</button></td>
+                                    <td class="text-center"><i class="material-icons" [routerLink]="['/productoEdita', producto.idProducto ]">visibility</i></td>
+                                    <td class="text-center"><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
                 
                                     <ng-template #content let-modal>
                                         <div class="modal-header">

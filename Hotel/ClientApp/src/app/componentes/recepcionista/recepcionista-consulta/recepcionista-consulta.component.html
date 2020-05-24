@@ -40,11 +40,11 @@
                                     <td class="text-center">{{ recepcionista.celular }}</td>
                                     <td class="text-center">{{ recepcionista.correo }}</td>
                                     <td class="text-center">{{ recepcionista.usuario }}</td>
-                                    <td class="text-center"><button class="btn btn-outline-dark"
-                                            [routerLink]="['/recepcionistaEdita', recepcionista.identificacion ]">Ver</button>
+                                    <td class="text-center"><i class="material-icons"
+                                            [routerLink]="['/recepcionistaEdita', recepcionista.identificacion ]">visibility</i>
                                     </td>
-                                    <td class="text-center"><button class="btn btn-outline-dark"
-                                            (click)=" openSm(content)">Eliminar</button></td>
+                                    <td class="text-center"><i class="material-icons"
+                                            (click)=" openSm(content)">how_to_vote</i></td>
                                     <!--Modal-->
                                     <ng-template #content let-modal>
                                         <div class="modal-header">
