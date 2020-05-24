@@ -118,15 +118,16 @@
                                 <button class="button type1" id="boton-registrar-atras"
                                     (click)=altern()>Registrar-Consultar</button>
                             </div>
-                            <div class="inicioo" *ngIf="inicioo">
-
-                            </div>
+                            
                             <div class="reg" *ngIf="alternkey">
                                 <app-cliente-registro></app-cliente-registro>
                             </div>
                             <div class="search" *ngIf="!alternkey">
                                 <app-cliente-consulta></app-cliente-consulta>
                             </div>
+                        </div>
+                        <div class="inicioo" *ngIf="inicioo">
+                            <app-inicio-inicio></app-inicio-inicio>
                         </div>
                         <div class="proc" *ngIf="productoc">
                             <app-producto-consulta></app-producto-consulta>
@@ -143,6 +144,7 @@
                         <div class="cliRec" *ngIf="clienteRegistroc">
                             <app-cliente-registro></app-cliente-registro>
                         </div>
+                        
                     </div>
                     <!-- your content here -->
                 </div>

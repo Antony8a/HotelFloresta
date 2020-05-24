@@ -36,6 +36,7 @@ import { BannerRecepcionistaComponent } from './componentes/banners/banner-recep
 import { InicioHotelComponent } from './componentes/inicio-hotel/inicio-hotel.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { InicioAdminComponent } from './componentes/banners/inicio-admin/inicio-admin.component';
+import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inicio-inicio.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { InicioAdminComponent } from './componentes/banners/inicio-admin/inicio-
     InicioHotelComponent,
     LoginComponent,
     InicioAdminComponent,
+    InicioInicioComponent,
   ],
   imports: [
     ReactiveFormsModule,
