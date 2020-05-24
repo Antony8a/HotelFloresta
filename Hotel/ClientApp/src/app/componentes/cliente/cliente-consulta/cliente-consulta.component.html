@@ -43,7 +43,7 @@
                     (click)="openScrollableContent(longContent)" 
                     (click)="consultaId(cliente.identificacion)" >Ver</button></td>
 
-<!---------------------------------------------------------------Modal Ver---------------------------------------------------------->
+                  <!----------------------------------------------Modal Ver----------------------------------------------->
                   <ng-template #longContent let-modal>
                     <div class="card">
                       <div class="modal-header">
@@ -146,7 +146,7 @@
                               <button class="btn btn-outline-dark" (click)=" openSm(content)"
                                   [disabled]="formGroup.invalid">Actualizar</button>
 
-<!------------------------------------ este modal es quien confirma la edicion---------------------------------------->
+                                  <!-----------------------este modal es quien confirma la edicion------------------------>
                                   <ng-template #content let-modal>
                                     <div class="card">
                                       <div class="modal-header">
@@ -164,18 +164,18 @@
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-dark" (click)=" onSubmit()" (click)="modal.close('Close click')">Modificar</button>
                                       </div>
-                                    </ng-template>
-<!------------------------------------ este modal es quien confirma la edicion---------------------------------------->    
-                          </div>
-                      </form>
+                                  </ng-template>
+                                  <!-----------------------este modal es quien confirma la edicion------------------------>    
+                            </div>
+                        </form>
+                        </div>
                       </div>
-                    </div>
-                  </ng-template>
-<!-----------------------------------------------------------------Fin modal ver-------------------------------------------------->
+                    </ng-template>
+                  <!--------------------------------------------Fin modal ver--------------------------------------------->
 
                   <td class="text-center"><button class="btn btn-outline-dark" (click)=" openSm(content)">Eliminar</button></td>
 
-                  <!--Modal confirmación de eliminación-->
+                  <!-----------------------------------Modal confirmación de eliminación---------------------------------->
                   <ng-template #content let-modal>
                     <div class="card">
                       <div class="modal-header">
@@ -195,7 +195,7 @@
                         (click)="modal.close('Close click')">Eliminar</button>
                     </div>
                   </ng-template>
-                  <!--Fin modal-->
+                  <!---------------------------------------------Fin modal------------------------------------------------>
                 </tr>
               </tbody>
             </table>
