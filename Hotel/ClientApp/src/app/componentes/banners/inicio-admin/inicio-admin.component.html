@@ -128,7 +128,19 @@
                             </div>
                         </div>
                         <div class="proc" *ngIf="productoc">
-                            <app-producto-consulta></app-producto-consulta>
+                            <div class="return-1">
+                                <button class="button type1" id="boton-registrar-atras"
+                                    (click)=altern()>Registrar-Consultar</button>
+                            </div>
+                            <div class="inicioo" *ngIf="inicioo">
+
+                            </div>
+                            <div class="reg" *ngIf="alternkey">
+                                <app-producto-registro></app-producto-registro>
+                            </div>
+                            <div class="search" *ngIf="!alternkey">
+                                <app-producto-consulta></app-producto-consulta>
+                            </div>
                         </div>
                         <div class="recc" *ngIf="recepcionistac">
                             <app-recepcionista-consulta></app-recepcionista-consulta>
