@@ -74,7 +74,7 @@ import { LoginComponent } from './componentes/login/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: BannerAdminComponent, pathMatch: 'full' },
+      { path: '', component: InicioHotelComponent, pathMatch: 'full' },
     ]),
     NgbModule,
     AppRoutingModule
