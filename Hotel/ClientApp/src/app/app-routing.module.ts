@@ -24,6 +24,11 @@ import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/res
 import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
+  { 
+    path: '', 
+    component: InicioHotelComponent, 
+    pathMatch: 'full' 
+  },
   {
     path: 'home',
     component: HomeComponent

@@ -15,6 +15,13 @@
 		  </div>
 		</div>
 	  </div>
+
+	  <div class="temporal"><br>
+		<button class="button type1" [routerLink]="['/inicioAdmin']">Admin</button>
+		<button class="button type1" [routerLink]="['/inicioRecepcionista']">Recepcionista</button>
+		<button class="button type1" [routerLink]="['/iniciocliente']">Cliente</button>
+	</div>
+
 	  <div class="login">
   
 		<form>
@@ -34,7 +41,7 @@
 		  </div>
 		  <!--esto es provisional, ya que debo probar el componente de registro de cliente-->
 		  <div><br>
-			<h6 class="h6">Si no tiene un usuario, registrese <a [routerLink]="['/clienteRegistro']">Aquí</a></h6>
+			<h5 class="h6">Si no tiene un usuario, registrese <a [routerLink]="['/clienteRegistro']">Aquí</a></h5>
 		  </div>
   
 		</form>

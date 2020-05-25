@@ -1,190 +1,195 @@
 
 .back{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-  }
-  .bicon{
-    width: 50px;
-    height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
 }
-  .bcont{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  
-  .bback{
-    background-color: black;
-    height: 50px;
-    width: 130px;
-    display: flex;
-    flex-direction: row;
+.bicon{
+  width: 50px;
+  height: 50px;
+}
+.bcont{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
-  }
-  
-  .text{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .text label{
-    color: rgb(252, 252, 252);
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: flex;
-    justify-content: center;
-    font-size: 10pt;
-    font-weight: bold;
-    letter-spacing: 3pt;
-  }
-  
-  .body{
-    position: relative;
-    width: 100%;
-    height: 80%;
-    padding: 0 10% 0 10%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("/assets/images/laputmdre.jpg");
-    
-    
-  }
-  
-  img{
-    height: inherit;
-    width: inherit;
-  }
-  
-  .eicon{
-    width: 30px;
-    height: 30px;
-  }
-  
-  .econt{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .footer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 25%;
-    max-height: 170px;
-    width: 100%;
-    background-color: rgb(52, 38, 56);
-  }
-  
-  .element{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 4px;
-    width: 20%;
-    height: 100%;   
-  }
-  
-  .element  p {
-    color: white;
-  }
-  
-  .etitle{
-    display: flex;
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
-  }
-  
-  .edesc{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.6;
-  }
-  
-  .edesc p{
-    padding: 0;
-    margin: 0;
-    border: 0;
-  }
-  .input,label{display:block }
-  .input{-webkit-transition:all .3s;transition:all .3s}
-  .input{background-color:transparent;width:100%;height:30px;margin-bottom:20px;padding:0 8px;border:1px solid rgba(255, 255, 255, 0.3);border-radius:5px}
-  .input{border-color:#fff;color: white;}
+.bback{
+  background-color: black;
+  height: 50px;
+  width: 130px;
+  display: flex;
+  flex-direction: row;
 
-  .login{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+}
+
+.text{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text label{
+  color: rgb(252, 252, 252);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 10pt;
+  font-weight: bold;
+  letter-spacing: 3pt;
+}
+
+.body{
+  position: relative;
+  width: 100%;
+  height: 80%;
+  padding: 0 10% 0 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/laputmdre.jpg");
   
-  form{
-    min-height: 350px;
-    min-width: 300px;
-    background-color: rgba(26, 25, 25, 0.425);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  
+}
 
-  .button{position:relative;padding:.5em 1.5em;border:none;background-color:transparent;cursor:pointer;outline:0;font-size:18px;margin:1em .8em}
- .button.type1{color:#fff; opacity: .7; }
- .button.type1.type1::after,.button.type1.type1::before{content:"";display:block;position:absolute;width:20%;height:20%;border:2px solid;transition:all .6s ease;border-radius:1px}
- .button.type1.type1::after{bottom:0;right:0;border-color:transparent #fff #fff transparent}
- .button.type1.type1::before{top:0;left:0;border-color:#fff transparent transparent #fff}
- .button.type1.type1:hover:after,.button.type1.type1:hover:before{width:100%;height:100%}
+img{
+  height: inherit;
+  width: inherit;
+}
 
- 
+.eicon{
+  width: 30px;
+  height: 30px;
+}
+
+.econt{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 25%;
+  max-height: 170px;
+  width: 100%;
+  background-color: rgb(52, 38, 56);
+}
+
+.element{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4px;
+  width: 20%;
+  height: 100%;   
+}
+
+.element  p {
+  color: white;
+}
+
+.etitle{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+}
+
+.edesc{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.edesc p{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.input,label{display:block }
+.input{-webkit-transition:all .3s;transition:all .3s}
+.input{background-color:transparent;width:100%;height:30px;margin-bottom:20px;padding:0 8px;border:1px solid rgba(255, 255, 255, 0.3);border-radius:5px}
+.input{border-color:#fff;color: white;}
+
+.login{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center; <- Retirar apenas expliquen login*/
+  align-items: center;
+}
+
+form{
+  min-height: 350px;
+  min-width: 300px;
+  background-color: rgba(26, 25, 25, 0.425);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button{position:relative;padding:.5em 1.5em;border:none;background-color:transparent;cursor:pointer;outline:0;font-size:18px;margin:1em .8em}
+.button.type1{color:#fff; opacity: .7; }
+.button.type1.type1::after,.button.type1.type1::before{content:"";display:block;position:absolute;width:20%;height:20%;border:2px solid;transition:all .6s ease;border-radius:1px}
+.button.type1.type1::after{bottom:0;right:0;border-color:transparent #fff #fff transparent}
+.button.type1.type1::before{top:0;left:0;border-color:#fff transparent transparent #fff}
+.button.type1.type1:hover:after,.button.type1.type1:hover:before{width:100%;height:100%}
+
+
 .contenedor{
-    height: 100vh;
+  height: 100vh;
 }
 .box-login{
-    width: 330px;
-    height: 420px;
+  width: 330px;
+  height: 420px;
 }
 .logo{
-    height: 200px;
+  height: 200px;
 }
 .imagen{
-    height: 120px;
-    width: 120px;
+  height: 120px;
+  width: 120px;
 }
 .box-login{
-    border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 }
 .boton{
-    width: 100%;
-    color: #E5E9EA;
+  width: 100%;
+  color: #E5E9EA;
 }
 .boton:hover{
-    background: rgb(15, 143, 73);
+  background: rgb(15, 143, 73);
 }
 a:hover{
-    color: #7F8C8D;
+  color: #7F8C8D;
 }
 .caja{
-    width: 80px;
-    text-anchor: 16px;
+  width: 80px;
+  text-anchor: 16px;
 }
 .h6{
-  color: #E5E9EA;
+color: #E5E9EA;
+}
+
+.temporal{
+width: 80px;
+float: right;
 }
 

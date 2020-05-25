@@ -1,5 +1,5 @@
 <div class="headerrr">
-    <h2 class="hmm" [routerLink]="['/inicioHotel']" >Hotel La Floresta</h2><br><br><br>
+    <h2 class="hmm" [routerLink]="['/inicioHotel']">Hotel La Floresta</h2><br><br><br>
 
 </div>
 
@@ -12,54 +12,46 @@
 
             <div class="aver"></div>
 
-            <div class="llegada">
-                <span>
-                    <h6>Fecha de llegada:</h6>
-                </span>
-                <div class="datapicker">
-                    
-                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-                    
+            <div>
+                <div class="dataaaa">
+                    <mat-form-field color="accent">
+                        <mat-label>Fecha llegada</mat-label>
+                        <input matInput [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+                    </mat-form-field>
                 </div>
-
-
             </div>
 
-            <div class="salida">
-                <span>
-                    <h6>Fecha de Salida:</h6>
-                </span>
-                <div class="datapicker">
-                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+            <div>
+                <div class="dataaaa">
+                    <mat-form-field color="accent">
+                        <mat-label>fecha salida</mat-label>
+                        <input matInput [matDatepicker]="picker2">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                    </mat-form-field>
                 </div>
             </div>
 
             <div class="chekk">
-                <p>
-                    <label>
-                        <input type="checkbox" />
-                        <span>Aire acondicionado</span>
-                    </label>
-                </p>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button class="r1" value="1">Aire acondicionado</mat-radio-button>
+                    <mat-radio-button value="2">Ventilador</mat-radio-button>
+                  </mat-radio-group>
 
-                <p>
-                    <label>
-                        <input type="checkbox" />
-                        <span>Ventilador</span>
-                    </label>
-                </p>
             </div>
 
-            <div class="ran">
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Cantidad de camas</label><br>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="" disabled selected>Seleccione</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
+            <div class="">
+                <div class="">
+                    <mat-form-field>
+                        <mat-label>Tipo de habitacion</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let food of foods" [value]="food.value">
+                                {{food.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
             </div>
 
@@ -78,80 +70,80 @@
 
         <div class="contenedor-imagenes">
 
-            <div class="imagen"(click)="change()">
-                
+            <div class="imagen" (click)="change()">
+
                 <img src="/assets/images/rom.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
-                
-                
+
+
             </div>
-            <div class="imagen"(click)="change()">
-                
+            <div class="imagen" (click)="change()">
+
                 <img src="/assets/images/rom3.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-                
+
                 <img src="/assets/images/rom.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-                
+
                 <img src="/assets/images/rom3.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-                
+
                 <img src="/assets/images/rom2.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-                
+
                 <img src="/assets/images/rom3.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-               
+
                 <img src="/assets/images/rom.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-                
+
                 <img src="/assets/images/rom3.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-               
+
                 <img src="/assets/images/rom.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-                
+
                 <img src="/assets/images/rom.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
                 </div>
             </div>
             <div class="imagen" (click)="change()">
-               
+
                 <img src="/assets/images/rom.jpg" alt="">
                 <div class="overlay">
                     <h2>RESERVAR</h2>
@@ -184,7 +176,9 @@
             <div class="brCenter"></div>
         </div>
         <div class="parla">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. </p>
         </div>
         <div class="pic">
             <div class="picimg">
@@ -193,7 +187,7 @@
         </div>
         <div class="res">
             <div class="contenedorBtn">
-                <button  class="button type1" >Confirmar reserva</button>
+                <button class="button type1">Confirmar reserva</button>
             </div>
         </div>
         <div class="icons">
@@ -201,22 +195,22 @@
                 <img class="img" src="/assets/images/cama.png" alt="icon">
             </div>
             <div class="icon">
-                <img  class="img" src="/assets/images/ducha.png" alt="icon">
+                <img class="img" src="/assets/images/ducha.png" alt="icon">
             </div>
             <div class="icon">
-                <img  class="img" src="/assets/images/tv.png" alt="icon">
+                <img class="img" src="/assets/images/tv.png" alt="icon">
             </div>
             <div class="icon">
-                <img  class="img" src="/assets/images/wifi.png" alt="icon">
+                <img class="img" src="/assets/images/wifi.png" alt="icon">
             </div>
             <div class="icon">
-                <img  class="img" src="/assets/images/telephone.png" alt="icon">
+                <img class="img" src="/assets/images/telephone.png" alt="icon">
             </div>
             <div class="icon">
-                <img  class="img" src="/assets/images/machine.png" alt="icon">
+                <img class="img" src="/assets/images/machine.png" alt="icon">
             </div>
             <div class="icon">
-                <img  class="img" src="/assets/images/hot.png" alt="icon">
+                <img class="img" src="/assets/images/hot.png" alt="icon">
             </div>
         </div>
     </div>

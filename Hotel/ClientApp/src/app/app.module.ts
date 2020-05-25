@@ -3,6 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -38,6 +45,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { InicioAdminComponent } from './componentes/banners/inicio-admin/inicio-admin.component';
 import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inicio-inicio.component';
 import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/reserva-inicio.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -79,11 +87,15 @@ import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/res
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: InicioHotelComponent, pathMatch: 'full' },
-    ]),
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule 
   ],
   entryComponents:[AlertModalComponent],
   providers: [],
