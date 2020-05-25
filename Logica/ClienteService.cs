@@ -23,7 +23,7 @@ namespace Logica
                 var clientex = _repositorio.BuscarPorIdentificacion(cliente.Identificacion);
                 if (clientex != null)
                 {
-                    return new GuardarClienteResponse("Error el cliente ya se encuentra registrada");
+                    return new GuardarClienteResponse("Error el cliente ya se encuentra registrado");
                 }
                 _repositorio.Guardar(cliente);
                 _conexion.Close();

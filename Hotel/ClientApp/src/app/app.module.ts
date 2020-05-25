@@ -80,7 +80,7 @@ import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/res
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: InicioHotelComponent, pathMatch: 'full' },
+      { path: '', component: InicioAdminComponent, pathMatch: 'full' },
     ]),
     NgbModule,
     AppRoutingModule
