@@ -44,7 +44,7 @@ namespace Logica
             return reservas;
         }
 
-        public int Eliminar(int identificacion)
+        public string Eliminar(int identificacion)
         {
             try
             {
@@ -54,16 +54,16 @@ namespace Logica
                 {
                     _repositorio.Eliminar(reserva);
                     _conexion.Close();
-                    return 1;
+                    return ($"El registro {reserva.IdReserva} se ha eliminado satisfactoriamente.");
                 }
                 else
                 {
-                    return 0;
+                    return ($"Lo sentimos, la reserva no. {identificacion} no se encuentra registrada.");
                 }
             }
             catch (Exception e)
             {
-                return 2;
+                return $"Error de la Aplicación: {e.Message}";
             }
             finally { _conexion.Close(); }
 

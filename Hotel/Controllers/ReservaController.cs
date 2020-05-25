@@ -54,7 +54,7 @@ namespace Hotel.Controllers
                 {
                     Status = StatusCodes.Status400BadRequest,
                 };
-                return BadRequest(response.Mensaje);
+                return BadRequest(problemDetails);
             }
             return Ok(response.Reserva);
         }
@@ -63,7 +63,7 @@ namespace Hotel.Controllers
         [HttpDelete("{identificacion}")]
         public ActionResult<int> Delete(int identificacion)
         {
-            int mensaje = _reservaService.Eliminar(identificacion);
+            string mensaje = _reservaService.Eliminar(identificacion);
             return Ok(mensaje);
         }
 
@@ -99,7 +99,7 @@ namespace Hotel.Controllers
                     {
                         Status = StatusCodes.Status400BadRequest,
                     };
-                    return BadRequest(response.Mensaje);
+                    return BadRequest(problemDetails);
                 }
                 return Ok(response.Reserva);                
             }

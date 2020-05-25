@@ -37,6 +37,7 @@ namespace Hotel.Models
         public string Usuario { get; set; }
         
         [Required(ErrorMessage = "La contraseña es requerida")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "La contraseña debe tener como maximo 20 y minimo 4 caracteres")]
         public string Password { get; set; }  
     }
 

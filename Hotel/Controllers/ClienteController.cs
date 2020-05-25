@@ -54,7 +54,7 @@ namespace Hotel.Controllers
                 {
                     Status = StatusCodes.Status400BadRequest,
                 };
-                return BadRequest(response.Mensaje);
+                return BadRequest(problemDetails);
             }
             return Ok(response.Cliente);
         }
@@ -102,7 +102,7 @@ namespace Hotel.Controllers
                     {
                         Status = StatusCodes.Status400BadRequest,
                     };
-                    return BadRequest(response.Mensaje);
+                    return BadRequest(problemDetails);
                 }
                 return Ok(response.Cliente);                
             }
