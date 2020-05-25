@@ -31,7 +31,7 @@
 
                     <div class="form-group">
                         <label for="precio">precio</label>
-                        <input type="number" name="precio" formControlName="precio" placeholder="digite el precio"
+                        <input type="number" name="precio" formControlName="precio"
                             class="form-control" [ngClass]="{'is-invalid':control.precio.errors}" />
 
                         <div *ngIf="control.precio.errors" class="invalid-feedback">
@@ -41,7 +41,7 @@
 
                     <div class="form-group">
                         <label>descripcion</label>
-                        <input type="text" formControlName="descripcion" class="form-control" placeholder="describa..."
+                        <input type="text" formControlName="descripcion" class="form-control" 
                             [ngClass]="{ 'is-invalid':  control.descripcion.errors }" />
                         <div *ngIf=" control.descripcion.errors" class="invalid-feedback">
                             <div *ngIf="control.descripcion.errors.required">Agregue una descripción</div>

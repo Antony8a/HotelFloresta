@@ -4,6 +4,8 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Cliente } from 'src/app/models/cliente';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { UsersService } from 'src/app/services/users.service';
+import { Users } from 'src/app/models/users';
 
 @Component({
   selector: 'app-cliente-registro',
@@ -14,8 +16,10 @@ export class ClienteRegistroComponent implements OnInit {
 
   formGroup: FormGroup;
   cliente: Cliente;
+  user:Users;
   constructor(
-    private clienteService: ClienteService, 
+    private clienteService: ClienteService,
+    private usersService: UsersService,
     private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
@@ -26,15 +30,6 @@ export class ClienteRegistroComponent implements OnInit {
 
   private buildForm() {
     this.cliente = new Cliente();
-    this.cliente.identificacion = '';
-    this.cliente.nombre = '';
-    this.cliente.edad = 0;
-    this.cliente.sexo = '';
-    this.cliente.direccion = '';
-    this.cliente.celular = '';
-    this.cliente.correo = '';
-    this.cliente.usuario = '';
-    this.cliente.password = '';
     this.formGroup = this.formBuilder.group({
       identificacion: [this.cliente.identificacion, Validators.required],
       nombre: [this.cliente.nombre, Validators.required],
@@ -52,10 +47,29 @@ export class ClienteRegistroComponent implements OnInit {
     if (this.formGroup.invalid) {
       return;
     }
-    this.add();
+    this.addUser();
+    this.addCliente();
   }
 
-  add() {
+  addUser(){    
+    this.cliente = this.formGroup.value;
+    this.user = new Users();
+    this.user.usuario = this.cliente.usuario;
+    this.user.password = this.cliente.password;
+    this.user.identificacion = this.cliente.identificacion;
+    this.user.tipoUsuario = 'cliente';
+    this.usersService.post(this.user).subscribe(p => {
+      if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Usuario creado!!! :-)';
+        this.user = p;
+      }
+    });
+
+    }
+
+  addCliente() {
     this.cliente = this.formGroup.value;
     this.clienteService.post(this.cliente).subscribe(p => {
       if (p != null) {

@@ -95,7 +95,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatNativeDateModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule 
+    MatRadioModule,
+    MatInputModule    
+
   ],
   entryComponents:[AlertModalComponent],
   providers: [],

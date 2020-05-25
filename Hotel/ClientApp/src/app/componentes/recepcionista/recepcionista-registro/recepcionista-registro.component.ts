@@ -24,15 +24,6 @@ export class RecepcionistaRegistroComponent implements OnInit {
   }
   private buildForm() {
     this.recepcionista = new Recepcionista();
-    this.recepcionista.identificacion = '';
-    this.recepcionista.nombre = '';
-    this.recepcionista.edad = 0;
-    this.recepcionista.sexo = '';
-    this.recepcionista.direccion = '';
-    this.recepcionista.celular = '';
-    this.recepcionista.correo = '';
-    this.recepcionista.usuario = '';
-    this.recepcionista.password = '';
     this.formGroup = this.formBuilder.group({
       identificacion: [this.recepcionista.identificacion, Validators.required],
       nombre: [this.recepcionista.nombre, Validators.required],

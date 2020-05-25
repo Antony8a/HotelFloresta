@@ -4,6 +4,8 @@ import { ClienteService } from 'src/app/services/cliente.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Users } from 'src/app/models/users';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-cliente-consulta',
@@ -15,6 +17,7 @@ export class ClienteConsultaComponent implements OnInit {
   //Esto es de Consulta
   clientes:Cliente[];
   cliente:Cliente;
+  users:Users;
   searchText: string;
   closeResult: string;
 
@@ -26,6 +29,7 @@ export class ClienteConsultaComponent implements OnInit {
 
   constructor(
     private clienteService: ClienteService,
+    private usersService: UsersService,
     private modalService: NgbModal,
     //agregando del "EDITAR"
     private formBuilder: FormBuilder) { } 
@@ -97,10 +101,28 @@ export class ClienteConsultaComponent implements OnInit {
     if (this.formGroup.invalid) {
       return;
     }
-    this.update();
+    this.updateUsers();
+    this.updateCliente();
+  }
+
+  updateUsers(){
+    this.cliente = this.formGroup.value;
+    this.users = new Users();
+    this.users.usuario = this.cliente.usuario;
+    this.users.password = this.cliente.password;
+    this.users.identificacion = this.cliente.identificacion;
+    this.users.tipoUsuario = 'cliente';
+    this.usersService.put(this.users).subscribe(p => {
+      if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Usuario Modificado!!! :)';
+        this.cliente = p;
+      }
+    });
   }
   
-  update() {
+  updateCliente() {
     this.cliente = this.formGroup.value;
     this.clienteService.put(this.cliente).subscribe(p => {
       if (p != null) {
@@ -110,7 +132,6 @@ export class ClienteConsultaComponent implements OnInit {
         this.cliente = p;
       }
     });
-
   }
 
   get control() { return this.formGroup.controls; }

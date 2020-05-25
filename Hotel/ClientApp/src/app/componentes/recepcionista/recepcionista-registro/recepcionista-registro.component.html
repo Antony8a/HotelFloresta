@@ -28,7 +28,7 @@
 
                     <div class="form-group">
                         <label for="edad">edad</label>
-                        <input type="number" name="edad" formControlName="edad" placeholder="digite su edad"
+                        <input type="number" name="edad" formControlName="edad" 
                             class="form-control" [ngClass]="{'is-invalid':control.edad.errors}" />
 
                         <div *ngIf="control.edad.errors" class="invalid-feedback">
