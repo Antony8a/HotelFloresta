@@ -15,6 +15,7 @@ namespace Hotel.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
+        
         private readonly ClienteService _clienteService;
         public IConfiguration Configuration { get; }
         public ClienteController(IConfiguration configuration)
