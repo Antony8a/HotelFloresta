@@ -24,10 +24,6 @@ export class ProductoRegistroComponent implements OnInit {
     }
     private buildForm() {
       this.producto = new Producto();
-      this.producto.idProducto = '';
-      this.producto.nombre = '';
-      this.producto.tipo = '';
-      this.producto.precio = 0;
       this.formGroup = this.formBuilder.group({
         idProducto: [this.producto.idProducto, Validators.required],
         nombre: [this.producto.nombre, Validators.required],

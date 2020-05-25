@@ -126,7 +126,7 @@
           
                           <div class="form-group">
                               <label>Usuario</label>
-                              <input type="text" formControlName="usuario" class="form-control" value={{_usuario}}
+                              <input type="text" formControlName="usuario" class="form-control" readonly value={{_usuario}}
                                   [ngClass]="{ 'is-invalid':  control.usuario.errors }" />
                               <div *ngIf=" control.usuario.errors" class="invalid-feedback">
                                   <div *ngIf="control.usuario.errors.required">El usuario es requerido</div>

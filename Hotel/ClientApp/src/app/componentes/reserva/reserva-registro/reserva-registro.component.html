@@ -35,8 +35,7 @@
                     <div class="form-group">
                         <label for="cantidadPersonas">Cantidad de Personas</label>
                         <input type="number" name="cantidadPersonas" formControlName="cantidadPersonas"
-                            placeholder="cantidad de personas" class="form-control"
-                            [ngClass]="{'is-invalid':control.cantidadPersonas.errors}" />
+                            class="form-control" [ngClass]="{'is-invalid':control.cantidadPersonas.errors}" />
 
                         <div *ngIf="control.cantidadPersonas.errors" class="invalid-feedback">
                             <div *ngIf="control.cantidadPersonas.errors.required">La edad es requerida</div>
