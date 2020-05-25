@@ -4,6 +4,8 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Recepcionista } from 'src/app/models/recepcionista';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RecepcionistaService } from 'src/app/services/recepcionista.service';
+import { Users } from 'src/app/models/users';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-recepcionista-registro',
@@ -14,8 +16,10 @@ export class RecepcionistaRegistroComponent implements OnInit {
 
   formGroup: FormGroup;
   recepcionista:Recepcionista;
+  user:Users;
   constructor(
     private recepcionistaService: RecepcionistaService,
+    private usersService: UsersService,
     private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
@@ -41,10 +45,29 @@ export class RecepcionistaRegistroComponent implements OnInit {
     if (this.formGroup.invalid) {
       return;
     }
-    this.add();
+    this.addUser();
+    this.addRecepcionista();
   }
 
-  add() {
+  addUser(){    
+    this.recepcionista = this.formGroup.value;
+    this.user = new Users();
+    this.user.usuario = this.recepcionista.usuario;
+    this.user.password = this.recepcionista.password;
+    this.user.identificacion = this.recepcionista.identificacion;
+    this.user.tipoUsuario = 'recepcionista';
+    this.usersService.post(this.user).subscribe(p => {
+      if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Usuario creado!!! :-)';
+        this.user = p;
+      }
+    });
+
+    }
+
+  addRecepcionista() {
     this.recepcionista = this.formGroup.value;
     this.recepcionistaService.post(this.recepcionista).subscribe(p => {
       if (p != null) {

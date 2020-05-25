@@ -42,7 +42,7 @@
                                     <td class="text-center">{{ recepcionista.usuario }}</td>
                                     <td class="text-center"><i class="material-icons"
                                         (click)="openScrollableContent(longContent)" 
-                                        (click)="consultaId(recepcionistatificacion)" >visibility</i></td>
+                                        (click)="consultaId(recepcionista.identificacion)" >visibility</i></td>
                     
                                       <!----------------------------------------------Modal Ver----------------------------------------------->
                                       <ng-template #longContent let-modal>
@@ -50,7 +50,7 @@
                                           <div class="modal-header">
                                               <div class="card-header card-header-primary" id="pruebaxd">
                                                 <h4 class="card-title ">Ver recepcionista</h4>
-                                                <p class="card-category">Datos del recepcionista {{recepcionistatificacion}}</p>
+                                                <p class="card-category">Datos del recepcionista {{recepcionista.identificacion}}</p>
                                             </div>
                                             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                                               <span aria-hidden="true">&times;</span>
