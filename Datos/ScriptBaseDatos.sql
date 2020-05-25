@@ -1,6 +1,15 @@
 CREATE DATABASE [HotelFloresta];
-USE  [HotelFloresta]
 
+USE  [HotelFloresta]
+CREATE TABLE [dbo].[Users](    
+    [Usuario] [nvarchar](30) PRIMARY KEY,
+    [Password] [nvarchar](30) NULL,
+	[TipoUsuario] [nvarchar](20) NULL,
+    [Identificacion] [nvarchar](10) NULL
+)
+GO
+
+USE  [HotelFloresta]
 CREATE TABLE [dbo].[Cliente](
 	[Identificacion] [nvarchar](10) NOT NULL PRIMARY KEY,
 	[Nombre] [nvarchar](100) NULL,
@@ -11,6 +20,7 @@ CREATE TABLE [dbo].[Cliente](
     [Correo] [nvarchar](80) NULL,
     [Usuario] [nvarchar](30) NULL,
     [Password] [nvarchar](50) NULL,
+    CONSTRAINT fk_UsuarioC FOREIGN KEY (Usuario) REFERENCES Users (Usuario)
 ) 
 GO
 
@@ -46,6 +56,7 @@ CREATE TABLE [dbo].[Recepcionista](
     [Correo] [nvarchar](80) NULL,
     [Usuario] [nvarchar](30) NULL,
     [Password] [nvarchar](50) NULL,
+    CONSTRAINT fk_UsuarioF FOREIGN KEY (Usuario) REFERENCES Users (Usuario)
 ) 
 GO
 
