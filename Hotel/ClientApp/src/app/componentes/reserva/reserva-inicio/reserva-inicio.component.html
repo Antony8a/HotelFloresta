@@ -1,0 +1,223 @@
+<div class="headerrr">
+    <h2 class="hmm" [routerLink]="['/inicioHotel']" >Hotel La Floresta</h2><br><br><br>
+
+</div>
+
+
+<div class="galeria">
+
+    <div class="footer">
+
+        <div class="linea">
+
+            <div class="aver"></div>
+
+            <div class="llegada">
+                <span>
+                    <h6>Fecha de llegada:</h6>
+                </span>
+                <div class="datapicker">
+                    
+                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                    
+                </div>
+
+
+            </div>
+
+            <div class="salida">
+                <span>
+                    <h6>Fecha de Salida:</h6>
+                </span>
+                <div class="datapicker">
+                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                </div>
+            </div>
+
+            <div class="chekk">
+                <p>
+                    <label>
+                        <input type="checkbox" />
+                        <span>Aire acondicionado</span>
+                    </label>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" />
+                        <span>Ventilador</span>
+                    </label>
+                </p>
+            </div>
+
+            <div class="ran">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Cantidad de camas</label><br>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option value="" disabled selected>Seleccione</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="body">
+
+        <div class="pestaña">
+            <div class="iz"></div>
+            <div class="cen"> Habitaciones </div>
+            <div class="der"></div>
+        </div>
+
+
+        <div class="contenedor-imagenes">
+
+            <div class="imagen"(click)="change()">
+                
+                <img src="/assets/images/rom.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+                
+                
+            </div>
+            <div class="imagen"(click)="change()">
+                
+                <img src="/assets/images/rom3.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+                
+                <img src="/assets/images/rom.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+                
+                <img src="/assets/images/rom3.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+                
+                <img src="/assets/images/rom2.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+                
+                <img src="/assets/images/rom3.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+               
+                <img src="/assets/images/rom.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+                
+                <img src="/assets/images/rom3.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+               
+                <img src="/assets/images/rom.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+                
+                <img src="/assets/images/rom.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+            <div class="imagen" (click)="change()">
+               
+                <img src="/assets/images/rom.jpg" alt="">
+                <div class="overlay">
+                    <h2>RESERVAR</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="mod" *ngIf="modal">
+    <div id="modal" cdkDrag>
+        <div class="mopt">
+            <div class="btnClose" (click)="change()">
+                <img class="imgC" src="../../assets/images/signs.png" alt="cerrar">
+            </div>
+        </div>
+        <div class="logo">
+            <div class="piclogo">
+                <img class="img" src="/assets/images/LogoShido.PNG" alt="logo">
+            </div>
+        </div>
+        <div class="tit">
+            <h3>HABITACIÓN # PARLA</h3>
+        </div>
+        <div class="br">
+            <div class="brCenter"></div>
+        </div>
+        <div class="parla">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+        </div>
+        <div class="pic">
+            <div class="picimg">
+                <img class="img" src="/assets/images/rom3.jpg" alt="cuarto">
+            </div>
+        </div>
+        <div class="res">
+            <div class="contenedorBtn">
+                <button  class="button type1" >Confirmar reserva</button>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="icon">
+                <img class="img" src="/assets/images/cama.png" alt="icon">
+            </div>
+            <div class="icon">
+                <img  class="img" src="/assets/images/ducha.png" alt="icon">
+            </div>
+            <div class="icon">
+                <img  class="img" src="/assets/images/tv.png" alt="icon">
+            </div>
+            <div class="icon">
+                <img  class="img" src="/assets/images/wifi.png" alt="icon">
+            </div>
+            <div class="icon">
+                <img  class="img" src="/assets/images/telephone.png" alt="icon">
+            </div>
+            <div class="icon">
+                <img  class="img" src="/assets/images/machine.png" alt="icon">
+            </div>
+            <div class="icon">
+                <img  class="img" src="/assets/images/hot.png" alt="icon">
+            </div>
+        </div>
+    </div>
+</div>

@@ -37,6 +37,7 @@ import { InicioHotelComponent } from './componentes/inicio-hotel/inicio-hotel.co
 import { LoginComponent } from './componentes/login/login.component';
 import { InicioAdminComponent } from './componentes/banners/inicio-admin/inicio-admin.component';
 import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inicio-inicio.component';
+import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/reserva-inicio.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inici
     LoginComponent,
     InicioAdminComponent,
     InicioInicioComponent,
+    ReservaInicioComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -78,7 +80,7 @@ import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inici
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: InicioAdminComponent, pathMatch: 'full' },
+      { path: '', component: InicioHotelComponent, pathMatch: 'full' },
     ]),
     NgbModule,
     AppRoutingModule

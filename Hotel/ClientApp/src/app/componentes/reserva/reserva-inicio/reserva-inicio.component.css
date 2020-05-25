@@ -1,0 +1,371 @@
+@media (max-width:1000px){
+    .contenedor-imagenes{
+        width: 95%;
+    }
+}
+
+.hmm{
+    cursor: pointer;
+}
+
+@media (max-width:700px){
+    .contenedor-imagenes{
+        width: 90%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 48%;
+    }
+}
+
+@media(max-width:450px){
+    h1{
+        font-size:22px;
+    }
+    .contenedor-imagenes{
+        width: 98%;
+    }
+    .contenedor-imagenes .imagen{
+        width: 80%;
+    }
+}
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.galeria h1{
+    text-align: center;
+    margin:20px 0 15px 0;
+    font-weight: 300;
+    
+}
+
+.linea{
+    height: 80px ;
+    background-color: rgba(0, 0, 0, 0.425);
+    color: #fff;
+    margin-bottom: 40px;
+    display:flex;
+    align-items: center;
+}
+
+
+
+.contenedor-imagenes{
+    display:flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius:20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.contenedor-imagenes .imagen{
+    width: 32%;
+    position: relative;
+    height:250px;
+    margin-bottom:5px;
+    box-shadow: 0px 0px 2px 0px 
+}
+.imagen img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    border-radius:10px;
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background:rgba(0, 0, 0, 0.425) ;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease;
+    font-family: 'open sans';
+    
+}
+
+.overlay h2{
+    color: #fff;
+    font-weight: 300;
+    font-size:20px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.imagen:hover .overlay{
+    height:100%;
+    cursor: pointer;
+    border-radius:10px;
+}
+
+.galeria{
+    position: relative;
+    background-image: url("/assets/images/laputmdre.jpg");
+    background-size: 100% 100%;
+}
+
+.contenedor-imagenes{
+    background-color: rgba(0, 0, 0, 0.425);
+    
+}
+
+.headerrr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    max-height: 170px;
+    width: 100%;
+    background-color: rgb(52, 38, 56);
+    color: #fff;
+    font-family: 'open sans'; 
+}
+
+.iz{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.425);
+    border-radius: 10px 10px 0 0;
+    
+    
+}
+
+.cen{
+    color: #fff;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.425);
+    border-radius: 15px 15px 0 0;
+    font-family: 'open sans';
+    font-size: 25px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.der{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.425);
+    top: 5%;
+    border-radius: 10px 10px 0 0;
+    padding-right: 10px;
+}
+.pestaña{
+    align-items: center;
+    display:flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.aver{
+    padding: 250px;
+    float: left;
+}
+
+.llegada{
+    
+    border-radius: 15px 15px 0 0;
+    justify-content: space-around;
+    
+    width: 12%;
+    color: #fff;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.425);
+    padding: 1em;
+}
+
+.salida{
+    border-radius: 15px 15px 0 0;
+    
+    width: 12%;
+    height: 80px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.425);
+    padding: 1em;
+}
+
+.chekk{
+    padding: 8px;
+}
+
+.ran{
+    padding: 8px;
+}
+
+
+.mod{
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.507);
+    color: white;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal{
+    background-color: white;
+    width: 30%;
+    height: 90%;
+    min-width: 600px;
+    color: black;
+    border-radius: 10px;
+}
+
+.mopt{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.btnClose{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;   
+}
+
+.btnClose:hover{
+    background-color: rgba(151, 94, 94, 0.384);
+    transform: scale(0.9);
+    border-radius: 5px;
+ }
+
+.imgC{
+    height: inherit;
+    width: inherit;
+    padding: 15%;
+}
+
+.logo{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.piclogo{
+    width: 400px;
+    height: 100px;
+}
+.img{
+    height: inherit;
+    width: inherit;
+}
+
+.tit{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+}
+
+.tit h3 {
+    padding: 0;
+    border: 0;
+    margin:0;
+}
+
+.br{
+    height: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.brCenter{
+    height: 2px;
+    width: 80%;
+    background-color: gray;
+}
+
+.parla{
+    padding: 5% 10%;
+    text-align: center;
+}
+
+.pic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    border: 0;
+    padding: 0;
+}
+
+.picimg{
+    padding: 0 50px;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.res{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0 35px 0;
+}
+
+.contenedorBtn > button {
+    margin:0;
+ }
+
+ .button{position:relative;padding:1em 1.5em;border:none;background-color:transparent;cursor:pointer;outline:0;font-size:13pt;} /*margin:1em .8em*/
+ .button.type1{color:rgb(12, 2, 2); opacity: .7; }
+ .button.type1.type1::after,.button.type1.type1::before{content:"";display:block;position:absolute;width:20%;height:20%;border:2px solid;transition:all .6s ease;border-radius:1px}
+ .button.type1.type1::after{bottom:0;right:0;border-color:transparent rgb(8, 0, 0) rgb(10, 0, 0) transparent}
+ .button.type1.type1::before{top:0;left:0;border-color:rgb(8, 0, 0) transparent transparent rgb(12, 0, 0)}
+ .button.type1.type1:hover:after,.button.type1.type1:hover:before{width:100%;height:100%}
+
+
+ .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .icon{
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    cursor: pointer;
+    border-radius: 10px;
+ }
+
+ .icon:hover{
+    background-color: rgba(0, 0, 0, 0.171);
+    transform: scale(0.9);
+ }

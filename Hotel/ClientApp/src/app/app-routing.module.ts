@@ -19,6 +19,9 @@ import { ReservaConsultaComponent } from './componentes/reserva/reserva-consulta
 import { ReservaEditaComponent } from './componentes/reserva/reserva-edita/reserva-edita.component';
 import { InicioAdminComponent } from './componentes/banners/inicio-admin/inicio-admin.component';
 import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inicio-inicio.component';
+import { InicioHotelComponent } from './componentes/inicio-hotel/inicio-hotel.component';
+import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/reserva-inicio.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
   {
@@ -106,6 +109,18 @@ const routes: Routes = [
   {
     path: 'inicioInicio',
     component: InicioInicioComponent 
+  },
+  {
+    path: 'inicioHotel',
+    component: InicioHotelComponent 
+  },
+  {
+    path: 'realizarReserva',
+    component: ReservaInicioComponent 
+  },
+  {
+    path: 'login',
+    component: LoginComponent 
   },
 
 

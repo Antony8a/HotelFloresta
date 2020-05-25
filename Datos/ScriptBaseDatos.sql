@@ -60,6 +60,8 @@ CREATE TABLE [dbo].[Reserva](
     CONSTRAINT fk_IdCliente FOREIGN KEY (IdCliente) REFERENCES Cliente (Identificacion),
     CONSTRAINT fk_IdHabitacion FOREIGN KEY (IdHabitacion) REFERENCES Habitacion (IdHabitacion)
 ) 
+GO
+
 
 
 -------------------------------------- or
