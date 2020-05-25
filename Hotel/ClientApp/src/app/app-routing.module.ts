@@ -24,6 +24,7 @@ import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/res
 import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
+  
   { 
     path: '', 
     component: InicioHotelComponent, 
@@ -127,15 +128,14 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent 
   },
-
-
+  
 ]
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})
   ],
   exports:[RouterModule]
  
