@@ -17,12 +17,12 @@ export class ClienteConsultaComponent implements OnInit {
   //Esto es de Consulta
   clientes:Cliente[];
   cliente:Cliente;
-  users:Users;
   searchText: string;
   closeResult: string;
 
   // Cosas agregadas del "EDITAR"
   formGroup: FormGroup;
+  users:Users;
 
   idn: string; public _nombre: string; public _edad: number; public _sexo: string; public _direccion: string;
   public _celular: string; public _correo: string; public _usuario: string; public _password: string;
@@ -117,7 +117,7 @@ export class ClienteConsultaComponent implements OnInit {
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Resultado Operación";
         messageBox.componentInstance.message = 'Usuario Modificado!!! :)';
-        this.cliente = p;
+        this.users = p;
       }
     });
   }
