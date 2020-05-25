@@ -34,3 +34,15 @@ C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Dato
 C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
 C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.dll
 C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.pdb
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.deps.json
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.dll
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Datos.pdb
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Entity.dll
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\bin\Debug\netstandard2.0\Entity.pdb
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfoInputs.cache
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfo.cs
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.dll
+C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.0\Datos.pdb
