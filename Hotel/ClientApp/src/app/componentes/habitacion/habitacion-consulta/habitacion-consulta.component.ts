@@ -30,6 +30,7 @@ export class HabitacionConsultaComponent implements OnInit {
       const messageBox = this.modalService.open(AlertModalComponent)
       messageBox.componentInstance.title = "Resultado Operación";
       messageBox.componentInstance.message = 'Habitacion Eliminada!!! :)';
+      
     });
   }
 

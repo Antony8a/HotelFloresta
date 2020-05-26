@@ -1,217 +1,502 @@
-<div class="headerrr">
-    <h2 class="hmm" [routerLink]="['/inicioHotel']">Hotel La Floresta</h2><br><br><br>
+<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+<link rel="stylesheet" href="/assets/inicioHotel/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/animate.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/magnific-popup.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/aos.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/ionicons.min.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/jquery.timepicker.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/flaticon.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/icomoon.css">
+<link rel="stylesheet" href="/assets/inicioHotel/css/style.css">
 
-</div>
+<div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Hotel La floresta</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="rooms.html" class="nav-link">Habitaciones</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Login</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
 
 
-<div class="galeria">
 
-    <div class="footer">
-
-        <div class="linea">
-
-            <div class="aver"></div>
-
-            <div>
-                <div class="dataaaa">
-                    <mat-form-field color="accent">
-                        <mat-label>Fecha llegada</mat-label>
-                        <input matInput [matDatepicker]="picker1">
-                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                        <mat-datepicker #picker1 color="primary"></mat-datepicker>
-                    </mat-form-field>
+    <div class="block-30 block-30-sm item" style="background-image: url('/assets/inicioHotel/images/bg_2.jpg');"
+        data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-10">
+                    <span class="subheading-sm">Habitaciones</span>
+                    <h2 class="heading">Habitaciones floresta</h2>
                 </div>
             </div>
-
-            <div>
-                <div class="dataaaa">
-                    <mat-form-field color="accent">
-                        <mat-label>fecha salida</mat-label>
-                        <input matInput [matDatepicker]="picker2">
-                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                        <mat-datepicker #picker2 color="primary"></mat-datepicker>
-                    </mat-form-field>
-                </div>
-            </div>
-
-            <div class="chekk">
-                <mat-radio-group aria-label="Select an option">
-                    <mat-radio-button class="r1" value="1">Aire acondicionado</mat-radio-button>
-                    <mat-radio-button value="2">Ventilador</mat-radio-button>
-                  </mat-radio-group>
-
-            </div>
-
-            <div class="">
-                <div class="">
-                    <mat-form-field>
-                        <mat-label>Tipo de habitacion</mat-label>
-                        <mat-select>
-                            <mat-option *ngFor="let food of foods" [value]="food.value">
-                                {{food.viewValue}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-            </div>
-
         </div>
     </div>
 
 
-    <div class="body">
 
-        <div class="pestaña">
-            <div class="iz"></div>
-            <div class="cen"> Habitaciones </div>
-            <div class="der"></div>
+
+
+
+    <div class="site-section bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12 mb-5">
+
+                    <div class="block-3 d-md-flex">
+                        <div class="image" style="background-image: url('/assets/inicioHotel/images/img_1.jpg'); ">
+                        </div>
+                        <div class="text">
+
+                            <h2 class="heading">Habitacion de soltero</h2>
+                            <div class="price"><sup>$</sup><span class="number">50k</span><sub>/por noche</sub></div>
+                            <ul class="specs mb-5">
+                                <li><strong>Adultos:</strong> 1</li>
+                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta definición, Teléfono</li>
+                                <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
+                                <li><strong>Tipo de cama:</strong> Una cama</li>
+                            </ul>
+
+                            <p><a href="#" class="btn btn-primary py-3 px-5">Reservar</a></p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-12 mb-5">
+
+                    <div class="block-3 d-md-flex">
+                        <div class="image order-2"
+                            style="background-image: url('/assets/inicioHotel/images/img_2.jpg'); "></div>
+                        <div class="text order-1">
+
+                            <h2 class="heading">Habitacion para pareja</h2>
+                            <div class="price"><sup>$</sup><span class="number">60k</span><sub>/por noche</sub></div>
+                            <ul class="specs mb-5">
+                                <li><strong>Adultos:</strong> 2</li>
+                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta definición, Teléfono</li>
+                                <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
+                                <li><strong>Tipo de cama:</strong> Una cama</li>
+                            </ul>
+
+                            <p><a href="#" class="btn btn-primary py-3 px-5">Reservar</a></p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-12">
+
+                    <div class="block-3 d-md-flex">
+                        <div class="image" style="background-image: url('/assets/inicioHotel/images/img_3.jpg'); ">
+                        </div>
+                        <div class="text">
+
+                            <h2 class="heading">Habitacion +</h2>
+                            <div class="price"><sup>$</sup><span class="number">80k</span><sub>/por noche</sub></div>
+                            <ul class="specs mb-5">
+                                <li><strong>Adultos:</strong> 2+</li>
+                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta definición, Teléfono</li>
+                                <li><strong>Tamaño:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Tipo de cama:</strong> 2+ camas</li>
+                            </ul>
+
+                            <p><a href="#" class="btn btn-primary py-3 px-5">Reservar</a></p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="row mb-5 pt-5 justify-content-center">
+                <div class="col-md-7 text-center section-heading">
+                    <h2 class="heading">Mas Habitaciones</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, iusto, omnis! Quidem,
+                        sint, impedit? Dicta eaque delectus tempora hic, corporis velit doloremque quod quam laborum,
+                        nobis iusto autem culpa quaerat!</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_1.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Bachelor Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">156</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_2.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Family Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">245</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_3.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Presidential Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">375</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_1.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Bachelor Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">156</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_2.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Family Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">245</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_3.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Presidential Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">375</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_1.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Bachelor Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">156</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_2.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Family Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">245</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-5">
+                    <div class="block-34">
+                        <div class="image">
+                            <a href="#"><img src="/assets/inicioHotel/images/img_3.jpg" alt="Image placeholder"></a>
+                        </div>
+                        <div class="text">
+                            <h2 class="heading">Presidential Room</h2>
+                            <div class="price"><sup>$</sup><span class="number">375</span><sub>/per night</sub></div>
+                            <ul class="specs">
+                                <li><strong>Adults:</strong> 1</li>
+                                <li><strong>Categories:</strong> Single</li>
+                                <li><strong>Facilities:</strong> Closet with hangers, HD flat-screen TV, Telephone</li>
+                                <li><strong>Size:</strong> 20m<sup>2</sup></li>
+                                <li><strong>Bed Type:</strong> One bed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-        <div class="contenedor-imagenes">
-
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-
-
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom3.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom3.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom2.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom3.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom3.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-            <div class="imagen" (click)="change()">
-
-                <img src="/assets/images/rom.jpg" alt="">
-                <div class="overlay">
-                    <h2>RESERVAR</h2>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
-</div>
 
 
-<div class="mod" *ngIf="modal">
-    <div id="modal" cdkDrag>
-        <div class="mopt">
-            <div class="btnClose" (click)="change()">
-                <img class="imgC" src="../../assets/images/signs.png" alt="cerrar">
+
+
+
+
+    <div class="site-section bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-7 section-heading">
+                    <span class="subheading-sm">Reviews</span>
+                    <h2 class="heading">Guest Reviews</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="block-33">
+                        <div class="vcard d-flex mb-3">
+                            <div class="image align-self-center"><img src="/assets/inicioHotel/images/person_3.jpg"
+                                    alt="Person here"></div>
+                            <div class="name-text align-self-center">
+                                <h2 class="heading">Martin Newmansfield</h2>
+                                <span class="meta">Satisfied Customer</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <blockquote>
+                                <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque
+                                    dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae
+                                    error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="block-33">
+                        <div class="vcard d-flex mb-3">
+                            <div class="image align-self-center"><img src="/assets/inicioHotel/images/person_2.jpg"
+                                    alt="Person here"></div>
+                            <div class="name-text align-self-center">
+                                <h2 class="heading">Nancy Green</h2>
+                                <span class="meta">Satisfied Customer</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <blockquote>
+                                <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque
+                                    dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae
+                                    error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="block-33">
+                        <div class="vcard d-flex mb-3">
+                            <div class="image align-self-center"><img src="/assets/inicioHotel/images/person_1.jpg"
+                                    alt="Person here"></div>
+                            <div class="name-text align-self-center">
+                                <h2 class="heading">Elizabeth Charles</h2>
+                                <span class="meta">Satisfied Customer</span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <blockquote>
+                                <p>&rdquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque
+                                    dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae
+                                    error ad itaque inventore accusantium tempore dolores sunt. &ldquo;</p>
+                            </blockquote>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="logo">
-            <div class="piclogo">
-                <img class="img" src="/assets/images/LogoShido.PNG" alt="logo">
-            </div>
-        </div>
-        <div class="tit">
-            <h3>HABITACIÓN # PARLA</h3>
-        </div>
-        <div class="br">
-            <div class="brCenter"></div>
-        </div>
-        <div class="parla">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. </p>
-        </div>
-        <div class="pic">
-            <div class="picimg">
-                <img class="img" src="/assets/images/rom3.jpg" alt="cuarto">
-            </div>
-        </div>
-        <div class="res">
-            <div class="contenedorBtn">
-                <button class="button type1">Confirmar reserva</button>
-            </div>
-        </div>
-        <div class="icons">
-            <div class="icon">
-                <img class="img" src="/assets/images/cama.png" alt="icon">
-            </div>
-            <div class="icon">
-                <img class="img" src="/assets/images/ducha.png" alt="icon">
-            </div>
-            <div class="icon">
-                <img class="img" src="/assets/images/tv.png" alt="icon">
-            </div>
-            <div class="icon">
-                <img class="img" src="/assets/images/wifi.png" alt="icon">
-            </div>
-            <div class="icon">
-                <img class="img" src="/assets/images/telephone.png" alt="icon">
-            </div>
-            <div class="icon">
-                <img class="img" src="/assets/images/machine.png" alt="icon">
-            </div>
-            <div class="icon">
-                <img class="img" src="/assets/images/hot.png" alt="icon">
+    </div>
+
+    <div class="block-22">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 text-center">
+                    <h2 class="heading mb-4">Be Sure To Get Our Promos</h2>
+                    <form action="#" class="subscribe">
+                        <div class="form-group">
+                            <input type="email" class="form-control email" placeholder="Enter your email">
+                            <!-- <input type="submit" class="btn btn-primary submit"> -->
+                            <button type="submit" class="btn btn-primary submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<footer class="footer">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-6 col-lg-4">
+                <h3 class="heading-section">About Us</h3>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse
+                    veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore
+                    accusantium tempore dolores sunt.</p>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <h3 class="heading-section">Relacionados</h3>
+                <div class="block-21 d-flex mb-4">
+                    <figure class="mr-3">
+                        <img src="/assets/inicioHotel/images/img_1.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <h3 class="heading"><a href="#">Our Luxury Hotel &amp; Restaurants</a></h3>
+                        <div class="meta">
+                            <div><a href="#"><span class="icon-calendar"></span> May 29, 2018</a></div>
+                            <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                            <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-21 d-flex mb-4">
+                    <figure class="mr-3">
+                        <img src="/assets/inicioHotel/images/img_2.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <h3 class="heading"><a href="#">Our Luxury Hotel &amp; Restaurants</a></h3>
+                        <div class="meta">
+                            <div><a href="#"><span class="icon-calendar"></span> May 29, 2018</a></div>
+                            <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                            <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-21 d-flex mb-4">
+                    <figure class="mr-3">
+                        <img src="/assets/inicioHotel/images/img_3.jpg" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <h3 class="heading"><a href="#">Our Luxury Hotel &amp; Restaurants</a></h3>
+                        <div class="meta">
+                            <div><a href="#"><span class="icon-calendar"></span> May 29, 2018</a></div>
+                            <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                            <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="block-23">
+                    <h3 class="heading-section">Informacion de contacto</h3>
+                    <ul>
+                        <li><span class="icon icon-map-marker"></span><span class="text">Calle 13 # 13-44 barrio 12 de
+                                octubre,
+                                valledupar-cesar</span></li>
+                        <li><a href="#"><span class="icon icon-phone"></span><span class="text">+57 313 538 21
+                                    74</span></a></li>
+                        <li><a href="#"><span class="icon icon-envelope"></span><span
+                                    class="text">HotelLaFloresta@gmail.com</span></a></li>
+                        <li><span class="icon icon-clock-o"></span><span class="text">Lunes &mdash; Viernes 8:00am -
+                                5:00pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-md-12 text-left">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy; 2020 Derechos reservados <i class="icon-heart" aria-hidden="true"></i> por <a
+                        href="#" target="_blank" class="text-primary">danmatora-remembernoob</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
