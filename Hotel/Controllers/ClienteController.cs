@@ -57,7 +57,7 @@ namespace Hotel.Controllers
                 };
                 return BadRequest(problemDetails);
             }
-            return Ok(response.Cliente);
+            return Ok(response.Cliente);   
         }
         
         // DELETE: api/Cliente/5
