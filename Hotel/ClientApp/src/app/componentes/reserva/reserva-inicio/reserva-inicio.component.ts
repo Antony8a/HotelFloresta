@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 interface Food {
   value: string;
@@ -20,7 +21,7 @@ export class ReservaInicioComponent implements OnInit {
     {value: 'tacos-2', viewValue: 'KingKing'}
   ];
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,11 @@ export class ReservaInicioComponent implements OnInit {
       this.modal=false;
     else
       this.modal=true;
+  }
+
+  goBack(){
+    // window.history.back();
+    this.location.back();
   }
 
 }

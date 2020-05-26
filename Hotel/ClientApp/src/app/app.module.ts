@@ -96,7 +96,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    MatInputModule    
+    MatInputModule,
+    RouterModule.forRoot([
+      { path: '', component: InicioAdminComponent, pathMatch: 'full' },
+    ]) 
 
   ],
   entryComponents:[AlertModalComponent],
