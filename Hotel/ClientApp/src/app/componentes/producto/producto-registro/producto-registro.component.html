@@ -13,7 +13,7 @@
                         <input type="text" formControlName="idProducto" class="form-control"
                             [ngClass]="{ 'is-invalid':  control.idProducto.errors }" />
                         <div *ngIf=" control.idProducto.errors" class="invalid-feedback">
-                            <div *ngIf="control.idProducto.errors.required">este codigo es requerido</div>
+                            <div *ngIf="control.idProducto.errors.required">El codigo es requerido</div>
                         </div>
                     </div>
 
@@ -37,11 +37,11 @@
 
                     <div class="form-group">
                         <label for="precio">Precio</label>
-                        <input type="number" name="precio" formControlName="precio" placeholder="digite su precio"
+                        <input type="number" name="precio" formControlName="precio"
                             class="form-control" [ngClass]="{'is-invalid':control.precio.errors}" />
 
                         <div *ngIf="control.precio.errors" class="invalid-feedback">
-                            <div *ngIf="control.precio.errors.required">El precio es requerida</div>
+                            <div *ngIf="control.precio.errors.required">El precio es requerido</div>
                         </div>
                     </div>
 
