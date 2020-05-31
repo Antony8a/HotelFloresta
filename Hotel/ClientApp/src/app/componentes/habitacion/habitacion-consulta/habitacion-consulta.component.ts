@@ -72,6 +72,7 @@ export class HabitacionConsultaComponent implements OnInit {
 
   comprobadorfechas(){
     this.traerReservas();
+    
     alert("TRAE RESERVAS");
 
     this.traerHabitaciones();
