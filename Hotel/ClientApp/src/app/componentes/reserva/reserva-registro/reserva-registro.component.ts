@@ -40,6 +40,7 @@ export class ReservaRegistroComponent implements OnInit {
       this.traerHabitaciones();
       this.buildForm();
     }
+
     traerHabitaciones(){
       this.habitacionService.get().subscribe(result => {
         this.habitaciones = result;});
@@ -50,6 +51,7 @@ export class ReservaRegistroComponent implements OnInit {
         this.reservas = result;
       });
     }
+
     private buildForm() {
       this.reserva = new Reserva();
       this.formGroup = this.formBuilder.group({
@@ -80,17 +82,6 @@ export class ReservaRegistroComponent implements OnInit {
       }
     }
 
-    fechaCorrecta():number{
-      this.reserva=this.formGroup.value;
-      var toma1 =new Date(this.reserva.fechaInicio);
-      var toma2 =new Date(this.reserva.fechaFin);
-
-      if(toma1>toma2){
-        this.validadorFechasIguales=this.validadorFechasIguales+1;
-      }
-      return this.validadorFechasIguales;
-    }
-  
     add() {
       this.reserva = this.formGroup.value;
       this.reservaService.post(this.reserva).subscribe(p => {
@@ -146,8 +137,21 @@ export class ReservaRegistroComponent implements OnInit {
             return this.baderilla=this.baderilla+0;
           }
        });
+       return this.baderilla;    
+    }
 
-       return this.baderilla;
+    fechaCorrecta():number{
+      this.reserva=this.formGroup.value;
+      var toma1 =new Date(this.reserva.fechaInicio);
+      var toma2 =new Date(this.reserva.fechaFin);
+
+      if(toma1>toma2){
+        this.validadorFechasIguales=this.validadorFechasIguales+1;
+      }
+      return this.validadorFechasIguales;
+    }
+}
+
       
       // if(toma > fechaI && toma < fechaF){
       //   alert("está entre fechas");
@@ -167,6 +171,3 @@ export class ReservaRegistroComponent implements OnInit {
       //       this.habitacion = p;
       //     }
       //   });
-    
-    }
-}

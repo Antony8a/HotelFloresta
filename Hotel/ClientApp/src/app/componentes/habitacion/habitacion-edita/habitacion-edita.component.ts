@@ -80,7 +80,6 @@ export class HabitacionEditaComponent implements OnInit {
           this.habitacion = p;
         }
       });
-  
     }
   
     get control() { return this.formGroup.controls; }
