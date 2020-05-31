@@ -2,7 +2,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header card-header-primary">
-                <h4 class="card-title ">Registro</h4>
+                <h4 class="card-title ">Registro - {{fechaprueba}}</h4>
                 <p class="card-category">Formulario de registro de reserva</p>
             </div>
             <div class="card-body">
@@ -12,7 +12,7 @@
                         <label>Fecha de Inicio</label>
                         <div class="datapicker">
                             <input formControlName="fechaInicio" class="form-control" type="datetime-local"
-                                placeholder="yyyy-mm-dd" value="2011-08-19T13:45:00" id="dateOfBirth"
+                                placeholder="yyyy-mm-dd" id="dateOfBirth"
                                 [ngClass]="{ 'is-invalid':  control.fechaInicio.errors }">
                         </div>
                         <div *ngIf=" control.fechaInicio.errors" class="invalid-feedback">
@@ -24,7 +24,7 @@
                         <label>Fecha fin</label>
                         <div class="datapicker">
                             <input formControlName="fechaFin" class="form-control" type="datetime-local"
-                                placeholder="yyyy-mm-dd" value="2011-08-19T13:45:00" id="dateOfBirth"
+                                placeholder="yyyy-mm-dd" id="dateOfBirth"
                                 [ngClass]="{ 'is-invalid':  control.fechaFin.errors }">
                         </div>
                         <div *ngIf=" control.fechaFin.errors" class="invalid-feedback">
@@ -36,9 +36,8 @@
                         <label for="cantidadPersonas">Cantidad de Personas</label>
                         <input type="number" name="cantidadPersonas" formControlName="cantidadPersonas"
                             class="form-control" [ngClass]="{'is-invalid':control.cantidadPersonas.errors}" />
-
                         <div *ngIf="control.cantidadPersonas.errors" class="invalid-feedback">
-                            <div *ngIf="control.cantidadPersonas.errors.required">La edad es requerida</div>
+                            <div *ngIf="control.cantidadPersonas.errors.required">La cantidad de personas es requerida</div>
                         </div>
                     </div>
 
@@ -47,7 +46,7 @@
                         <input type="text" formControlName="idCliente" class="form-control"
                             [ngClass]="{ 'is-invalid':  control.idCliente.errors }" />
                         <div *ngIf=" control.idCliente.errors" class="invalid-feedback">
-                            <div *ngIf="control.idCliente.errors.required">La Identificación es requerido</div>
+                            <div *ngIf="control.idCliente.errors.required">La Identificación del cliente es requerida</div>
                         </div>
                     </div>
 
@@ -55,10 +54,13 @@
                         <label for="idHabitacion">Habitacion</label>
                         <select class="custom-select" id="idHabitacion" formControlName="idHabitacion"
                             class="form-control" [ngClass]="{'is-invalid':control.idHabitacion.errors}">
-                            <option selected>Seleccionar...</option>
+                            <option selected></option>
                             <option *ngFor="let habitacion of habitaciones" value={{habitacion.idHabitacion}}>
                                 {{habitacion.idHabitacion}}</option>
                         </select>
+                        <div *ngIf="control.idHabitacion.errors" class="invalid-feedback">
+                            <div *ngIf="control.idHabitacion.errors.required">La habitacion es requerida</div>
+                        </div>
                     </div>
 
                     <div class="text-center">
