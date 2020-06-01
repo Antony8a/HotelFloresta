@@ -6,9 +6,11 @@ import { Reserva } from '../models/reserva';
 })
 export class FiltroReservaPipe implements PipeTransform {
 
-  transform(reserva: Reserva[], searchText: number): any {
+  transform(reserva: Reserva[], searchText: string): any {
     if (searchText == null) return reserva;
-        return reserva.filter(p => p.idReserva);
+        return reserva.filter(p =>
+          p.idHabitacion.toLowerCase()
+          .indexOf(searchText.toLowerCase()) !== -1);
     }
 
 }

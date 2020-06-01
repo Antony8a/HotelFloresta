@@ -13,7 +13,7 @@ export class ReservaConsultaComponent implements OnInit {
 
   reservas:Reserva[];
   reserva:Reserva;
-  searchText:number;
+  searchText:string;
   closeResult: string;
   constructor(
     private reservaService: ReservaService,
