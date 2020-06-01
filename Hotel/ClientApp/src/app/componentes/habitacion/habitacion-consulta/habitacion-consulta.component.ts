@@ -14,20 +14,20 @@ import { Reserva } from 'src/app/models/reserva';
 export class HabitacionConsultaComponent implements OnInit {
 
   //prueba 
-  fechaprueba:string;
-  pdia:string;
-  pmes:string;
-  paño:string;
-  baderilla:number = 0;
-  validadorFechasIguales:number = 0;
+  fechaprueba: string;
+  pdia: string;
+  pmes: string;
+  paño: string;
+  baderilla: number = 0;
+  validadorFechasIguales: number = 0;
   //finprueba
 
-  habitaciones:Habitacion[];
-  reservas:Reserva[];
-  habitacion:Habitacion;
-  habitacionedita:Habitacion;
-  retornarHabitacion:Habitacion;
-  searchText:string;
+  habitaciones: Habitacion[];
+  reservas: Reserva[];
+  habitacion: Habitacion;
+  habitacionedita: Habitacion;
+  retornarHabitacion: Habitacion;
+  searchText: string;
   closeResult: string;
   constructor(
     private habitacionService: HabitacionService,
@@ -35,60 +35,112 @@ export class HabitacionConsultaComponent implements OnInit {
     private modalService: NgbModal) { }
 
   ngOnInit() {
-    this.comprobadorfechas();
+    this.comprobadorfechasAnt();
   }
 
   delete(identificacion: string) {
     this.habitacionService.delete(identificacion).subscribe(p => {
       const messageBox = this.modalService.open(AlertModalComponent)
       messageBox.componentInstance.title = "Resultado Operación";
-      messageBox.componentInstance.message = 'Habitacion Eliminada!!! :)';      
+      messageBox.componentInstance.message = 'Habitacion Eliminada!!! :)';
     });
   }
 
   openSm(content) {
-    this.modalService.open(content, { size: 'sm' ,centered: true });
+    this.modalService.open(content, { size: 'sm', centered: true });
   }
-  
+
   //prueba fecha
-  asignarfecha(){
+  asignarfecha() {
     var toma = new Date();
     this.pdia = toma.getDate().toString();
-    this.pmes = (toma.getMonth()+1).toString();
+    this.pmes = (toma.getMonth() + 1).toString();
     this.paño = toma.getFullYear().toString();
     this.fechaprueba = this.pdia + "/" + this.pmes + "/" + this.paño;
   }
-  
-  traerHabitaciones(){
+
+  traerHabitaciones() {
     this.habitacionService.get().subscribe(result => {
-      this.habitaciones = result;});
+      this.habitaciones = result;
+
+    });
+
   }
 
-  traerReservas(){
+  traerReservas() {
     this.reservaService.get().subscribe(result => {
       this.reservas = result;
+
     });
   }
 
-  comprobadorfechas(){
-    this.traerReservas();
-    
-    alert("TRAE RESERVAS");
+  comprobadorfechasAnt() {
+    alert("ENTRA A funcion");
 
-    this.traerHabitaciones();
-    alert("TRAE HABITACIONES");
+    this.reservaService.get().subscribe(result => {
+
+      this.reservas = result;
+      alert("tengo las reservas");
+
+      this.reservas.forEach(item => {
+
+        this.habitacionService.get().subscribe(result => {
+          this.habitaciones = result;
+          alert("tengo las habitaciones");
+
+          this.habitaciones.forEach(hab => {
+            alert("ENTRA A HABT ");
+    
+            var hoy = new Date();
+            var fechaI = new Date(item.fechaInicio);
+            var fechaF = new Date(item.fechaFin);
+            if (hoy > fechaI && hoy < fechaF && hab.idHabitacion == item.idHabitacion) {
+              alert("entró con:" + hab.idHabitacion);
+              this.retornarHabitacion = new Habitacion();
+              this.retornarHabitacion.idHabitacion = hab.idHabitacion;
+              this.retornarHabitacion.descripcion = hab.descripcion;
+              this.retornarHabitacion.aire = hab.aire;
+              this.retornarHabitacion.ventilador = hab.ventilador;
+              this.retornarHabitacion.tipo = hab.tipo;
+              this.retornarHabitacion.precio = hab.precio;
+              this.retornarHabitacion.disponibilidad = "no";
+              this.habitacionService.put(this.retornarHabitacion).subscribe(p => {
+                if (p != null) {
+                  const messageBox = this.modalService.open(AlertModalComponent)
+                  messageBox.componentInstance.title = "Resultado Operación";
+                  messageBox.componentInstance.message = 'Habitacion Modificada!!! :-)';
+                  this.habitacion = p;
+                }
+              });
+            }
+          });
+
+        });
+      });
+
+    });
+  }
+
+  comprobadorfechas() {
+
+
+
+
+    console.log(this.reservas);
+
+
 
     this.reservas.forEach(item => {
-      alert("ENTRA A RESERVA");
 
-        this.habitaciones.forEach(hab => {
-          alert("ENTRA A HABITACIONES");
-          
+
+      this.habitaciones.forEach(hab => {
+        alert("ENTRA A HABT ");
+
         var hoy = new Date();
         var fechaI = new Date(item.fechaInicio);
-        var fechaF = new Date(item.fechaFin);        
-        if(hoy > fechaI && hoy < fechaF && hab.idHabitacion==item.idHabitacion){
-          alert("entró con:"+hab.idHabitacion);
+        var fechaF = new Date(item.fechaFin);
+        if (hoy > fechaI && hoy < fechaF && hab.idHabitacion == item.idHabitacion) {
+          alert("entró con:" + hab.idHabitacion);
           this.retornarHabitacion = new Habitacion();
           this.retornarHabitacion.idHabitacion = hab.idHabitacion;
           this.retornarHabitacion.descripcion = hab.descripcion;
@@ -105,8 +157,8 @@ export class HabitacionConsultaComponent implements OnInit {
               this.habitacion = p;
             }
           });
-          }
-       }); 
+        }
+      });
     });
   }
 }
