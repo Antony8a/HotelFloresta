@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { HabitacionService } from 'src/app/services/habitacion.service';
+import { ReservaService } from 'src/app/services/reserva.service';
+import { Habitacion } from 'src/app/models/habitacion';
 
 interface Food {
   value: string;
@@ -14,16 +17,28 @@ interface Food {
 export class ReservaInicioComponent implements OnInit {
   modal: boolean = false;
 
-
+  habitaciones: Habitacion[];
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'King'},
     {value: 'pizza-1', viewValue: 'KingDoble'},
     {value: 'tacos-2', viewValue: 'KingKing'}
   ];
 
-  constructor(private location: Location) { }
+  constructor(private location: Location,
+    private habitacionService: HabitacionService,
+    private reservaService: ReservaService,
+    ) { }
 
   ngOnInit(): void {
+    this.traerHabitaciones();
+  }
+
+  traerHabitaciones() {
+    this.habitacionService.get().subscribe(result => {
+      this.habitaciones = result;
+
+    });
+
   }
 
   change(){
