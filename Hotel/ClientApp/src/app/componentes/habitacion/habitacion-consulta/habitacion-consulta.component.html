@@ -23,7 +23,6 @@
                     <th class="text-center" scope="col">Descripcion</th>
                     <th class="text-center" scope="col">Aire</th>
                     <th class="text-center" scope="col">Ventilador</th>
-                    <th class="text-center" scope="col">Disponibilidad</th>
                     <th class="text-center" scope="col">Ver</th>
                     <th class="text-center" scope="col">Eliminar</th>
                 </tr>
@@ -36,7 +35,6 @@
                     <td class="text-center" >{{ habitacion.descripcion }}</td>
                     <td class="text-center" >{{ habitacion.aire }}</td>
                     <td class="text-center" >{{ habitacion.ventilador }}</td>
-                    <td class="text-center" >{{ habitacion.disponibilidad }}</td>
                     <td class="text-center" ><i class="material-icons" [routerLink]="['/habitacionEdita', habitacion.idHabitacion ]">visibility</i></td>
                     <td class="text-center" ><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
 

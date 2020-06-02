@@ -133,13 +133,14 @@ export class HabitacionConsultaComponent implements OnInit {
               this.retornarHabitacion.ventilador = hab.ventilador;
               this.retornarHabitacion.tipo = hab.tipo;
               this.retornarHabitacion.precio = hab.precio;
-              this.retornarHabitacion.disponibilidad = "si";
+              this.retornarHabitacion.disponibilidad = "Si";
               this.habitacionService.put(this.retornarHabitacion).subscribe(p => {
                 if (p != null) {
                   this.habitacion = p;
                 }
               });
             }else{
+              alert("entro aqui"+this.contador);
               this.retornarHabitacion = new Habitacion();
               this.retornarHabitacion.idHabitacion = hab.idHabitacion;
               this.retornarHabitacion.descripcion = hab.descripcion;
@@ -147,7 +148,7 @@ export class HabitacionConsultaComponent implements OnInit {
               this.retornarHabitacion.ventilador = hab.ventilador;
               this.retornarHabitacion.tipo = hab.tipo;
               this.retornarHabitacion.precio = hab.precio;
-              this.retornarHabitacion.disponibilidad = "no";
+              this.retornarHabitacion.disponibilidad = "No";
               this.habitacionService.put(this.retornarHabitacion).subscribe(p => {
                 if (p != null) {
                   this.habitacion = p;
