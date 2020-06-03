@@ -31,31 +31,126 @@
                                     <td class="text-center">{{ producto.nombre }}</td>
                                     <td class="text-center">{{ producto.tipo }}</td>
                                     <td class="text-center">{{ producto.precio }}</td>
-                                    <td class="text-center"><i class="material-icons" [routerLink]="['/productoEdita', producto.idProducto ]">visibility</i></td>
-                                    <td class="text-center"><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
-                
-                                    <ng-template #content let-modal>
-                                        <div class="modal-header">
-                                          <h4 class="modal-title">Eliminar producto?</h4>
-                                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class="modal-body">
-                                          <p>seguro que desea eliminar a {{producto.idProducto}}&hellip;</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-outline-dark" (click)=" delete(producto.idProducto)" (click)="modal.close('Close click')">Eliminar</button>
-                                        </div>
-                                      </ng-template>
-                                </tr>
-                            </tbody>
-                        </table>
-                      </div>
-                  </div>
-            </div>
-        </div>
+                                    <td class="text-center"><i class="material-icons"
+                                      (click)="openScrollableContent(longContent)" 
+                                      (click)="consultaId(producto.idProducto)" >visibility</i></td>
 
+                  <!----------------------------------------------Modal Ver----------------------------------------------->
+                  <ng-template #longContent let-modal>
+                    <div class="card">
+                      <div class="modal-header">
+                          <div class="card-header card-header-primary" id="pruebaxd">
+                            <h4 class="card-title ">Ver Producto</h4>
+                            <p class="card-category">Datos del producto {{producto.idProducto}}</p>
+                        </div>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container-1">
+                        <br><h5 class="text-center" >Actualizar informacion | Eliminar producto</h5><br>
+            
+                        <form [formGroup]="formGroup">
         
+                            <div class="form-group">
+                                <label>Codigo Producto</label>
+                                <input type="text" formControlName="idProducto" class="form-control"  readonly value={{idn}}
+                                    [ngClass]="{ 'is-invalid':  control.idProducto.errors }" />
+                                <div *ngIf=" control.idProducto.errors" class="invalid-feedback">
+                                    <div *ngIf="control.idProducto.errors.required">este codigo es requerido</div>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" formControlName="nombre" class="form-control" value= {{_nombre}}
+                                    [ngClass]="{ 'is-invalid':  control.nombre.errors }" />
+                                <div *ngIf=" control.nombre.errors" class="invalid-feedback">
+                                    <div *ngIf="control.nombre.errors.required">El nombre es requerido</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Tipo</label>
+                                <input type="text" formControlName="tipo" class="form-control" value= {{_tipo}}
+                                    [ngClass]="{ 'is-invalid':  control.tipo.errors }" />
+                                <div *ngIf=" control.tipo.errors" class="invalid-feedback">
+                                    <div *ngIf="control.tipo.errors.required">El tipo es requerido</div>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="precio">Precio</label>
+                                <input type="number" name="precio" formControlName="precio" placeholder="digite su precio" value= {{_precio}}
+                                    class="form-control" [ngClass]="{'is-invalid':control.precio.errors}" />
+            
+                               <div *ngIf="control.precio.errors" class="invalid-feedback">
+                               <div *ngIf="control.precio.errors.required">El precio es requerido</div>
+                            </div>
+                            </div>
+                            
+                          <div class="text-center">
+                              <button class="btn btn-outline-dark" (click)=" openSm(content)"
+                                  [disabled]="formGroup.invalid">Actualizar</button>
+
+                                  <!-----------------------este modal es quien confirma la edicion------------------------>
+                                  <ng-template #content let-modal>
+                                    <div class="card">
+                                      <div class="modal-header">
+                                          <div class="card-header card-header-primary" id="pruebaxd">
+                                            <h4 class="card-title ">Modificar producto?</h4>
+                                        </div>
+                                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                      <div class="modal-body">
+                                        <p>seguro que desea modificar a {{idn}}&hellip;</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-dark" (click)=" onSubmit()" (click)="modal.close('Close click')">Modificar</button>
+                                      </div>
+                                  </ng-template>
+                                  <!-----------------------este modal es quien confirma la edicion------------------------>    
+                            </div>
+                        </form>
+                        </div>
+                      </div>
+                    </ng-template>
+                  <!--------------------------------------------Fin modal ver--------------------------------------------->
+                  <td class="text-center"><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
+
+                  <!-----------------------------------Modal confirmación de eliminación---------------------------------->
+                  <ng-template #content let-modal>
+                    <div class="card">
+                      <div class="modal-header">
+                          <div class="card-header card-header-primary" id="pruebaxd">
+                            <h4 class="card-title ">Eliminar cliente?</h4>
+                        </div>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="modal-body">
+                      <p>seguro que desea eliminar a {{producto.idProducto}}&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-dark" (click)=" delete(producto.idProducto)"
+                        (click)="modal.close('Close click')">Eliminar</button>
+                    </div>
+                  </ng-template>
+                  <!---------------------------------------------Fin modal------------------------------------------------>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
