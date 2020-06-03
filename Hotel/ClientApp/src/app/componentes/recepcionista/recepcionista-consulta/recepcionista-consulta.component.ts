@@ -19,6 +19,7 @@ export class RecepcionistaConsultaComponent implements OnInit {
   recepcionista:Recepcionista;
   searchText:string;
   closeResult: string;
+  
 
   // Cosas agregadas del "EDITAR"
   formGroup: FormGroup;
@@ -48,7 +49,7 @@ export class RecepcionistaConsultaComponent implements OnInit {
     });
   }
 
-  openSm(content) {
+  openSm(content) { 
     this.modalService.open(content, { size: 'sm' ,centered: true });
   }
 
