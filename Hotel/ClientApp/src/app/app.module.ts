@@ -46,6 +46,8 @@ import { InicioAdminComponent } from './componentes/banners/inicio-admin/inicio-
 import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inicio-inicio.component';
 import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/reserva-inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InicioClienteComponent } from './componentes/banners/inicio-cliente/inicio-cliente.component';
+import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InicioAdminComponent,
     InicioInicioComponent,
     ReservaInicioComponent,
+    InicioClienteComponent,
+    InicioRecepcionistaComponent,
   ],
   imports: [
     ReactiveFormsModule,

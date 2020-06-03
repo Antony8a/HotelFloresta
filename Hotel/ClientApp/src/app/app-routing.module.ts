@@ -22,6 +22,8 @@ import { InicioInicioComponent } from './componentes/banners/inicio-inicio/inici
 import { InicioHotelComponent } from './componentes/inicio-hotel/inicio-hotel.component';
 import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/reserva-inicio.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { InicioClienteComponent } from './componentes/banners/inicio-cliente/inicio-cliente.component';
+import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 
 const routes: Routes = [
   { 
@@ -62,7 +64,7 @@ const routes: Routes = [
     path: 'recepcionistaRegistro',
     component: RecepcionistaRegistroComponent 
   },
-
+ 
   // producto--------------------------------------------------------------------------------------------
 
   {
@@ -127,6 +129,15 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent 
   },
+  {
+    path: 'inicioCliente',
+    component: InicioClienteComponent 
+  },
+  {
+    path: 'inicioRecepcionista',
+    component: InicioRecepcionistaComponent 
+  },
+
 
 
 ]
