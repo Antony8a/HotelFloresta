@@ -5,6 +5,7 @@ namespace Entity
 {
     public class Recepcionista
     {
+        [Key]
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
         public int Edad { get; set; }

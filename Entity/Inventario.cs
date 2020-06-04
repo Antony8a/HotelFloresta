@@ -5,6 +5,7 @@ namespace Entity
 {
     public class Inventario
     {
+        [Key]
         public string IdInventario { get; set; }
         public DateTime Fecha      { get; set; }
     }
