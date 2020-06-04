@@ -12,7 +12,7 @@ namespace Datos
         public DbSet<Cliente> Clientes {get; set;}
         public DbSet<Compra> Compras {get; set;}
         public DbSet<Factura> Facturas {get; set;}
-        public DbSet<Habitacion> Habitacions {get; set;}
+        public DbSet<Habitacion> Habitaciones {get; set;}
         public DbSet<Inventario> Inventarios {get; set;}
         public DbSet<Producto> Productos {get; set;}
         public DbSet<Recepcionista> Recepcionistas {get; set;}
