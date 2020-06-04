@@ -34,25 +34,146 @@
                                     <td class="text-center" >{{ reserva.cantidadPersonas }}</td>
                                     <td class="text-center" >{{ reserva.idCliente }}</td>
                                     <td class="text-center" >{{ reserva.idHabitacion }}</td>
-                                    <td class="text-center" ><i class="material-icons" placement="top" popoverTitle="Editar en desarrollo"
-                                        ngbPopover="En desarrollo, nos veremos proximamente.">visibility</i></td>
-                                    <td class="text-center" ><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
-                
+                                    <td class="text-center"><i class="material-icons"
+                                        (click)="openScrollableContent(longContent)" 
+                                        (click)="consultaId(reserva.idReserva)" >visibility</i></td>
+  
+                    <!----------------------------------------------Modal Ver----------------------------------------------->
+                    <ng-template #longContent let-modal>
+                      <div class="card">
+                        <div class="modal-header">
+                            <div class="card-header card-header-primary" id="pruebaxd">
+                              <h4 class="card-title ">Ver reserva</h4>
+                              <p class="card-category">Datos del producto {{reserva.idReserva}}</p>
+                          </div>
+                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-1">
+                          <br><h5 class="text-center" >Actualizar informacion</h5><br>
+              
+                          <form [formGroup]="formGroup">
+          
+                              <div class="form-group">
+                                  <label>Codigo Reserva</label>
+                                  <input type="text" formControlName="idReserva" class="form-control"  readonly value={{idn}}
+                                      [ngClass]="{ 'is-invalid':  control.idReserva.errors }" />
+                                  <div *ngIf=" control.idReserva.errors" class="invalid-feedback">
+                                      <div *ngIf="control.idReserva.errors.required">este codigo es requerido</div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label>Fecha de Inicio</label>
+                                <div class="datapicker">
+                                    <input formControlName="fechaInicio" class="form-control" type="datetime-local" value="{{_fechaInicio}}"
+                                        placeholder="yyyy-mm-dd" id="dateOfBirth"
+                                        [ngClass]="{ 'is-invalid':  control.fechaInicio.errors }">
+                                </div>
+                                <div *ngIf=" control.fechaInicio.errors" class="invalid-feedback">
+                                    <div *ngIf="control.fechaInicio.errors.required">La fecha de inicio es requerido</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fecha fin</label>
+                                <div class="datapicker">
+                                    <input formControlName="fechaFin" class="form-control" type="datetime-local" value="{{_fechaFin}}"
+                                        placeholder="yyyy-mm-dd" id="dateOfBirth"
+                                        [ngClass]="{ 'is-invalid':  control.fechaFin.errors }">
+                                </div>
+                                <div *ngIf=" control.fechaFin.errors" class="invalid-feedback">
+                                    <div *ngIf="control.fechaFin.errors.required">La fecha final es requerida</div>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="cantidadPersonas">Cantidad de Personas</label>
+                                <input type="number" name="cantidadPersonas" formControlName="cantidadPersonas" value="{{_cantidadPersonas}}"
+                                    class="form-control" [ngClass]="{'is-invalid':control.cantidadPersonas.errors}" />
+                                <div *ngIf="control.cantidadPersonas.errors" class="invalid-feedback">
+                                    <div *ngIf="control.cantidadPersonas.errors.required">La cantidad de personas es requerida</div>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Identificación del Cliente</label>
+                                <input type="text" formControlName="idCliente" class="form-control" value="{{_idCliente}}"
+                                    [ngClass]="{ 'is-invalid':  control.idCliente.errors }" />
+                                <div *ngIf=" control.idCliente.errors" class="invalid-feedback">
+                                    <div *ngIf="control.idCliente.errors.required">La Identificación del cliente es requerida</div>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="idHabitacion">Habitacion</label>
+                                <select class="custom-select" id="idHabitacion" formControlName="idHabitacion" value="{{_idHabitacion}}"
+                                    class="form-control" [ngClass]="{'is-invalid':control.idHabitacion.errors}">
+                                    <option selected></option>
+                                    <option *ngFor="let habitacion of habitaciones" value={{habitacion.idHabitacion}}>
+                                        {{habitacion.idHabitacion}}</option>
+                                </select>
+                                <div *ngIf="control.idHabitacion.errors" class="invalid-feedback">
+                                    <div *ngIf="control.idHabitacion.errors.required">La habitacion es requerida</div>
+                                </div>
+                            </div>      
+                              
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark" (click)=" openSm(content)"
+                                    [disabled]="formGroup.invalid">Actualizar</button>
+  
+                                    <!-----------------------este modal es quien confirma la edicion------------------------>
                                     <ng-template #content let-modal>
+                                      <div class="card">
                                         <div class="modal-header">
-                                        <h4 class="modal-title">Eliminar reserva?</h4>
-                                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                            <div class="card-header card-header-primary" id="pruebaxd">
+                                              <h4 class="card-title ">Modificar reserva?</h4>
+                                          </div>
+                                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                                             <span aria-hidden="true">&times;</span>
-                                        </button>
+                                          </button>
                                         </div>
+                                      </div>
                                         <div class="modal-body">
-                                        <p>seguro que desea eliminar la reserva: {{reserva.idReserva}}&hellip;</p>
+                                          <p>seguro que desea modificar a {{idn}}&hellip;</p>
                                         </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-dark" (click)=" delete(reserva.idReserva)" (click)="modal.close('Close click')">Eliminar</button>
+                                          <button type="button" class="btn btn-outline-dark" (click)=" onSubmit()" (click)="modal.close('Close click')">Modificar</button>
                                         </div>
                                     </ng-template>
-                
+                                    <!-----------------------este modal es quien confirma la edicion------------------------>    
+                              </div>
+                          </form>
+                          </div>
+                        </div>
+                      </ng-template>
+                    <!--------------------------------------------Fin modal ver--------------------------------------------->
+                    <td class="text-center"><i class="material-icons" (click)=" openSm(content)">how_to_vote</i></td>
+  
+                    <!-----------------------------------Modal confirmación de eliminación---------------------------------->
+                    <ng-template #content let-modal>
+                      <div class="card">
+                        <div class="modal-header">
+                            <div class="card-header card-header-primary" id="pruebaxd">
+                              <h4 class="card-title ">Eliminar reserva?</h4>
+                          </div>
+                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="modal-body">
+                        <p>seguro que desea eliminar a {{reserva.idReserva}}&hellip;</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)=" delete(reserva.idReserva)"
+                          (click)="modal.close('Close click')">Eliminar</button>
+                      </div>
+                    </ng-template>
+                    <!---------------------------------------------Fin modal------------------------------------------------>
                                 </tr>
                             </tbody>
                         </table>

@@ -62,7 +62,6 @@ export class InicioRecepcionistaComponent implements OnInit {
 
     else
       document.getElementById("client").style.backgroundColor = 'transparent';
-    document.getElementById("recep").style.backgroundColor = 'transparent';
     document.getElementById("reser").style.backgroundColor = 'transparent';
     document.getElementById("habit").style.backgroundColor = 'transparent';
     document.getElementById("ini").style.backgroundColor = 'transparent';
@@ -92,7 +91,6 @@ export class InicioRecepcionistaComponent implements OnInit {
     }
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
-    document.getElementById("recep").style.backgroundColor = 'transparent';
     document.getElementById("reser").style.backgroundColor = 'transparent';
     document.getElementById("habit").style.backgroundColor = 'transparent';
     document.getElementById("ini").style.backgroundColor = 'transparent';
@@ -153,7 +151,6 @@ export class InicioRecepcionistaComponent implements OnInit {
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
     document.getElementById("client").style.backgroundColor = 'transparent';
-    document.getElementById("recep").style.backgroundColor = 'transparent';
     document.getElementById("habit").style.backgroundColor = 'transparent';
     document.getElementById("ini").style.backgroundColor = 'transparent';
     document.getElementById("reser").style.backgroundColor = '#a53cb580';
@@ -182,7 +179,6 @@ export class InicioRecepcionistaComponent implements OnInit {
     else
       document.getElementById("prod").style.backgroundColor = 'transparent';
     document.getElementById("client").style.backgroundColor = 'transparent';
-    document.getElementById("recep").style.backgroundColor = 'transparent';
     document.getElementById("reser").style.backgroundColor = 'transparent';
     document.getElementById("ini").style.backgroundColor = 'transparent';
     document.getElementById("habit").style.backgroundColor = '#a53cb580';
