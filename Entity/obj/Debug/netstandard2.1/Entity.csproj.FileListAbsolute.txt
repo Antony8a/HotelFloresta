@@ -1,0 +1,9 @@
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\bin\Debug\netstandard2.1\Entity.deps.json
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfoInputs.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfo.cs
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.pdb

@@ -1,0 +1,4 @@
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfo.cs
