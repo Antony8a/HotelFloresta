@@ -72,7 +72,6 @@ export class ProductoEditaComponent implements OnInit {
         this.producto = p;
       }
     });
-
   }
 
   get control() { return this.formGroup.controls; }

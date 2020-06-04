@@ -36,7 +36,7 @@ export class ReservaService {
     }
 
     /** GET reserva by identificacion. Will 404 if id not found */
-    getId(id: string): Observable<Reserva> {
+    getId(id: number): Observable<Reserva> {
       const url = `${this.baseUrl + 'api/Reserva'}/${id}`;
         return this.http.get<Reserva>(url, httpOptions)
         .pipe(

@@ -1,10 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Jl/+KTvTmhKt1A0uTu5h2Jmo67pIKO7PxuOb6vmPwSWFNNVV5m2F4CwMA59FZ2c8Jrb51xwfZ2YSyWcjPkba9w==",
+=======
+  "dgSpecHash": "OEx21nrI6PygN0IkSCq4UeR6ZxmY25zoJxrzJciG2mehcscli6EkNHkCQQ4gyLJqBCETKvqpBH+GqZUbOM3Shw==",
+>>>>>>> a1471ae9104774c683e10636d551f9986eab175d
   "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\Documents\\GitHub\\Prueba-Hotel\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\anton\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+=======
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+>>>>>>> a1471ae9104774c683e10636d551f9986eab175d
   ],
   "logs": []
 }
