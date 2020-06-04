@@ -12,16 +12,9 @@ namespace Logica
     {
         private readonly ClienteContext _context;
 
-        //private readonly ConnectionManager _conexion;
-        //private readonly ClienteRepository _repositorio;
-
-
         public ClienteService(ClienteContext context)
         {
             _context=context;
-
-            //_conexion = new ConnectionManager(connectionString);
-            //_repositorio = new ClienteRepository(_conexion);
         }
 
         public GuardarClienteResponse Guardar(Cliente cliente)
@@ -29,30 +22,23 @@ namespace Logica
             try
             {
                 var clienteBuscado = _context.Clientes.Find(cliente.Identificacion);
-                //_conexion.Open();
-                //var clientex = _repositorio.BuscarPorIdentificacion(cliente.Identificacion);
-                if (clientex != null)
+                if (clienteBuscado != null)
                 {
                     return new GuardarClienteResponse("Error el cliente ya se encuentra registrado");
                 }
                 _context.Clientes.Add(cliente);
                 _context.SaveChanges();
-                //_repositorio.Guardar(cliente);
-                //_conexion.Close();
                 return new GuardarClienteResponse(cliente);
             }
             catch (Exception e)
             {
                 return new GuardarClienteResponse($"Error de la Aplicacion: {e.Message}");
             }
-            //finally { _conexion.Close(); }
         }
 
         public List<Cliente> ConsultarTodos()
         {
-            //_conexion.Open();
             List<Cliente> Clientes = _context.Clientes.ToList();
-            //_conexion.Close();
             return Clientes;
         }
 
@@ -61,16 +47,11 @@ namespace Logica
             try
             {
                 var cliente = _context.Clientes.Find(identificacion);
-                //_conexion.Open();
-                //var cliente = _repositorio.BuscarPorIdentificacion(identificacion);
                 if (cliente != null)
                 {
                     
                     _context.Clientes.Remove(cliente);
                     _context.SaveChanges();
-
-                    //_repositorio.Eliminar(cliente);
-                    //_conexion.Close();
                     return ($"El registro {cliente.Nombre} se ha eliminado satisfactoriamente.");
                 }
                 else
@@ -82,24 +63,27 @@ namespace Logica
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
-            
-            //finally { _conexion.Close(); }
-
         }
 
-        public ModificarClienteResponse ModificarCliente(Cliente cliente)
+        public ModificarClienteResponse ModificarCliente(Cliente clienteNuevo)
         {            
             try
             {
-                var clienteViejo = _context.Clientes.Find(cliente.Identificacion);
-                _conexion.Open();
+                var clienteViejo = _context.Clientes.Find(clienteNuevo.Identificacion);
                 if (clienteViejo != null)
                 {
+                    clienteViejo.Identificacion=clienteNuevo.Identificacion;
+                    clienteViejo.Nombre=clienteNuevo.Nombre;
+                    clienteViejo.Edad=clienteNuevo.Edad;
+                    clienteViejo.Sexo=clienteNuevo.Sexo;
+                    clienteViejo.Direccion=clienteNuevo.Direccion;
+                    clienteViejo.Celular=clienteNuevo.Celular;
+                    clienteViejo.Correo=clienteNuevo.Correo;
+                    clienteViejo.Usuario=clienteNuevo.Usuario;
+                    clienteViejo.Password=clienteNuevo.Password;
                     _context.Clientes.Modificar(clienteViejo);
                     _context.SaveChanges();
-                    //_repositorio.Modificar(cliente);
-                    //_conexion.Close();
-                    return new ModificarClienteResponse(cliente);
+                    return new ModificarClienteResponse(clienteViejo);
                 }
                 else
                 {
@@ -108,17 +92,13 @@ namespace Logica
             }
             catch (Exception e)
             {
-
                 return new ModificarClienteResponse($"Error de la Aplicación: {e.Message}");
             }
-            //finally { _conexion.Close(); }
         }
 
         public Cliente BuscarxIdentificacion(string identificacion)
         {
-            //_conexion.Open();
             Cliente cliente = _context.Clientes.Find(identificacion);
-            //_conexion.Close();
             return cliente;
         }
 
