@@ -7,8 +7,7 @@ namespace Datos
     public class HotelContext : DbContext
     {
         public HotelContext(DbContextOptions options) : base(options)
-        {
-            
+        {            
         }
         public DbSet<Cliente> Clientes {get; set;}
         public DbSet<Compra> Compras {get; set;}
@@ -19,8 +18,5 @@ namespace Datos
         public DbSet<Recepcionista> Recepcionistas {get; set;}
         public DbSet<Reserva> Reservas {get; set;}
         public DbSet<Users> Users {get; set;}
-        
-        
-        
     }
 }
