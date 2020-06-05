@@ -1,46 +1,42 @@
 using Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Datos;
 
 namespace Logica
 {
     public class HabitacionService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly HabitacionRepository _repositorio;
-        public HabitacionService(string connectionString)
+        private readonly HotelContext _context;
+
+        public HabitacionService(HotelContext _context)
         {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new HabitacionRepository(_conexion);
+            _context=context;
         }
 
         public GuardarHabitacionResponse Guardar(Habitacion habitacion)
         {
             try
             {
-                _conexion.Open();
-                var habitacionx = _repositorio.BuscarPorIdentificacion(habitacion.IdHabitacion);
-                if (habitacionx != null)
+                var habitacionBuscada = _context.Habitaciones.Find(habitacion.IdHabitacion);
+                if (habitacionBuscada != null)
                 {
                     return new GuardarHabitacionResponse("Error esta habitacion ya se encuentra registrada");
                 }
-                _repositorio.Guardar(habitacion);
-                _conexion.Close();
+                _context.Habitaciones.Add(habitacion);
+                _context.SaveChanges();
                 return new GuardarHabitacionResponse(habitacion);
             }
             catch (Exception e)
             {
                 return new GuardarHabitacionResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public List<Habitacion> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Habitacion> habitaciones = _repositorio.ConsultarTodos();
-            _conexion.Close();
+            List<Habitacion> habitaciones = _context.Habitaciones.ToList();
             return habitaciones;
         }
 
@@ -48,12 +44,11 @@ namespace Logica
         {
             try
             {
-                _conexion.Open();
-                var habitacion = _repositorio.BuscarPorIdentificacion(identificacion);
+                var habitacion = _context.Habitaciones.Find(identificacion);
                 if (habitacion != null)
-                {
-                    _repositorio.Eliminar(habitacion);
-                    _conexion.Close();
+                {                    
+                    _context.Habitaciones.Remove(habitacion);
+                    _context.SaveChanges();
                     return ($"El registro {habitacion.IdHabitacion} se ha eliminado satisfactoriamente.");
                 }
                 else
@@ -65,20 +60,25 @@ namespace Logica
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
-            finally { _conexion.Close(); }
-
         }
 
-        public ModificarHabitacionResponse Modificar(Habitacion habitacion)
+        public ModificarHabitacionResponse Modificar(Habitacion habitacionNueva)
         {            
             try
             {
-                _conexion.Open();
-                if (habitacion != null)
+                var habitacionVieja = _context.Habitaciones.Find(habitacionNueva.IdHabitacion);
+                if (habitacionVieja != null)
                 {
-                    _repositorio.Modificar(habitacion);
-                    _conexion.Close();
-                    return new ModificarHabitacionResponse(habitacion);
+                    habitacionVieja.IdHabitacion=habitacionNueva.IdHabitacion;
+                    habitacionVieja.Tipo=habitacionNueva.Tipo;
+                    habitacionVieja.Precio=habitacionNueva.Precio;
+                    habitacionVieja.Descripcion=habitacionNueva.Descripcion;
+                    habitacionVieja.Aire=habitacionNueva.Aire;
+                    habitacionVieja.Ventilador=habitacionNueva.Ventilador;
+                    habitacionVieja.Disponibilidad=habitacionNueva.Disponibilidad;
+                    _context.Habitaciones.Update(habitacionVieja);
+                    _context.SaveChanges();
+                    return new ModificarHabitacionResponse(habitacionVieja);
                 }
                 else
                 {
@@ -87,17 +87,13 @@ namespace Logica
             }
             catch (Exception e)
             {
-
                 return new ModificarHabitacionResponse($"Error de la Aplicación: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public Habitacion BuscarxIdentificacion(string identificacion)
         {
-            _conexion.Open();
-            Habitacion habitacion = _repositorio.BuscarPorIdentificacion(identificacion);
-            _conexion.Close();
+            Habitacion habitacion = _context.Habitaciones.Find(identificacion);
             return habitacion;
         }
 
