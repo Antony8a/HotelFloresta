@@ -2,45 +2,40 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using Datos;
+using System.Linq;
 
 namespace Logica
 {
     public class ReservaService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly ReservaRepository _repositorio;
-        public ReservaService(string connectionString)
+        private readonly HotelContext _context;
+        public ReservaService(HotelContext context)
         {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new ReservaRepository(_conexion);
+            _context=context;
         }
 
         public GuardarReservaResponse Guardar(Reserva reserva)
         {
             try
             {
-                _conexion.Open();
-                var reservax = _repositorio.BuscarPorIdentificacion(reserva.IdReserva);
-                if (reservax != null)
+                var reservaBuscada = _contextReservas.Find(reserva.IdReserva);
+                if (reservaBuscada != null)
                 {
                     return new GuardarReservaResponse("Error esta reserva ya se encuentra registrado");
                 }
-                _repositorio.Guardar(reserva);
-                _conexion.Close();
+                _context.Reservas.Add(reserva);
+                _context.SaveChanges();
                 return new GuardarReservaResponse(reserva);
             }
             catch (Exception e)
             {
                 return new GuardarReservaResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public List<Reserva> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Reserva> reservas = _repositorio.ConsultarTodos();
-            _conexion.Close();
+            List<Reserva> reservas = _context.Reservas.ToList();
             return reservas;
         }
 
@@ -48,12 +43,11 @@ namespace Logica
         {
             try
             {
-                _conexion.Open();
-                var reserva = _repositorio.BuscarPorIdentificacion(identificacion);
+                var reserva = _context.Reservas.Find(identificacion);
                 if (reserva != null)
                 {
-                    _repositorio.Eliminar(reserva);
-                    _conexion.Close();
+                    _context.Reservas.Remove(reserva);
+                    _context.SaveChanges();
                     return ($"El registro {reserva.IdReserva} se ha eliminado satisfactoriamente.");
                 }
                 else
@@ -65,39 +59,39 @@ namespace Logica
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
-            finally { _conexion.Close(); }
-
         }
 
-        public ModificarReservaResponse Modificar(Reserva reserva)
+        public ModificarReservaResponse Modificar(Reserva reservaNueva)
         {            
             try
             {
-                _conexion.Open();
-                if (reserva != null)
+                var reservaVieja = _context.Reservas.Find(reservaNueva.IdReserva);
+                if (reservaVieja != null)
                 {
-                    _repositorio.Modificar(reserva);
-                    _conexion.Close();
-                    return new ModificarReservaResponse(reserva);
+                    reservaVieja.IdReserva=reservaNueva.IdReserva;
+                    reservaVieja.FechaInicio=reservaNueva.FechaInicio;
+                    reservaVieja.FechaFin=reservaNueva.FechaFin;
+                    reservaVieja.CantidadPersonas=reservaNueva.CantidadPersonas;
+                    reservaVieja.IdCliente=reservaNueva.IdCliente;
+                    reservaVieja.IdHabitacion=reservaNueva.IdHabitacion;
+                    _context.Reservas.Update(reservaVieja);
+                    _context.SaveChanges();
+                    return new ModificarReservaResponse(reservaVieja);
                 }
                 else
                 {
-                    return new ModificarReservaResponse($"Lo sentimos, {reserva.IdReserva} no se encuentra registrada.");
+                    return new ModificarReservaResponse($"Lo sentimos, {reservaNueva.IdReserva} no se encuentra registrada.");
                 }
             }
             catch (Exception e)
             {
-
                 return new ModificarReservaResponse($"Error de la Aplicación: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public Reserva BuscarxIdentificacion(int identificacion)
         {
-            _conexion.Open();
-            Reserva reserva = _repositorio.BuscarPorIdentificacion(identificacion);
-            _conexion.Close();
+            Reserva reserva = _context.Reservas.Find(identificacion);
             return reserva;
         }
 
