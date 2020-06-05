@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Hotel.Models;
+using Datos;
 
 namespace Hotel.Controllers
 {
@@ -16,12 +17,10 @@ namespace Hotel.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UsersService _usersService;
-        public IConfiguration Configuration { get; }
-        public UsersController(IConfiguration configuration)
+        
+        public UsersController(HotelContext context)
         {
-            Configuration = configuration;
-            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
-            _usersService = new UsersService(connectionString);
+           _usersService = new UsersService(context);
         }
         // GET: api/Users
         [HttpGet]

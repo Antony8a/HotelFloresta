@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Hotel.Models;
+using Datos;
 
 namespace Hotel.Controllers
 {
@@ -16,12 +17,10 @@ namespace Hotel.Controllers
     public class RecepcionistaController : ControllerBase
     {
         private readonly RecepcionistaService _recepcionistaService;
-        public IConfiguration Configuration { get; }
-        public RecepcionistaController(IConfiguration configuration)
+        
+        public RecepcionistaController(HotelContext context)
         {
-            Configuration = configuration;
-            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
-            _recepcionistaService = new RecepcionistaService(connectionString);
+             _recepcionistaService = new RecepcionistaService(context);
         }
         // GET: api/Recepcionista
         [HttpGet]
