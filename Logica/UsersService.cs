@@ -7,40 +7,35 @@ namespace Logica
 {
     public class UsersService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly UsersRepository _repositorio;
-        public UsersService(string connectionString)
+        private readonly HotelContext _context;
+
+        public UsersService(HotelContext context)
         {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new UsersRepository(_conexion);
+            _context=context;
         }
 
-        public GuardarUsersResponse Guardar(Users users)
+        public GuardarUsersResponse Guardar(Users user)
         {
             try
             {
-                _conexion.Open();
-                var usersx = _repositorio.BuscarPorIdentificacion(users.Usuario);
-                if (usersx != null)
+                var userBuscado = _context.Userss.Find(user.Usuario);
+                if (userBuscado != null)
                 {
                     return new GuardarUsersResponse("Error el usuario ya se encuentra registrado");
                 }
-                _repositorio.Guardar(users);
-                _conexion.Close();
-                return new GuardarUsersResponse(users);
+                _context.Userss.Add(user);
+                _context.SaveChanges();
+                return new GuardarUsersResponse(user);
             }
             catch (Exception e)
             {
                 return new GuardarUsersResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public List<Users> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Users> Userss = _repositorio.ConsultarTodos();
-            _conexion.Close();
+            List<Users> Userss = _context.Userss.ToList();
             return Userss;
         }
 
@@ -48,12 +43,11 @@ namespace Logica
         {
             try
             {
-                _conexion.Open();
-                var users = _repositorio.BuscarPorIdentificacion(identificacion);
+                var users = _context.Users.Find(identificacion);
                 if (users != null)
-                {
-                    _repositorio.Eliminar(users);
-                    _conexion.Close();
+                {                    
+                    _context.Userss.Remove(users);
+                    _context.SaveChanges();
                     return ($"El registro {users.Usuario} se ha eliminado satisfactoriamente.");
                 }
                 else
@@ -65,24 +59,26 @@ namespace Logica
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
-            finally { _conexion.Close(); }
-
         }
 
-        public ModificarUsersResponse Modificar(Users users)
+        public ModificarUsersResponse Modificar(Users usersNuevo)
         {            
             try
             {
-                _conexion.Open();
-                if (users != null)
+                var usersViejo = _context.Userss.Find(usersNuevo.Usuario);
+                if (usersViejo != null)
                 {
-                    _repositorio.Modificar(users);
-                    _conexion.Close();
-                    return new ModificarUsersResponse(users);
+                    usersViejo.Usuario=usersNuevo.Usuario;
+                    usersViejo.Password=usersNuevo.Password;
+                    usersViejo.TipoUsuario=usersNuevo.TipoUsuario;
+                    usersViejo.Identificacion=usersNuevo.Identificacion;
+                    _context.Userss.Update(usersViejo);
+                    _context.SaveChanges();
+                    return new ModificarUsersResponse(usersViejo);
                 }
                 else
                 {
-                    return new ModificarUsersResponse($"Lo sentimos, {users.Identificacion} no se encuentra registrada.");
+                    return new ModificarUsersResponse($"Lo sentimos, {usersNuevo.Usuario} no se encuentra registrada.");
                 }
             }
             catch (Exception e)
@@ -90,14 +86,11 @@ namespace Logica
 
                 return new ModificarUsersResponse($"Error de la Aplicación: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public Users BuscarxIdentificacion(string identificacion)
         {
-            _conexion.Open();
-            Users users = _repositorio.BuscarPorIdentificacion(identificacion);
-            _conexion.Close();
+            Users users = _context.Userss.Find(identificacion);
             return users;
         }
 
