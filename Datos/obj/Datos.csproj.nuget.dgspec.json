@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj": {}
+    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj": {
+    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj"
+              "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
+    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
