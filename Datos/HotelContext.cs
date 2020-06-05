@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Entity;
-
-
 namespace Datos
 {
     public class HotelContext : DbContext

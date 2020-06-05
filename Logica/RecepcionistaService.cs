@@ -12,7 +12,7 @@ namespace Logica
 
         public RecepcionistaService(HotelContext context)
         {
-            _context = context
+            _context = context;
         }
 
         public GuardarRecepcionistaResponse Guardar(Recepcionista recepcionista)
@@ -78,7 +78,7 @@ namespace Logica
                     recepcionistaViejo.Correo=recepcionistaNuevo.Correo;
                     recepcionistaViejo.Usuario=recepcionistaNuevo.Usuario;
                     recepcionistaViejo.Password=recepcionistaNuevo.Password;
-                    _context.Clientes.Update(recepcionistaViejo);
+                    _context.Recepcionistas.Update(recepcionistaViejo);
                     _context.SaveChanges();
                     return new ModificarRecepcionistaResponse(recepcionistaViejo);
                 }

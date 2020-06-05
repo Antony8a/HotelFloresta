@@ -10,7 +10,7 @@ namespace Logica
     {
         private readonly HotelContext _context;
 
-        public HabitacionService(HotelContext _context)
+        public HabitacionService(HotelContext context)
         {
             _context=context;
         }
@@ -82,7 +82,7 @@ namespace Logica
                 }
                 else
                 {
-                    return new ModificarHabitacionResponse($"Lo sentimos, {habitacion.IdHabitacion} no se encuentra registrada.");
+                    return new ModificarHabitacionResponse($"Lo sentimos, {habitacionNueva.IdHabitacion} no se encuentra registrada.");
                 }
             }
             catch (Exception e)

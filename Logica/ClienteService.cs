@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Datos;
 using System.Linq;
 
-
 namespace Logica
 {
     public class ClienteService

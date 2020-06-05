@@ -2,6 +2,7 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using Datos;
+using System.Linq;
 
 namespace Logica
 {
@@ -43,7 +44,7 @@ namespace Logica
         {
             try
             {
-                var users = _context.Users.Find(identificacion);
+                var users = _context.Userss.Find(identificacion);
                 if (users != null)
                 {                    
                     _context.Userss.Remove(users);

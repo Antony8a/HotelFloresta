@@ -9,6 +9,7 @@ namespace Logica
     public class ReservaService
     {
         private readonly HotelContext _context;
+
         public ReservaService(HotelContext context)
         {
             _context=context;
@@ -18,7 +19,7 @@ namespace Logica
         {
             try
             {
-                var reservaBuscada = _contextReservas.Find(reserva.IdReserva);
+                var reservaBuscada = _context.Reservas.Find(reserva.IdReserva);
                 if (reservaBuscada != null)
                 {
                     return new GuardarReservaResponse("Error esta reserva ya se encuentra registrado");
