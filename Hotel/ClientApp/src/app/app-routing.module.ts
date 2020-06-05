@@ -25,6 +25,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { InicioClienteComponent } from './componentes/banners/inicio-cliente/inicio-cliente.component';
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 
+import { AuthGuard } from './services/auth.guard';
+
 const routes: Routes = [
   { 
     path: '', 
@@ -62,7 +64,7 @@ const routes: Routes = [
   },
   {
     path: 'recepcionistaRegistro',
-    component: RecepcionistaRegistroComponent 
+    component: RecepcionistaRegistroComponent
   },
  
   // producto--------------------------------------------------------------------------------------------
@@ -77,7 +79,7 @@ const routes: Routes = [
   },
   {
     path: 'productoRegistra',
-    component: ProductoRegistroComponent    
+    component: ProductoRegistroComponent
   },
 
   // habitacion-----------------------------------------------------------------------------------------
@@ -99,7 +101,7 @@ const routes: Routes = [
 
   {
     path: 'reservaRegistro',
-    component: ReservaRegistroComponent 
+    component: ReservaRegistroComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'reservaConsulta',
@@ -123,7 +125,7 @@ const routes: Routes = [
   },
   {
     path: 'realizarReserva',
-    component: ReservaInicioComponent 
+    component: ReservaInicioComponent
   },
   {
     path: 'login',
@@ -131,11 +133,11 @@ const routes: Routes = [
   },
   {
     path: 'inicioCliente',
-    component: InicioClienteComponent 
+    component: InicioClienteComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'inicioRecepcionista',
-    component: InicioRecepcionistaComponent 
+    component: InicioRecepcionistaComponent,canActivate: [AuthGuard] 
   },
 
 

@@ -26,7 +26,7 @@ export class ClienteRegistroComponent implements OnInit {
   ngOnInit() {
     this.buildForm();
   }
-
+ 
 
   private buildForm() {
     this.cliente = new Cliente();

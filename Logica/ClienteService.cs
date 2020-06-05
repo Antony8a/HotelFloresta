@@ -29,7 +29,7 @@ namespace Logica
                 return new GuardarClienteResponse(cliente);
             }
             catch (Exception e)
-            {
+            { 
                 return new GuardarClienteResponse($"Error de la Aplicacion: {e.Message}");
             }
         }

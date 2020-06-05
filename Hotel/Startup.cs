@@ -9,6 +9,10 @@ using Microsoft.OpenApi.Models;
 using System;
 using Datos;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Hotel.ClientApp.Config;
+using System.Text;
 
 
 namespace Hotel
@@ -26,32 +30,62 @@ namespace Hotel
         public void ConfigureServices(IServiceCollection services)
         {
             // Configurar cadena de Conexion con EF
-            var connectionString=Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<HotelContext>(p=>p.UseSqlServer(connectionString));
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<HotelContext>(p => p.UseSqlServer(connectionString));
             services.AddControllersWithViews();
 
-            //Agregar OpenApi Swagger
-                services.AddSwaggerGen(c =>
+            //Wea de jwt que ni idea
+
+            #region    configure strongly typed settings objects
+            var appSettingsSection = Configuration.GetSection("AppSetting");
+            services.Configure<AppSetting>(appSettingsSection);
+            #endregion
+
+            #region Configure jwt authentication inteprete el token
+            var appSettings = appSettingsSection.Get<AppSetting>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    c.SwaggerDoc("v1", new OpenApiInfo
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+            #endregion
+            //fin de la wea
+
+            //Agregar OpenApi Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Hotel Floresta API",
+                    Description = "Hotel la floresta API - ASP.NET Core Web API",
+                    TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
+                    Contact = new OpenApiContact
                     {
-                        Version = "v1",
-                        Title = "Hotel Floresta API",
-                        Description = "Hotel la floresta API - ASP.NET Core Web API",
-                        TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
-                        Contact = new OpenApiContact
-                        {
-                            Name = "HotelFloresta",
-                            Email = string.Empty,
-                            Url = new Uri("https://github.com/daantoma/Hotel-La-Floresta"),
-                        },
-                        License = new OpenApiLicense
-                        {
-                            Name = "Licencia dotnet foundation",
-                            Url = new Uri("https://www.byasystems.co/license"),
-                        }
-                    });
+                        Name = "HotelFloresta",
+                        Email = string.Empty,
+                        Url = new Uri("https://github.com/daantoma/Hotel-La-Floresta"),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Licencia dotnet foundation",
+                        Url = new Uri("https://www.byasystems.co/license"),
+                    }
                 });
+            });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -83,6 +117,19 @@ namespace Hotel
 
             app.UseRouting();
 
+            //mas weas de jwt
+
+            #region global cors policy activate Authentication/Authorization
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+            app.UseAuthentication();
+            app.UseAuthorization();
+            #endregion
+
+            //
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -112,4 +159,5 @@ namespace Hotel
             });
         }
     }
+
 }

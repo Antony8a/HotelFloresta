@@ -24,6 +24,9 @@ namespace Hotel.Models
 
         [Required(ErrorMessage = "La identificacion es requerida")]
         public string Identificacion { get; set; }
+        
+        [Required(ErrorMessage = "La identificacion es requerida")]
+        public string Token { get; set; }
     }
 
     public class TipoUsuarioValidacion : ValidationAttribute{

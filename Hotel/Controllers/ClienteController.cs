@@ -69,7 +69,7 @@ namespace Hotel.Controllers
         private Cliente MapearCliente(ClienteInputModel clienteInput)
         {
             var cliente = new Cliente
-            {
+            { 
                 Identificacion = clienteInput.Identificacion,
                 Nombre = clienteInput.Nombre,
                 Edad = clienteInput.Edad,

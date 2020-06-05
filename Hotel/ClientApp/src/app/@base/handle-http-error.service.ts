@@ -16,7 +16,7 @@ export class HandleHttpErrorService {
       
         if (error.status == "400") {
         this.mostrarError400(error);
-        }     
+        }
       return of(result as T);
     };
   }

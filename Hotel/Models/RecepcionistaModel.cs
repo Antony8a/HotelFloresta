@@ -28,7 +28,7 @@ namespace Hotel.Models
         [Required(ErrorMessage = "El celular es requerido")]
         public string Celular { get; set; }
         
-       [Required]
+       [Required] 
        /* /<email-pattern>|<phone-pattern>/ */
        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$|^\+?\d{0,2}\-?\d{4,5}\-?\d{5,6}", ErrorMessage = "Debe ingresar un correo electronico valido")] 
         public string Correo { get; set; }

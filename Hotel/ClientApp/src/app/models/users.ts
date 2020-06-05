@@ -3,4 +3,5 @@ export class Users {
     password:string;
     tipoUsuario:string;
     identificacion:string;
+    token: string;
 }

@@ -2,18 +2,20 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using Datos;
-using System.Linq;
+using System.Linq;
 
 namespace Logica
 {
     public class UsersService
     {
-        private readonly HotelContext _context;
+        private readonly HotelContext _context;
 
-        public UsersService(HotelContext context)
+        public UsersService(HotelContext context) => _context = context;
+        public Users Validate(string usuario, string password)
         {
-            _context=context;
+            return _context.Userss.FirstOrDefault(t => t.Usuario == usuario && t.Password == password );
         }
+
 
         public GuardarUsersResponse Guardar(Users user)
         {
@@ -46,7 +48,7 @@ namespace Logica
             {
                 var users = _context.Userss.Find(identificacion);
                 if (users != null)
-                {                    
+                {
                     _context.Userss.Remove(users);
                     _context.SaveChanges();
                     return ($"El registro {users.Usuario} se ha eliminado satisfactoriamente.");
@@ -63,16 +65,16 @@ namespace Logica
         }
 
         public ModificarUsersResponse Modificar(Users usersNuevo)
-        {            
+        {
             try
             {
                 var usersViejo = _context.Userss.Find(usersNuevo.Usuario);
                 if (usersViejo != null)
                 {
-                    usersViejo.Usuario=usersNuevo.Usuario;
-                    usersViejo.Password=usersNuevo.Password;
-                    usersViejo.TipoUsuario=usersNuevo.TipoUsuario;
-                    usersViejo.Identificacion=usersNuevo.Identificacion;
+                    usersViejo.Usuario = usersNuevo.Usuario;
+                    usersViejo.Password = usersNuevo.Password;
+                    usersViejo.TipoUsuario = usersNuevo.TipoUsuario;
+                    usersViejo.Identificacion = usersNuevo.Identificacion;
                     _context.Userss.Update(usersViejo);
                     _context.SaveChanges();
                     return new ModificarUsersResponse(usersViejo);
