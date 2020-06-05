@@ -48,7 +48,6 @@ namespace Logica
                 var cliente = _context.Clientes.Find(identificacion);
                 if (cliente != null)
                 {
-                    
                     _context.Clientes.Remove(cliente);
                     _context.SaveChanges();
                     return ($"El registro {cliente.Nombre} se ha eliminado satisfactoriamente.");
