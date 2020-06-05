@@ -2,45 +2,41 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using Datos;
+using System.Linq;
 
 namespace Logica
 {
     public class ProductoService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly ProductoRepository _repositorio;
-        public ProductoService(string connectionString)
+        private readonly HotelContext _context;
+
+        public ProductoService(HotelContext context)
         {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new ProductoRepository(_conexion);
+            _context=context;
         }
 
         public GuardarProductoResponse Guardar(Producto producto)
         {
             try
             {
-                _conexion.Open();
-                var productox = _repositorio.BuscarPorIdentificacion(producto.IdProducto);
-                if (productox != null)
+                var productoBuscado = _context.Productos.Find(producto.IdProducto);
+                if (productoBuscado != null)
                 {
                     return new GuardarProductoResponse("Error este producto ya se encuentra registrado");
                 }
-                _repositorio.Guardar(producto);
-                _conexion.Close();
+                _context.Productos.Add(producto);
+                _context.SaveChanges();
                 return new GuardarProductoResponse(producto);
             }
             catch (Exception e)
             {
                 return new GuardarProductoResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public List<Producto> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Producto> productos = _repositorio.ConsultarTodos();
-            _conexion.Close();
+            List<Producto> productos = _context.Productos.ToList();
             return productos;
         }
 
@@ -48,12 +44,11 @@ namespace Logica
         {
             try
             {
-                _conexion.Open();
-                var producto = _repositorio.BuscarPorIdentificacion(identificacion);
+                var producto = _context.Productos.Find(identificacion);
                 if (producto != null)
                 {
-                    _repositorio.Eliminar(producto);
-                    _conexion.Close();
+                    _context.Productos.Remove(producto);
+                    _context.SaveChanges();
                     return ($"El registro {producto.IdProducto} se ha eliminado satisfactoriamente.");
                 }
                 else
@@ -65,39 +60,37 @@ namespace Logica
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
-            finally { _conexion.Close(); }
-
         }
 
-        public ModificarProductoResponse Modificar(Producto producto)
+        public ModificarProductoResponse Modificar(Producto productoNuevo)
         {            
             try
             {
-                _conexion.Open();
-                if (producto != null)
+                var productoViejo = _context.Productos.Find(productoNuevo.IdProducto);
+                if (productoViejo != null)
                 {
-                    _repositorio.Modificar(producto);
-                    _conexion.Close();
-                    return new ModificarProductoResponse(producto);
+                    productoViejo.IdProducto=productoNuevo.IdProducto;
+                    productoViejo.Nombre=productoNuevo.Nombre;
+                    productoViejo.Tipo=productoNuevo.Tipo;
+                    productoViejo.Precio=productoNuevo.Precio;
+                    _context.Productos.Update(productoViejo);
+                    _context.SaveChanges();
+                    return new ModificarProductoResponse(productoViejo);
                 }
                 else
                 {
-                    return new ModificarProductoResponse($"Lo sentimos, {producto.IdProducto} no se encuentra registrada.");
+                    return new ModificarProductoResponse($"Lo sentimos, {productoNuevo.IdProducto} no se encuentra registrada.");
                 }
             }
             catch (Exception e)
             {
-
                 return new ModificarProductoResponse($"Error de la Aplicación: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public Producto BuscarxIdentificacion(string identificacion)
         {
-            _conexion.Open();
-            Producto producto = _repositorio.BuscarPorIdentificacion(identificacion);
-            _conexion.Close();
+            Producto producto = _context.Productos.Find(identificacion);
             return producto;
         }
 
