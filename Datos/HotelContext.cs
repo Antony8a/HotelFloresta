@@ -17,6 +17,6 @@ namespace Datos
         public DbSet<Producto> Productos {get; set;}
         public DbSet<Recepcionista> Recepcionistas {get; set;}
         public DbSet<Reserva> Reservas {get; set;}
-        public DbSet<Users> Users {get; set;}
+        public DbSet<Users> Userss {get; set;}
     }
 }
