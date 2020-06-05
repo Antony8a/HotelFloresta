@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using Datos;
-using System.Collections.Generic;
 using System.Linq;
 
 
@@ -10,9 +9,9 @@ namespace Logica
 {
     public class ClienteService
     {
-        private readonly ClienteContext _context;
+        private readonly HotelContext _context;
 
-        public ClienteService(ClienteContext context)
+        public ClienteService(HotelContext context)
         {
             _context=context;
         }
@@ -38,8 +37,8 @@ namespace Logica
 
         public List<Cliente> ConsultarTodos()
         {
-            List<Cliente> Clientes = _context.Clientes.ToList();
-            return Clientes;
+            List<Cliente> clientes = _context.Clientes.ToList();
+            return clientes;
         }
 
         public string Eliminar(string identificacion)
@@ -81,7 +80,7 @@ namespace Logica
                     clienteViejo.Correo=clienteNuevo.Correo;
                     clienteViejo.Usuario=clienteNuevo.Usuario;
                     clienteViejo.Password=clienteNuevo.Password;
-                    _context.Clientes.Modificar(clienteViejo);
+                    _context.Clientes.Update(clienteViejo);
                     _context.SaveChanges();
                     return new ModificarClienteResponse(clienteViejo);
                 }
