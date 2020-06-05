@@ -1,17 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Jl/+KTvTmhKt1A0uTu5h2Jmo67pIKO7PxuOb6vmPwSWFNNVV5m2F4CwMA59FZ2c8Jrb51xwfZ2YSyWcjPkba9w==",
+  "dgSpecHash": "ZfBtZhKIGTRJVZXup3f3VIM82Xcp+915Up5sKxap21TMrh/yqa7YGdXww0kkZTN4ETQlpO0Wg6juXNF0Lg55uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\Documents\\GitHub\\Prueba-Hotel\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\anton\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\Acer\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
