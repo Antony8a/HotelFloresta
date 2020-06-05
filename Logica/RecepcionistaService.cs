@@ -2,58 +2,53 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using Datos;
+using System.Linq;
 
 namespace Logica
 {
     public class RecepcionistaService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly RecepcionistaRepository _repositorio;
-        public RecepcionistaService(string connectionString)
+        private readonly HotelContext _context;
+
+        public RecepcionistaService(HotelContext context)
         {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new RecepcionistaRepository(_conexion);
+            _context = context
         }
 
         public GuardarRecepcionistaResponse Guardar(Recepcionista recepcionista)
         {
             try
             {
-                _conexion.Open();
-                var recepcionistax = _repositorio.BuscarPorIdentificacion(recepcionista.Identificacion);
-                if (recepcionistax != null)
+                var recepcionistaBuscado = _context.Recepcionistas.Find(recepcionista.Identificacion);
+                if (recepcionistaBuscado != null)
                 {
-                    return new GuardarRecepcionistaResponse("Error, la recepcionista ya se encuentra registrada");
+                    return new GuardarRecepcionistaResponse("Error, esta persona ya se encuentra registrada como recepcionista!");
                 }
-                _repositorio.Guardar(recepcionista);
-                _conexion.Close();
+                _context.Recepcionistas.Add(recepcionista);
+                _context.SaveChanges();
                 return new GuardarRecepcionistaResponse(recepcionista);
             }
             catch (Exception e)
             {
                 return new GuardarRecepcionistaResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public List<Recepcionista> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Recepcionista> Recepcionistas = _repositorio.ConsultarTodos();
-            _conexion.Close();
-            return Recepcionistas;
+            List<Recepcionista> recepcionistas = _context.Recepcionistas.ToList();
+            return recepcionistas;
         }
 
         public string Eliminar(string identificacion)
         {
             try
             {
-                _conexion.Open();
-                var recepcionista = _repositorio.BuscarPorIdentificacion(identificacion);
+                var recepcionista = _context.Recepcionistas.Find(identificacion);
                 if (recepcionista != null)
                 {
-                    _repositorio.Eliminar(recepcionista);
-                    _conexion.Close();
+                    _context.Recepcionistas.Remove(recepcionista);
+                    _context.SaveChanges();
                     return ($"El registro {recepcionista.Nombre} se ha eliminado satisfactoriamente.");
                 }
                 else
@@ -65,24 +60,31 @@ namespace Logica
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
-            finally { _conexion.Close(); }
-
         }
 
-        public ModificarRecepcionistaResponse ModificarRecepcionista(Recepcionista recepcionista)
+        public ModificarRecepcionistaResponse ModificarRecepcionista(Recepcionista recepcionistaNuevo)
         {            
             try
             {
-                _conexion.Open();
-                if (recepcionista != null)
+                var recepcionistaViejo = _context.Recepcionistas.Find(recepcionistaNuevo.Identificacion);
+                if (recepcionistaViejo != null)
                 {
-                    _repositorio.Modificar(recepcionista);
-                    _conexion.Close();
-                    return new ModificarRecepcionistaResponse(recepcionista);
+                    recepcionistaViejo.Identificacion=recepcionistaNuevo.Identificacion;
+                    recepcionistaViejo.Nombre=recepcionistaNuevo.Nombre;
+                    recepcionistaViejo.Edad=recepcionistaNuevo.Edad;
+                    recepcionistaViejo.Sexo=recepcionistaNuevo.Sexo;
+                    recepcionistaViejo.Direccion=recepcionistaNuevo.Direccion;
+                    recepcionistaViejo.Celular=recepcionistaNuevo.Celular;
+                    recepcionistaViejo.Correo=recepcionistaNuevo.Correo;
+                    recepcionistaViejo.Usuario=recepcionistaNuevo.Usuario;
+                    recepcionistaViejo.Password=recepcionistaNuevo.Password;
+                    _context.Clientes.Update(recepcionistaViejo);
+                    _context.SaveChanges();
+                    return new ModificarRecepcionistaResponse(recepcionistaViejo);
                 }
                 else
                 {
-                    return new ModificarRecepcionistaResponse($"Lo sentimos, {recepcionista.Identificacion} no se encuentra registrada.");
+                    return new ModificarRecepcionistaResponse($"Lo sentimos, {recepcionistaNuevo.Identificacion} no se encuentra registrada.");
                 }
             }
             catch (Exception e)
@@ -90,14 +92,11 @@ namespace Logica
 
                 return new ModificarRecepcionistaResponse($"Error de la Aplicación: {e.Message}");
             }
-            finally { _conexion.Close(); }
         }
 
         public Recepcionista BuscarxIdentificacion(string identificacion)
         {
-            _conexion.Open();
-            Recepcionista recepcionista = _repositorio.BuscarPorIdentificacion(identificacion);
-            _conexion.Close();
+            Recepcionista recepcionista = _context.Recepcionistas.Find(identificacion);
             return recepcionista;
         }
 
