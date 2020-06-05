@@ -14,3 +14,11 @@ C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos
 C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
 C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.dll
 C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.1\Datos.deps.json
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.dll
+C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Datos\obj\Debug\netstandard2.1\Datos.pdb
