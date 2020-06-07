@@ -55,6 +55,7 @@ namespace Hotel.Models
             Password = users.Password;
             TipoUsuario = users.TipoUsuario;
             Identificacion = users.Identificacion;
+            Token = users.Token;
         }
     }
 }

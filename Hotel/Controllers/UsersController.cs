@@ -11,17 +11,18 @@ using Hotel.Models;
 using Datos;
 using Microsoft.Extensions.Options;
 using Hotel.ClientApp.Config;
-using Hotel.ClientApp.Service;
+using Hotel.Service;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Hotel.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
+    [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly UsersService _usersService;
-        HotelContext _context;
+        UsersService _usersService;
+        HotelContext _context;  
         JwtService _jwtService;
         public UsersController(HotelContext context, IOptions<AppSetting> appSettings)
         {
@@ -44,6 +45,21 @@ namespace Hotel.Controllers
             _usersService = new UsersService(context);
             _jwtService = new JwtService(appSettings);
         }
+        
+        // POST: api/Users
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult Login([FromBody] UsersInputModel model)
+        {
+            var user = _usersService.Validate(model.Usuario, model.Password);
+            if (user == null) return BadRequest("Username or password is incorrect");
+            var response = _jwtService.GenerateToken(user);
+            return Ok(response);
+
+        }
+
+
+
         // GET: api/Users
         [HttpGet]
         public IEnumerable<UsersViewModel> Gets()
@@ -61,22 +77,23 @@ namespace Hotel.Controllers
             var usersViewModel = new UsersViewModel(users);
             return usersViewModel;
         }
-
-        // POST: api/Users
-        [AllowAnonymous]
-        [HttpPost]
-        public IActionResult Login([FromBody] UsersInputModel model)
-        {
-            var user = _usersService.Validate(model.Usuario, model.Password);
-            if (user == null) return BadRequest("Username or password is incorrect");
-            var response = _jwtService.GenerateToken(user);
-            return Ok(response);
-
-        }
         
+        // POST: api/Userss
+        [HttpPost]
         public ActionResult<UsersViewModel> Post(UsersInputModel usersInput)
         {
-            return Ok();
+            Users user = MapearUsers(usersInput);
+            var response = _usersService.Guardar(user);
+            if (response.Error) 
+            {
+                ModelState.AddModelError("Guardar reserva", response.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
+            return Ok(response.Users);
         }
 
         // DELETE: api/Users/5

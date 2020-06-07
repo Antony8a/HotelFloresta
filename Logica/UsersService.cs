@@ -10,7 +10,10 @@ namespace Logica
     {
         private readonly HotelContext _context;
 
-        public UsersService(HotelContext context) => _context = context;
+        public UsersService(HotelContext context)
+        {
+            _context=context;
+        }
         public Users Validate(string usuario, string password)
         {
             return _context.Userss.FirstOrDefault(t => t.Usuario == usuario && t.Password == password );

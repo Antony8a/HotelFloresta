@@ -35,73 +35,73 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,canActivate: [AuthGuard] 
   },
   
   // cliente-------------------------------------------------------------------------------------------------
 
   {
     path: 'clienteRegistro',
-    component: ClienteRegistroComponent
+    component: ClienteRegistroComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'clienteConsulta',
-    component: ClienteConsultaComponent
+    component: ClienteConsultaComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'clienteEdita/:id',
-    component: ClienteEditaComponent
+    component: ClienteEditaComponent,canActivate: [AuthGuard] 
   },
 
   // recepcionista--------------------------------------------------------------------------------------
   {
     path: 'recepcionistaConsulta',
-    component: RecepcionistaConsultaComponent 
+    component: RecepcionistaConsultaComponent ,canActivate: [AuthGuard] 
   },
   {
     path: 'recepcionistaEdita/:id',
-    component: RecepcionistaEditaComponent
+    component: RecepcionistaEditaComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'recepcionistaRegistro',
-    component: RecepcionistaRegistroComponent
+    component: RecepcionistaRegistroComponent,canActivate: [AuthGuard] 
   },
  
   // producto--------------------------------------------------------------------------------------------
 
   {
     path: 'productoEdita/:id',
-    component: ProductoEditaComponent 
+    component: ProductoEditaComponent,canActivate: [AuthGuard]  
   },
   {
     path: 'productoConsulta',
-    component: ProductoConsultaComponent 
+    component: ProductoConsultaComponent,canActivate: [AuthGuard]  
   },
   {
     path: 'productoRegistra',
-    component: ProductoRegistroComponent
+    component: ProductoRegistroComponent,canActivate: [AuthGuard] 
   },
 
   // habitacion-----------------------------------------------------------------------------------------
 
   {
     path: 'habitacionRegistro',
-    component: HabitacionRegistroComponent
+    component: HabitacionRegistroComponent,canActivate: [AuthGuard] 
   },
   {
     path: 'habitacionConsulta',
-    component: HabitacionConsultaComponent
+    component: HabitacionConsultaComponent,canActivate: [AuthGuard] 
   },  
   {
     path: 'habitacionEdita/:id',
-    component: HabitacionEditaComponent
+    component: HabitacionEditaComponent,canActivate: [AuthGuard] 
   },
 
   // reserva--------------------------------------------------------------------------------------------
 
   {
     path: 'reservaRegistro',
-    component: ReservaRegistroComponent,canActivate: [AuthGuard] 
+    component: ReservaRegistroComponent
   },
   {
     path: 'reservaConsulta',
@@ -109,15 +109,15 @@ const routes: Routes = [
   },
   {
     path: 'reservaEdita/:id',
-    component: ReservaEditaComponent 
+    component: ReservaEditaComponent,canActivate: [AuthGuard]  
   },
   {
     path: 'inicioAdmin',
-    component: InicioAdminComponent 
+    component: InicioAdminComponent,canActivate: [AuthGuard]  
   },
   {
     path: 'inicioInicio',
-    component: InicioInicioComponent 
+    component: InicioInicioComponent,canActivate: [AuthGuard]  
   },
   {
     path: 'inicioHotel',
