@@ -16,6 +16,7 @@ interface Food {
 })
 export class ReservaInicioComponent implements OnInit {
   modal: boolean = false;
+  prueba:string;
 
   habitaciones: Habitacion[];
   foods: Food[] = [
@@ -51,6 +52,10 @@ export class ReservaInicioComponent implements OnInit {
   goBack(){
     // window.history.back();
     this.location.back();
+  }
+
+  pruebaDatapic(pic1:Date, pic2:Date){
+    this.prueba = (pic1+" "+pic2);
   }
 
 }

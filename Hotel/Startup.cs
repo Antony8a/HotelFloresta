@@ -60,47 +60,28 @@ namespace Hotel
                     ValidateAudience = false
                 };
             });
-            services.AddSwaggerGen(c =>
-
-{
-
-c.SwaggerDoc("v1", new OpenApiInfo
-
-{
-
-Version = "v1",
-
-Title = "School API",
-
-Description = "School API - ASP.NET Core Web API",
-
-TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
-
-Contact = new OpenApiContact
-
-{
-
-Name = "Unicesar",
-
-Email = string.Empty,
-
-Url = new Uri("https://github.com/borisgr04/CrudNgDotNetCore3"),
-
-},
-
-License = new OpenApiLicense
-
-{
-
-Name = "Licencia dotnet foundation",
-
-Url = new Uri("https://www.byasystems.co/license"),
-
-}
-
-});
-
-});
+                //Agregar OpenApi Swagger
+                services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo
+                    {
+                        Version = "v1",
+                        Title = "Hotel Floresta API",
+                        Description = "Hotel la floresta API - ASP.NET Core Web API",
+                        TermsOfService = new Uri("https://cla.dotnetfoundation.org/"),
+                        Contact = new OpenApiContact
+                        {
+                            Name = "HotelFloresta",
+                            Email = string.Empty,
+                            Url = new Uri("https://github.com/daantoma/Hotel-La-Floresta"),
+                        },
+                        License = new OpenApiLicense
+                        {
+                            Name = "Licencia dotnet foundation",
+                            Url = new Uri("https://www.byasystems.co/license"),
+                        }
+                    });
+                });
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

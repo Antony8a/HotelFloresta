@@ -79,22 +79,22 @@ namespace Hotel.Controllers
         }
         
         // POST: api/Userss
-        [HttpPost]
-        public ActionResult<UsersViewModel> Post(UsersInputModel usersInput)
-        {
-            Users user = MapearUsers(usersInput);
-            var response = _usersService.Guardar(user);
-            if (response.Error) 
-            {
-                ModelState.AddModelError("Guardar reserva", response.Mensaje);
-                var problemDetails = new ValidationProblemDetails(ModelState)
-                {
-                    Status = StatusCodes.Status400BadRequest,
-                };
-                return BadRequest(problemDetails);
-            }
-            return Ok(response.Users);
-        }
+        // [HttpPost]
+        // public ActionResult<UsersViewModel> Post(UsersInputModel usersInput)
+        // {
+        //     Users user = MapearUsers(usersInput);
+        //     var response = _usersService.Guardar(user);
+        //     if (response.Error) 
+        //     {
+        //         ModelState.AddModelError("Guardar reserva", response.Mensaje);
+        //         var problemDetails = new ValidationProblemDetails(ModelState)
+        //         {
+        //             Status = StatusCodes.Status400BadRequest,
+        //         };
+        //         return BadRequest(problemDetails);
+        //     }
+        //     return Ok(response.Users);
+        // }
 
         // DELETE: api/Users/5
         [HttpDelete("{Usuario}")]

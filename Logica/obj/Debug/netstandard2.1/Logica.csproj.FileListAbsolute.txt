@@ -26,3 +26,17 @@ C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Logica\obj\Debug\netstandard2.1\Log
 C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Logica\obj\Debug\netstandard2.1\Logica.csproj.CopyComplete
 C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Logica\obj\Debug\netstandard2.1\Logica.dll
 C:\Users\anton\Desktop\Proyecto\Prueba-Hotel\Logica\obj\Debug\netstandard2.1\Logica.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Logica.deps.json
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Logica.dll
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Logica.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Logica\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.AssemblyInfoInputs.cache
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.AssemblyInfo.cs
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.csproj.CopyComplete
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.dll
+C:\Users\Acer\Documents\GitHub\hotel\Logica\obj\Debug\netstandard2.1\Logica.pdb
