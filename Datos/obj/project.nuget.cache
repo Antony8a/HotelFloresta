@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/UiS2WB4pUWl9ADPTHWXsC1EI3LWqSwHNbCPUD/RbDMn9Oief2gv8AaiVM4hS4ODBZ0kX4w7rEzYT6djp5ikLg==",
+  "dgSpecHash": "hgiLCNHKAQ+X5pXJ93Hd/Nlb1Av8eQdNgzmwxx78hI4puJC5rb87/qNRf/i9s2lX8J6vtVNQMN8ahwSDsGdhvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj",
+  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.data.sqlclient\\1.0.19249.1\\microsoft.data.sqlclient.1.0.19249.1.nupkg.sha512",

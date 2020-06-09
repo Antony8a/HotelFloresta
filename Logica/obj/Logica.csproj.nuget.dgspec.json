@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Logica\\Logica.csproj": {}
+    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj": {
+    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
         "projectName": "Datos",
-        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj"
+              "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj": {
+    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Logica\\Logica.csproj": {
+    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Logica\\Logica.csproj",
+        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj",
         "projectName": "Logica",
-        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Logica\\Logica.csproj",
+        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj",
         "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Logica\\obj\\",
+        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -155,11 +155,11 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj": {
-                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Datos\\Datos.csproj"
+              "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj": {
+                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj"
               },
-              "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Entity\\Entity.csproj"
+              "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj"
               }
             }
           }
