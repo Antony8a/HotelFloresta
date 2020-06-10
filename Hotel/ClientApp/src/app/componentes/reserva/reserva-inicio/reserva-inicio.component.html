@@ -71,55 +71,6 @@
                         </div>
                     </div>
                 </div>
-<!--
-                
-                <div class="col-md-12 mb-5">
-
-                    <div class="block-3 d-md-flex">
-                        <div class="image order-2"
-                            style="background-image: url('/assets/inicioHotel/images/img_2.jpg'); "></div>
-                        <div class="text order-1">
-                            <h2 class="heading">{{ habitacion.tipo }}</h2>
-                            <div class="price"><sup>$</sup><span class="number">80k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 1</li>
-                                <li><strong>Descripcion:</strong>{{ habitacion.descripcion }}</li>
-                                <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
-                            </ul>
-                            <p><a href="#" class="btn btn-primary py-3 px-5">Reservar</a></p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-12">
-
-                    <div class="block-3 d-md-flex">
-                        <div class="image" style="background-image: url('/assets/inicioHotel/images/img_3.jpg'); ">
-                        </div>
-                        <div class="text">
-
-                            <h2 class="heading">Habitacion +</h2>
-                            <div class="price"><sup>$</sup><span class="number">120k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 2+</li>
-                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta
-                                    definición, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 20m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> 2+ camas</li>
-                            </ul>
-
-                            <p><a href="#" class="btn btn-primary py-3 px-5">Reservar</a></p>
-
-                        </div>
-                    </div>
-
-
-                </div>-->
-
-            </div>
-
-
 
             <div class="row mb-5 pt-5 justify-content-center">
                 <div class="col-md-7 text-center section-heading">
@@ -248,6 +199,47 @@
 
             </div>
         </div>
+    </div>
+
+    <div id="amos-a-ver" class="container">
+                        <!-- aqui van los datapicker con los que tomaremos el rango de las fechas para las habitaciones -->
+
+                        <div class="row mb-5">
+                            <div class="col-md-12">
+                              <div class="block-32">
+                                <form action="#">
+                                  <div class="row">
+                                    <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+                                      <label for="checkin">Llegada</label>
+                                      <div class="field-icon-wrap">
+                                        <mat-form-field color="accent">
+                                          <input class="form-control" matInput [matDatepicker]="picker1">
+                                          <mat-datepicker-toggle class="inputt" matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                          <mat-datepicker #picker1 color="primary"></mat-datepicker>
+                                        </mat-form-field>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+                                      <label for="checkin">Salida</label>
+                                      <div class="field-icon-wrap">
+                                        <mat-form-field color="accent">
+                                          <input class="form-control" matInput [matDatepicker]="picker2">
+                                          <mat-datepicker-toggle class="inputt" matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                                        </mat-form-field>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 align-self-end">
+                                      <button class="btn btn-primary btn-block" (click)="pruebaDatapic(picker1.value,picker2.value)">Disponibilidad</button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+
+                          <label>aqui: {{prueba}}</label>
+                      <!-- aqui finalizan los datapicker con los que tomaremos el rango de las fechas para las habitaciones -->
     </div>
 
 

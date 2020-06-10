@@ -16,3 +16,12 @@ C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Enti
 C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfo.cs
 C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.dll
 C:\Users\Acer\Documents\GitHub\Prueba-Hotel\Entity\obj\Debug\netstandard2.1\Entity.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Entity\bin\Debug\netstandard2.1\Entity.deps.json
+C:\Users\Acer\Documents\GitHub\hotel\Entity\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\Acer\Documents\GitHub\hotel\Entity\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Entity\obj\Debug\netstandard2.1\Entity.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\hotel\Entity\obj\Debug\netstandard2.1\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\hotel\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfoInputs.cache
+C:\Users\Acer\Documents\GitHub\hotel\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfo.cs
+C:\Users\Acer\Documents\GitHub\hotel\Entity\obj\Debug\netstandard2.1\Entity.dll
+C:\Users\Acer\Documents\GitHub\hotel\Entity\obj\Debug\netstandard2.1\Entity.pdb

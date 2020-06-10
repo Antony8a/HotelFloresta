@@ -9,9 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Hotel.Models;
 using Datos;
+using Microsoft.Extensions.Options;
+using Hotel.ClientApp.Config;
+using Hotel.Service;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Hotel.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ClienteController : ControllerBase
