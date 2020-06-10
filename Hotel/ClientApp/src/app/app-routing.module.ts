@@ -113,7 +113,7 @@ const routes: Routes = [
   },
   {
     path: 'inicioAdmin',
-    component: InicioAdminComponent,canActivate: [AuthGuard]  
+    component: InicioAdminComponent
   },
   {
     path: 'inicioInicio',

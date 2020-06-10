@@ -107,7 +107,6 @@ export class ReservaRegistroComponent implements OnInit {
     public getErrorV(controlName: string): ValidationErrors {
       return this.formGroup.get(controlName).errors;
     }
-    get f() { return this.formGroup.controls; }
     get control() { return this.formGroup.controls; }
 
     //prueba fecha
