@@ -45,25 +45,17 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
     <div class="site-section bg-light">
         <div class="container" >
             <div class="row mb-5" *ngIf='habitaciones && habitaciones.length'>
-
                 <div class="col-md-12 mb-5" *ngFor="let habitacion of habitaciones; index as i" >
                     <div class="block-3 d-md-flex">
                         <div class="image "  style="background-image: url('/assets/inicioHotel/images/img_1.jpg'); ">
                         </div>
                         <div class="text">
                             <h2 class="heading">{{ habitacion.tipo }}</h2>
-                            <div class="price"><sup>$</sup><span class="number">80k</span><sub>/por noche</sub></div>
+                            <div class="price"><sup>$</sup><span class="number">{{habitacion.precio}}</span><sub>/por noche</sub></div>
                             <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 1</li>
                                 <li><strong>Descripcion: </strong>{{ habitacion.descripcion }}</li>
                                 <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
                             </ul>
@@ -80,168 +72,71 @@
                         clientes elijan la que mas les guste ó la que mas se acomode a su presupuesto!... ^-^</p>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-lg-4 mb-5">
-                    <div class="block-34">
-                        <div class="image">
-                            <a href="#"><img src="/assets/inicioHotel/images/img_1.jpg" alt="Image placeholder"></a>
-                        </div>
-                        <div class="text">
-                            <h2 class="heading">Habitacion de soltero</h2>
-                            <div class="price"><sup>$</sup><span class="number">80k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 1</li>
-                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta
-                                    definición, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> Una cama</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="block-34">
-                        <div class="image">
-                            <a href="#"><img src="/assets/inicioHotel/images/img_2.jpg" alt="Image placeholder"></a>
-                        </div>
-                        <div class="text">
-                            <h2 class="heading">Habitacion para pareja</h2>
-                            <div class="price"><sup>$</sup><span class="number">90k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 2</li>
-                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta
-                                    definición, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> Una cama</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="block-34">
-                        <div class="image">
-                            <a href="#"><img src="/assets/inicioHotel/images/img_3.jpg" alt="Image placeholder"></a>
-                        </div>
-                        <div class="text">
-                            <h2 class="heading">Habitacion doble</h2>
-                            <div class="price"><sup>$</sup><span class="number">130k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 2</li>
-                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta
-                                    definición, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 20m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> 2 camas</li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="block-34">
-                        <div class="image">
-                            <a href="#"><img src="/assets/inicioHotel/images/img_1.jpg" alt="Image placeholder"></a>
-                        </div>
-                        <div class="text">
-                            <h2 class="heading">Habitacion tiple</h2>
-                            <div class="price"><sup>$</sup><span class="number">140k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 3</li>
-                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta
-                                    definición, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 20m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> 3 camas</li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="block-34">
-                        <div class="image">
-                            <a href="#"><img src="/assets/inicioHotel/images/img_2.jpg" alt="Image placeholder"></a>
-                        </div>
-                        <div class="text">
-                            <h2 class="heading">Habitacion simple+</h2>
-                            <div class="price"><sup>$</sup><span class="number">85k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 1</li>
-                                <li><strong>Instalaciones:</strong> Armario con perchas, TV de pantalla plana de alta
-                                    definición, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> 1 cama doble</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-5">
-                    <div class="block-34">
-                        <div class="image">
-                            <a href="#"><img src="/assets/inicioHotel/images/img_1.jpg" alt="Image placeholder"></a>
-                        </div>
-                        <div class="text">
-                            <h2 class="heading">Habitacion ligth</h2>
-                            <div class="price"><sup>$</sup><span class="number">50k</span><sub>/por noche</sub></div>
-                            <ul class="specs mb-5">
-                                <li><strong>Adultos:</strong> 1</li>
-                                <li><strong>Instalaciones:</strong>TV clasi, Teléfono</li>
-                                <li><strong>Tamaño:</strong> 10m<sup>2</sup></li>
-                                <li><strong>Tipo de cama:</strong> Una cama sencilla</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
-    </div>
+        </div>
 
     <div id="amos-a-ver" class="container">
-                        <!-- aqui van los datapicker con los que tomaremos el rango de las fechas para las habitaciones -->
-
-                        <div class="row mb-5">
-                            <div class="col-md-12">
-                              <div class="block-32">
-                                <form action="#">
-                                  <div class="row">
-                                    <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                                      <label for="checkin">Llegada</label>
-                                      <div class="field-icon-wrap">
+        <!-- aqui van los datapicker con los que tomaremos el rango de las fechas para las habitaciones -->
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="block-32">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+                                    <label for="checkin">Llegada</label>
+                                    <div class="field-icon-wrap">
                                         <mat-form-field color="accent">
-                                          <input class="form-control" matInput [matDatepicker]="picker1">
-                                          <mat-datepicker-toggle class="inputt" matSuffix [for]="picker1"></mat-datepicker-toggle>
-                                          <mat-datepicker #picker1 color="primary"></mat-datepicker>
+                                        <input class="form-control" matInput [matDatepicker]="picker1"
+                                        (dateInput)="addEventInicio('input', $event)">
+                                        <mat-datepicker-toggle class="inputt" matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1 color="primary"></mat-datepicker>
                                         </mat-form-field>
-                                      </div>
                                     </div>
+                                    </div>
+                                
                                     <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                                      <label for="checkin">Salida</label>
-                                      <div class="field-icon-wrap">
+                                    <label for="checkin">Salida</label>
+                                    <div class="field-icon-wrap">
                                         <mat-form-field color="accent">
-                                          <input class="form-control" matInput [matDatepicker]="picker2">
-                                          <mat-datepicker-toggle class="inputt" matSuffix [for]="picker2"></mat-datepicker-toggle>
-                                          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                                        <input class="form-control" matInput [matDatepicker]="picker2"
+                                        (dateInput)="addEventFin('input', $event)">
+                                        <mat-datepicker-toggle class="inputt" matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker2 color="primary"></mat-datepicker>
                                         </mat-form-field>
-                                      </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-3 align-self-end">
-                                      <button class="btn btn-primary btn-block" (click)="pruebaDatapic(picker1.value,picker2.value)">Disponibilidad</button>
                                     </div>
-                                  </div>
-                                </form>
-                              </div>
+                                <div class="col-md-6 col-lg-3 align-self-end">
+                                    <button class="btn btn-primary btn-block"
+                                    (click)="comprobadorfechas()">Disponibilidad</button>
+                                </div>
                             </div>
-                          </div>
-
-                          <label>aqui: {{prueba}}</label>
-                      <!-- aqui finalizan los datapicker con los que tomaremos el rango de las fechas para las habitaciones -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="site-section bg-light">
+            <div class="container" >
+                <div class="row mb-5" *ngIf='habitacionesDisponibles && habitacionesDisponibles.length'>
+                    <div class="col-md-12 mb-5" *ngFor="let habitacion of habitacionesDisponibles; index as i" >
+                        <div class="block-3 d-md-flex">
+                            <div class="image "  style="background-image: url('/assets/inicioHotel/images/img_1.jpg'); ">
+                            </div>
+                            <div class="text">
+                                <h2 class="heading">{{ habitacion.tipo }}</h2>
+                                <div class="price"><sup>$</sup><span class="number">{{habitacion.precio}}</span><sub>/por noche</sub></div>
+                                <ul class="specs mb-5">
+                                    <li><strong>Descripcion: </strong>{{ habitacion.descripcion }}</li>
+                                    <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
+                                </ul>
+                                <p><a href="#" class="btn btn-primary py-3 px-5">Reservar</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- aqui finalizan los datapicker con los que tomaremos el rango de las fechas para las habitaciones -->
     </div>
-
 
     <div class="block-22">
         <div class="container">
