@@ -150,23 +150,3 @@ export class ReservaRegistroComponent implements OnInit {
       return this.validadorFechasIguales;
     }
 }
-
-      
-      // if(toma > fechaI && toma < fechaF){
-      //   alert("está entre fechas");
-      //   }else{
-      //     alert("fuera de fechas");
-      //   }
-
-      //el mmetodo de abajo es para hacer update a la disponibilidad de la habiitacion
-
-      // add() {
-      //   this.habitacion = this.formGroup.value;
-      //   this.habitacionService.put(this.habitacion).subscribe(p => {
-      //     if (p != null) {
-      //       const messageBox = this.modalService.open(AlertModalComponent)
-      //       messageBox.componentInstance.title = "Resultado Operación";
-      //       messageBox.componentInstance.message = 'Habitacion Modificada!!! :-)';
-      //       this.habitacion = p;
-      //     }
-      //   });
