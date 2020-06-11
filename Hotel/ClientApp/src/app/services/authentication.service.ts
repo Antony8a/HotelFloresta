@@ -28,14 +28,14 @@ export class AuthenticationService {
   }
 
   login(username:string, password:string) {
-    return this.http.post<any>(`${this.baseUrl}api/login`, { username, password })
+    return this.http.post<any>(`${this.baseUrl}api/Users`, { username, password })
       .pipe(map(user => {
         if (user && user.token) {
           // store user and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.currentUserSubject.next(user);
         }
-        return user;
+        return user; 
       }));
 
   }

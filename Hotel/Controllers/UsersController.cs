@@ -38,7 +38,8 @@ namespace Hotel.Controllers
                     Estado = "AC", 
                     FirstName = "Adminitrador", 
                     LastName = "    ", 
-                    MobilePhone = "318000" });
+                    MobilePhone = "318000",
+                    TipoUsuario="Administrador" });
 
                 var registrosGuardados = _context.SaveChanges();
 

@@ -31,7 +31,7 @@ export class UsersService {
       return this.http.get<Users[]>(this.baseUrl + 'api/Users')
       .pipe(
           catchError(this.handleErrorService.handleError<Users[]>('Consulta usuarios', null))
-      );
+      ); 
     }
 
     /** GET profesor by identificacion. Will 404 if id not found */

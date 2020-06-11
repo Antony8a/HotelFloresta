@@ -35,9 +35,9 @@ namespace Hotel.Service
                     new Claim(ClaimTypes.MobilePhone, userLogIn.MobilePhone.ToString()),
                     //new Claim(ClaimTypes.Role, "Rol1"),
                     //new Claim(ClaimTypes.Role, "Rol2"),
-                    new Claim(ClaimTypes.Role, "admin"),
-                    new Claim(ClaimTypes.Role, "cliente"),
-                    new Claim(ClaimTypes.Role, "recepcionista"),
+                    new Claim(ClaimTypes.Role, "inicioAdmin"),
+                    new Claim(ClaimTypes.Role, "inicioCliente"),
+                    new Claim(ClaimTypes.Role, "inicioRecepcionista"), 
                 }),
 
                 Expires = DateTime.UtcNow.AddDays(7),
