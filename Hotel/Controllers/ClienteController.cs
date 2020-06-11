@@ -16,7 +16,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Hotel.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ClienteController : ControllerBase
