@@ -53,7 +53,7 @@ namespace Hotel.Controllers
                 var response1 = _clienteService.Guardar(cliente);
                 if (response1.Error) 
                 {
-                    _usersService.Eliminar(users.Usuario);
+                    _usersService.Eliminar(users.UserName);
                     ModelState.AddModelError("Guardar Cliente", response1.Mensaje);
                     var problemDetails = new ValidationProblemDetails(ModelState)
                     {
@@ -89,9 +89,9 @@ namespace Hotel.Controllers
         {
             var users = new Users
             {
-                Identificacion = clienteInput.Identificacion,
+                
                 TipoUsuario = "cliente",
-                Usuario = clienteInput.Usuario,
+                UserName = clienteInput.Usuario,
                 Password = clienteInput.Password,
             };
             return users;

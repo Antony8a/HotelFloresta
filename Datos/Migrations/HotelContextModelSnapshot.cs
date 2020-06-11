@@ -214,10 +214,22 @@ namespace Datos.Migrations
 
             modelBuilder.Entity("Entity.Users", b =>
                 {
-                    b.Property<string>("Usuario")
+                    b.Property<string>("UserName")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Identificacion")
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Estado")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MobilePhone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -226,10 +238,7 @@ namespace Datos.Migrations
                     b.Property<string>("TipoUsuario")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Token")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Usuario");
+                    b.HasKey("UserName");
 
                     b.ToTable("Userss");
                 });

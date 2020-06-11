@@ -54,9 +54,8 @@ export class ClienteRegistroComponent implements OnInit {
   addUser(){    
     this.cliente = this.formGroup.value;
     this.user = new Users();
-    this.user.usuario = this.cliente.usuario;
+    this.user.userName = this.cliente.usuario;
     this.user.password = this.cliente.password;
-    this.user.identificacion = this.cliente.identificacion;
     this.user.tipoUsuario = 'cliente';
     this.usersService.post(this.user).subscribe(p => {
       if (p != null) {

@@ -22,7 +22,7 @@ namespace Hotel.Service
             // return null if user not found
             if (userLogIn == null) 
             return null;
-            var userResponse = new UsersViewModel() { Identificacion = userLogIn.Identificacion, TipoUsuario = userLogIn.TipoUsuario, Usuario = userLogIn.Usuario };
+            var userResponse = new UsersViewModel() { FirstName = userLogIn.FirstName, LastName = userLogIn.LastName, Username = userLogIn.UserName };
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -30,10 +30,14 @@ namespace Hotel.Service
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, userLogIn.Usuario.ToString()),
-                    new Claim(ClaimTypes.Email, userLogIn.TipoUsuario.ToString()),
-                    new Claim(ClaimTypes.Role, "Rol1"),
-                    new Claim(ClaimTypes.Role, "Rol2"),
+                    new Claim(ClaimTypes.Name, userLogIn.UserName.ToString()),
+                    new Claim(ClaimTypes.Email, userLogIn.Email.ToString()),
+                    new Claim(ClaimTypes.MobilePhone, userLogIn.MobilePhone.ToString()),
+                    //new Claim(ClaimTypes.Role, "Rol1"),
+                    //new Claim(ClaimTypes.Role, "Rol2"),
+                    new Claim(ClaimTypes.Role, "admin"),
+                    new Claim(ClaimTypes.Role, "cliente"),
+                    new Claim(ClaimTypes.Role, "recepcionista"),
                 }),
 
                 Expires = DateTime.UtcNow.AddDays(7),

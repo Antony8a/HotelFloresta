@@ -52,9 +52,8 @@ export class RecepcionistaRegistroComponent implements OnInit {
   addUser(){    
     this.recepcionista = this.formGroup.value;
     this.user = new Users();
-    this.user.usuario = this.recepcionista.usuario;
+    this.user.userName = this.recepcionista.usuario;
     this.user.password = this.recepcionista.password;
-    this.user.identificacion = this.recepcionista.identificacion;
     this.user.tipoUsuario = 'recepcionista';
     this.usersService.post(this.user).subscribe(p => {
       if (p != null) {

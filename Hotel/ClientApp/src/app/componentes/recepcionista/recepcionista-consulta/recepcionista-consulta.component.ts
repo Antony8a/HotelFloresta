@@ -109,9 +109,8 @@ export class RecepcionistaConsultaComponent implements OnInit {
   updateUsers(){
     this.recepcionista = this.formGroup.value;
     this.users = new Users();
-    this.users.usuario = this.recepcionista.usuario;
+    this.users.userName = this.recepcionista.usuario;
     this.users.password = this.recepcionista.password;
-    this.users.identificacion = this.recepcionista.identificacion;
     this.users.tipoUsuario = 'recepcionista';
     this.usersService.put(this.users).subscribe(p => {
       if (p != null) {

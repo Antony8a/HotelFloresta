@@ -108,9 +108,8 @@ export class ClienteConsultaComponent implements OnInit {
   updateUsers(){
     this.cliente = this.formGroup.value;
     this.users = new Users();
-    this.users.usuario = this.cliente.usuario;
+    this.users.userName = this.cliente.usuario;
     this.users.password = this.cliente.password;
-    this.users.identificacion = this.cliente.identificacion;
     this.users.tipoUsuario = 'cliente';
     this.usersService.put(this.users).subscribe(p => {
       if (p != null) {
