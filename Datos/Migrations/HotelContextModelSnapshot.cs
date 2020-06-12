@@ -238,6 +238,9 @@ namespace Datos.Migrations
                     b.Property<string>("TipoUsuario")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("UserName");
 
                     b.ToTable("Userss");

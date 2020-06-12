@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-inicio-cliente',
@@ -16,10 +18,17 @@ export class InicioClienteComponent implements OnInit {
   alternkey: boolean = false;
   inicioo: boolean = true;
 
-  constructor() { }
+  constructor(
+    private authenticationService: AuthenticationService,private router: Router
+  ) { }
 
   ngOnInit(): void {
     document.getElementById("client").style.backgroundColor = '#a53cb580';
+  }
+
+  CerrarSesion(){
+    this.authenticationService.logout();
+    this.router.navigate(['login']);
   }
 
   Close() {

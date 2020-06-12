@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder, Validators, ValidationErrors } from '@angular/f
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { Router } from '@angular/router';
 
 interface Food {
   value: string;
@@ -27,6 +29,8 @@ export class ReservaInicioComponent implements OnInit {
   baderilla:number=0;
   totalPagar:number=0;
   validadorFechasIguales:number = 0;
+  clienteR:boolean=false;
+  idn: string;
 
   //esto es de la gestion de reserva
   formGroup: FormGroup;
@@ -51,14 +55,21 @@ export class ReservaInicioComponent implements OnInit {
   constructor(
     private location: Location,
     private reservaService: ReservaService,
+    private clienteService: ClienteService,
     private habitacionService: HabitacionService,
     private formBuilder: FormBuilder,
+    private router: Router,
     private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.buildForm();
     this.traerHabitaciones();
     this.traerReservas();
+    this.esconderDiv();
+  }
+
+  RedirigirInicoi(){
+    this.router.navigate(['inicioHotel']);
   }
 
   traerHabitaciones() {
@@ -101,7 +112,6 @@ export class ReservaInicioComponent implements OnInit {
     this.traerHabitaciones();
     this.habitacionesDisponibles = this.habitaciones;
     this.habitaciones.forEach(hab=>{
-      alert(''+hab.idHabitacion);
       this.reservas.forEach(item => {        
         var toma1 =new Date(this.prueba1);
         var toma2 =new Date(this.prueba2);
@@ -181,5 +191,28 @@ export class ReservaInicioComponent implements OnInit {
     return this.formGroup.get(controlName).errors;
   }
   get control() { return this.formGroup.controls; }
+
+  //cosas del apartado de cliente
+  tomarValor(texto:string){
+    this.idn=texto;
+    this.clienteService.getId(this.idn).subscribe(p => {
+      if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Cliente Encontrado!!! :)';
+         this.esconderDiv();
+      }else{
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Cliente No Encontrado!!! :)';
+        this.clienteR=true;
+      }
+    });
+  }
+
+  esconderDiv(){    
+    this.clienteR=false;
+    
+  }
 
 }

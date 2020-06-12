@@ -14,6 +14,8 @@ namespace Entity
         public string Email { get; set; }
         public string Estado { get; set; }
         public string TipoUsuario { get; set; }
+
+        public string Token { get; set; }
         
     }
 }

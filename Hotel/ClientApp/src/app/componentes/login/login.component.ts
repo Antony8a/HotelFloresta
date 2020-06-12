@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService,
+    private authenticationService: AuthenticationService, 
     private modalService: NgbModal,
 
   ) {
@@ -51,9 +51,9 @@ export class LoginComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
+
   onSubmit() {
     this.submitted = true;
-    
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
@@ -63,11 +63,27 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
+          console.log('Fetch logrado');
+          console.log(data);
+          if(data.tipoUsuario=="Administrador"){
+            this.router.navigate(['inicioAdmin']);
+
+          }
+          else if(data.tipoUsuario=="Recepcionista"){
+            this.router.navigate(['inicioRecepcionista']);
+
+          }
+          else if(data.tipoUsuario=="Cliente"){
+            this.router.navigate(['inicioCliente']);
+
+          }
+          else{
+            this.router.navigate(['login']);
+          }
         },
         error => {
           const modalRef = this.modalService.open(AlertModalComponent);
-          modalRef.componentInstance.title = 'Acceso Denegado';
+          modalRef.componentInstance.title = 'Acceso Denegadoo';
           modalRef.componentInstance.message = error.error;
           this.loading = false;
         });

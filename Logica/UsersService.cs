@@ -14,8 +14,11 @@ namespace Logica
         {
             _context=context;
         }
+
+        
         public Users Validate(string usuario, string password)
         {
+            
             return _context.Userss.Where(u => u.UserName == usuario && u.Password == password && u.Estado== "AC").FirstOrDefault();
         }
 

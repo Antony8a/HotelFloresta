@@ -18,17 +18,16 @@ namespace Hotel.Models
         [Required]
         //[RegularExpression(@"^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$", ErrorMessage ="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico.")]        
         public string Password { get; set; }
-
-        [Required]
-        public string TipoUsuario { get; set; }
+ 
 
     }
-
+    
+/*
     public class TipoUsuarioValidacion : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if ((value.ToString().ToUpper() == "cliente") || (value.ToString().ToUpper() == "recepcionista") || (value.ToString().ToUpper() == "admin"))
+            if ((value.ToString().ToUpper() == "Cliente") || (value.ToString().ToUpper() == "Recepcionista") || (value.ToString().ToUpper() == "Administrador"))
             {
                 return ValidationResult.Success;
             }
@@ -39,15 +38,26 @@ namespace Hotel.Models
         }
     }
 
-    public class UsersViewModel
+*/
+    public class UsersViewModel : UsersInputModel
     {
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Username { get; set; }
-        [JsonIgnore] //no se para que
-        public string Password { get; set; }
-        public string Tipo { get; set; }
+        public string Estado { get; set; }
+        public string TipoUsuario { get; set; }
         public string Token { get; set; }
+
+        public UsersViewModel(){}
+
+        public UsersViewModel(Users users)
+        {
+            UserName = users.UserName;
+            Password = users.Password;
+            FirstName = users.FirstName;
+            LastName = users.LastName;
+            Estado = users.Estado;
+            TipoUsuario =  users.TipoUsuario;
+        }
+
     }
 }

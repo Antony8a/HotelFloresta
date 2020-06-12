@@ -2,6 +2,13 @@
     color: black;
 }
 
+#pruebaxd{
+    width: 90%;
+}
+
 #amos-a-ver{
     width: 90%;
+}
+.nav-link{
+    cursor: pointer;
 }

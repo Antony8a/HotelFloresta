@@ -51,23 +51,20 @@ namespace Hotel.Controllers
         
 
         [AllowAnonymous]
-        [HttpPost()]
-        public IActionResult Login(UsersInputModel model)
+        [HttpPost]
+        public ActionResult<UsersViewModel> Login([FromBody]UsersInputModel model)
         {
             var user = _usersService.Validate(model.UserName, model.Password);
 
-            if (user == null)
-            {
-                ModelState.AddModelError("Acceso Denegado", "Username or password is incorrect");
-                var problemDetails = new ValidationProblemDetails(ModelState)
-                {
-                    Status = StatusCodes.Status400BadRequest,
-                };
-                return BadRequest(problemDetails);
+            if(user!=null){
+                var response = _jwtService.GenerateToken(user);
+                response.Estado=user.Estado;
+                response.TipoUsuario=user.TipoUsuario;
+                return Ok(response);
             }
-            var response = _jwtService.GenerateToken(user);
 
-            return Ok(response);
+            return BadRequest("Usuario o clave es incorrecta");
+            
         }
 
 

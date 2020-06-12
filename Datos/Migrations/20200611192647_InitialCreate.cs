@@ -144,7 +144,8 @@ namespace Datos.Migrations
                     MobilePhone = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     Estado = table.Column<string>(nullable: true),
-                    TipoUsuario = table.Column<string>(nullable: true)
+                    TipoUsuario = table.Column<string>(nullable: true),
+                    Token = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
