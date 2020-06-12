@@ -65,7 +65,7 @@
 
             <div class="row mb-5 pt-5 justify-content-center">
                 <div class="col-md-7 text-center section-heading">
-                    <h2 class="heading">Mas Habitaciones</h2>
+                    <h2 class="heading">Consultar disponibilidad</h2>
                     <p>El hotel la floresta de la ciudad de valledupar ofrece distintos tipos de habitaciones para que
                         sus
                         clientes elijan la que mas les guste ó la que mas se acomode a su presupuesto!... ^-^</p>
@@ -128,72 +128,48 @@
                                     <li><strong>Descripcion: </strong>{{ habitacion.descripcion }}</li>
                                     <li><strong>Tamaño:</strong> 15m<sup>2</sup></li>
                                 </ul>
-                                <p><a (click)="openScrollableContent(longContent)" class="btn btn-primary py-3 px-5">Reservar</a></p>
+                                <p><a (click)="pintarInput(habitacion.idHabitacion)" (click)="openScrollableContent(longContent)" class="btn btn-primary py-3 px-5">Reservar</a></p>
                                 <!----------------------------------------------Modal Ver----------------------------------------------->
                                 <ng-template #longContent let-modal>
                                     <div class="card text-center">
                                         <div class="modal-header ">
                                             <div class="card-header card-header-primary" id="pruebaxd">
-                                                <h4 class="card-title ">Ver reserva</h4>
+                                                <h2 class="card-title modal-title heading text-center">Ver reserva</h2>
                                                 <p class="card-category">Datos del reserva</p>                                                
                                             </div>
-                                            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" (click)="esconderDiv()">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
                                         </div>
                                     </div>
                                     <div class="modal-body">
                                         <div class="block-3">
-                                            <div class="container-1">
-                                                <br><h5 class="text-center" >Informacion</h5><br>
-        
+                                            <div class="container-1">                                                        
                                                 <form [formGroup]="formGroup">
         
                                                     <div class="form-group">
-                                                    <label>Fecha de Inicio</label>
-                                                    <div class="datapicker">
-                                                        <input formControlName="fechaInicio" class="form-control" type="datetime-local" value="{{prueba1}}"
-                                                            placeholder="yyyy-mm-dd" id="dateOfBirth"
-                                                            [ngClass]="{ 'is-invalid':  control.fechaInicio.errors }">
+                                                        <label><h3 class="card-title modal-title heading text-center">Fecha de Inicio: </h3></label><br>
+                                                        <label> {{prueba1}}</label>
                                                     </div>
-                                                    <div *ngIf=" control.fechaInicio.errors" class="invalid-feedback">
-                                                        <div *ngIf="control.fechaInicio.errors.required">La fecha de inicio es requerido</div>
+                        
+                                                    <div class="form-group">
+                                                        <label><h3 class="card-title modal-title heading text-center">Fecha final: </h3></label><br>
+                                                        <label> {{prueba2}}</label>
                                                     </div>
-                                                </div>
-        
+
                                                 <div class="form-group">
-                                                    <label>Fecha fin</label>
-                                                    <div class="datapicker">
-                                                        <input formControlName="fechaFin" class="form-control" type="datetime-local" value="{{prueba2}}"
-                                                            placeholder="yyyy-mm-dd" id="dateOfBirth"
-                                                            [ngClass]="{ 'is-invalid':  control.fechaFin.errors }">
-                                                    </div>
-                                                    <div *ngIf=" control.fechaFin.errors" class="invalid-feedback">
-                                                        <div *ngIf="control.fechaFin.errors.required">La fecha final es requerida</div>
-                                                    </div>
+                                                    <label><h3 class="card-title modal-title heading text-center">Habitacion: </h3></label><br>
+                                                    <label> {{habitacion.idHabitacion}} - {{habitacion.tipo}}</label>
                                                 </div>
-        
+
                                                 <div class="form-group">
-                                                    <label for="cantidadPersonas">Cantidad de Personas</label>
+                                                    <label for="cantidadPersonas"><h3 class="card-title modal-title heading text-center">Cantidad de Personas</h3></label>
                                                     <input type="number" name="cantidadPersonas" formControlName="cantidadPersonas"
                                                         class="form-control" [ngClass]="{'is-invalid':control.cantidadPersonas.errors}" />
                                                     <div *ngIf="control.cantidadPersonas.errors" class="invalid-feedback">
                                                         <div *ngIf="control.cantidadPersonas.errors.required">La cantidad de personas es requerida</div>
                                                     </div>
                                                 </div>
-
-                                                <div class="form-group">
-                                                    <label for="idHabitacion">Habitacion</label>
-                                                    <select class="custom-select" id="idHabitacion" formControlName="idHabitacion" value="{{habitacion.idHabitacion}}"
-                                                        disabled class="form-control" [ngClass]="{'is-invalid':control.idHabitacion.errors}">
-                                                    </select>
-                                                    <div *ngIf="control.idHabitacion.errors" class="invalid-feedback">
-                                                        <div *ngIf="control.idHabitacion.errors.required">La habitacion es requerida</div>
-                                                    </div>
-                                                </div>
         
                                                 <div class="form-group">
-                                                    <label>Identificación del Cliente</label>
+                                                    <label><h3 class="card-title modal-title heading text-center">Identificación del Cliente</h3></label>
                                                     <div class="input-group">
                                                         <input type="text" formControlName="idCliente" class="form-control" #idc
                                                             [ngClass]="{ 'is-invalid':  control.idCliente.errors }" />
@@ -205,38 +181,35 @@
                                                         <div *ngIf="control.idCliente.errors.required">La Identificación del cliente es requerida</div>
                                                     </div>
                                                 </div><br>
-                                                                                               
-                                                <div class="clie" *ngIf="clienteR">
-                                                    <app-cliente-registro></app-cliente-registro>
-                                                </div><br>
-                                                    
-                                                <div class="text-center">
-                                                    <button class="btn btn-primary" (click)=" openSm(content)"
-                                                        [disabled]="formGroup.invalid">Registrar Reserva</button>
-        
-                                                        <!-----------------------este modal es quien confirma la edicion------------------------>
-                                                        <ng-template #content let-modal>
-                                                            <div class="card">
-                                                            <div class="modal-header">
-                                                                <div class="card-header card-header-primary" id="pruebaxd">
-                                                                    <h4 class="card-title ">Registrar reserva?</h4>
-                                                                </div>
-                                                                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                                                                <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p>seguro que desea Resgistrar esta reserva?&hellip;</p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-outline-dark" (click)=" onSubmit()" (click)="modal.close('Close click')">Modificar</button>
-                                                            </div>
-                                                        </ng-template>
-                                                        <!-----------------------este modal es quien confirma la edicion------------------------>    
-                                                    </div>
                                                 </form>
                                             </div>
+                                            <div class="clie" *ngIf="clienteR">
+                                                <app-cliente-registro></app-cliente-registro>
+                                            </div><br>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer text-center">
+                                        <div class="text-center">
+                                            <button class="btn btn-primary" (click)=" openSm(content)" 
+                                                [disabled]="formGroup.invalid">Registrar Reserva</button>
+
+                                                <!-----------------------este modal es quien confirma la edicion------------------------>
+                                                <ng-template #content let-modal>
+                                                    <div class="card">
+                                                    <div class="modal-header">
+                                                        <div class="card-header card-header-primary" id="pruebaxd">
+                                                            <h2 class="card-title modal-title heading text-center">Registrar reserva?</h2>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>seguro que desea Resgistrar esta reserva?&hellip;</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-outline-dark" (click)=" onSubmit()" (click)="modal.close('Close click')">Reservar</button>
+                                                    </div>
+                                                </ng-template>
+                                                <!-----------------------este modal es quien confirma la edicion------------------------>    
                                         </div>
                                     </div>                                    
                                 </ng-template>
