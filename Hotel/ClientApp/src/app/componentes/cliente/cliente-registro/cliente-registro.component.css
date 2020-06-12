@@ -9,7 +9,9 @@
     text-align: center;
 }
 
-
+#pruebaxd{
+    width: 100%;
+}
 
 .button{position:relative;padding:1em 1.5em;border:none;background-color:transparent;cursor:pointer;outline:0;font-size:18px;}
  .button.type1{color:#fff; }

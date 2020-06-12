@@ -30,7 +30,11 @@ export class ReservaInicioComponent implements OnInit {
   totalPagar:number=0;
   validadorFechasIguales:number = 0;
   clienteR:boolean=false;
+  cumpleCondicion:number=0;
   idn: string;
+  _fechaInicio:Date;
+  _fechaFin:Date;
+  _idHabitacion:string;
 
   //esto es de la gestion de reserva
   formGroup: FormGroup;
@@ -61,8 +65,7 @@ export class ReservaInicioComponent implements OnInit {
     private router: Router,
     private modalService: NgbModal) { }
 
-  ngOnInit(): void {
-    this.buildForm();
+  ngOnInit() {
     this.traerHabitaciones();
     this.traerReservas();
     this.esconderDiv();
@@ -110,24 +113,42 @@ export class ReservaInicioComponent implements OnInit {
   comprobadorfechas(){
     this.traerReservas();    
     this.traerHabitaciones();
-    this.habitacionesDisponibles = this.habitaciones;
     this.habitaciones.forEach(hab=>{
-      this.reservas.forEach(item => {        
+      this.reservas.forEach(res => {  
         var toma1 =new Date(this.prueba1);
         var toma2 =new Date(this.prueba2);
-        var fechaI = new Date(item.fechaInicio);
-        var fechaF = new Date(item.fechaFin);        
-        if(toma1 > fechaI && toma1 < fechaF && hab.idHabitacion==item.idHabitacion ||
-           toma2 > fechaI && toma2 < fechaF && hab.idHabitacion==item.idHabitacion ||
-           toma1 < fechaI && toma2 > fechaF && hab.idHabitacion==item.idHabitacion){
-            for(var i = this.habitacionesDisponibles.length - 1; i >= 0; i--) {
-              if(this.habitacionesDisponibles[i].idHabitacion === item.idHabitacion) {
-                 this.habitacionesDisponibles.splice(i, 1);
-              }
-            }
+        var fechaI = new Date(res.fechaInicio);
+        var fechaF = new Date(res.fechaFin);        
+        if(toma1 > fechaI && toma1 < fechaF && hab.idHabitacion==res.idHabitacion ||
+           toma2 > fechaI && toma2 < fechaF && hab.idHabitacion==res.idHabitacion ||
+           toma1 < fechaI && toma2 > fechaF && hab.idHabitacion==res.idHabitacion){
+              this.cumpleCondicion=this.cumpleCondicion+1;              
+              alert('entró aquí en la condicion'+hab.idHabitacion);
           }
       });
+      if(this.cumpleCondicion==0){
+        alert('entra a condicion');  
+        var probador = 0;
+        this.habitacionesDisponibles.forEach(habdis=>{
+          if(habdis.idHabitacion==hab.idHabitacion){
+            probador = probador+1;
+          }
+        });
+        if(probador==0){
+          alert('si agrega');  
+          this.habitacionesDisponibles.push(hab);
+        }             
+       }else{
+        alert('no agrega');  
+          this.cumpleCondicion=0;
+        }
     });
+    if(this.habitacionesDisponibles.length<=0){
+      const messageBox = this.modalService.open(AlertModalComponent)
+      messageBox.componentInstance.title = "¡Vaya!...";
+      messageBox.componentInstance.message = 'No hay habitaciones disponibles en esta fecha. '+
+      '<br> Intente consultar con otro intervalo nuevamente :D.';
+    }
     this.calcularDias();
   }
   
@@ -135,8 +156,8 @@ export class ReservaInicioComponent implements OnInit {
     this.habitacionesDisponibles.forEach(hab=>{      
       var dfi = new Date(this.prueba1).getTime();
       var dff = new Date(this.prueba2).getTime();
-      var diff = dff - dfi;
-      this.totalPagar = (diff/(1000*60*60*24));
+      var diff = (dff - dfi);
+      this.totalPagar = (diff/(1000*60*60*24))+1;
     });
   }
   
@@ -152,6 +173,13 @@ export class ReservaInicioComponent implements OnInit {
     }
   }
 
+  pintarInput(idhab:string){
+    this._fechaFin=this.prueba2;
+    this._fechaInicio=this.prueba1;
+    this._idHabitacion=idhab;
+    this.buildForm();
+  }
+
   //Esto es del modal content del registro de reserva
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { size: 'lg', scrollable: true, centered: true });
@@ -161,8 +189,12 @@ export class ReservaInicioComponent implements OnInit {
     this.modalService.open(content, { size: 'sm' ,centered: true });
   }
 
-  onSubmit(){
-
+  onSubmit() {
+    if (this.formGroup.invalid) {
+      return;
+    }else{
+      this.add();
+    }
   }
 
   //todo lo del formGroup
@@ -170,12 +202,25 @@ export class ReservaInicioComponent implements OnInit {
   private buildForm() {
     this.reserva = new Reserva();
     this.formGroup = this.formBuilder.group({
-      fechaInicio: [this.reserva.fechaInicio, Validators.required],
-      fechaFin: [this.reserva.fechaFin, Validators.required],
+      fechaInicio:this.prueba1,
+      fechaFin:this.prueba2,
+      idHabitacion: this._idHabitacion,
       cantidadPersonas: [this.reserva.cantidadPersonas, Validators.required],
       idCliente: [this.reserva.idCliente, Validators.required],
-      idHabitacion: [this.reserva.idHabitacion, Validators.required],
     });
+  }
+
+  add() {
+    this.reserva = this.formGroup.value;
+    this.reservaService.post(this.reserva).subscribe(p => {
+      if (p != null) {
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Reseerva creada!!! :D';
+        this.reserva = p;
+      }
+    });
+    this.traerReservas();
   }
 
   public getError(controlName: string): string {
@@ -195,24 +240,29 @@ export class ReservaInicioComponent implements OnInit {
   //cosas del apartado de cliente
   tomarValor(texto:string){
     this.idn=texto;
-    this.clienteService.getId(this.idn).subscribe(p => {
-      if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'Cliente Encontrado!!! :)';
-         this.esconderDiv();
-      }else{
-        const messageBox = this.modalService.open(AlertModalComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'Cliente No Encontrado!!! :)';
-        this.clienteR=true;
-      }
-    });
+    if(texto==''){
+      const messageBox = this.modalService.open(AlertModalComponent)
+      messageBox.componentInstance.title = "Resultado Operación";
+      messageBox.componentInstance.message = 'Cliente No Encontrado!!! :)'
+    }else{
+      this.clienteService.getId(this.idn).subscribe(p => {
+        if (p != null) {
+          const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Resultado Operación";
+          messageBox.componentInstance.message = 'Cliente Encontrado!!! :)';
+           this.esconderDiv();
+        }else{
+          const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Resultado Operación";
+          messageBox.componentInstance.message = 'Cliente No Encontrado!!! :)';
+          this.clienteR=true;
+        }
+      });
+    }
   }
 
   esconderDiv(){    
-    this.clienteR=false;
-    
+    this.clienteR=false;    
   }
 
 }
