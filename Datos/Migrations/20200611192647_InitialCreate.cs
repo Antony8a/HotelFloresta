@@ -137,15 +137,19 @@ namespace Datos.Migrations
                 name: "Userss",
                 columns: table => new
                 {
-                    Usuario = table.Column<string>(nullable: false),
+                    UserName = table.Column<string>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
+                    MobilePhone = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Estado = table.Column<string>(nullable: true),
                     TipoUsuario = table.Column<string>(nullable: true),
-                    Identificacion = table.Column<string>(nullable: true),
                     Token = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Userss", x => x.Usuario);
+                    table.PrimaryKey("PK_Userss", x => x.UserName);
                 });
         }
 

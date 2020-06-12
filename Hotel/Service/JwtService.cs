@@ -15,35 +15,98 @@ namespace Hotel.Service
         private readonly AppSetting _appSettings;
         public JwtService(IOptions<AppSetting> appSettings) => _appSettings = appSettings.Value;
 
-         
+
 
         public UsersViewModel GenerateToken(Users userLogIn)
         {
             // return null if user not found
-            if (userLogIn == null) 
-            return null;
-            var userResponse = new UsersViewModel() { Identificacion = userLogIn.Identificacion, TipoUsuario = userLogIn.TipoUsuario, Usuario = userLogIn.Usuario };
+            if (userLogIn == null)
+                return null;
+            var userResponse = new UsersViewModel() { FirstName = userLogIn.FirstName, LastName = userLogIn.LastName, UserName = userLogIn.UserName };
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
+
+            if (userLogIn.TipoUsuario == "admin")
             {
-                Subject = new ClaimsIdentity(new Claim[]
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    new Claim(ClaimTypes.Name, userLogIn.Usuario.ToString()),
-                    new Claim(ClaimTypes.Email, userLogIn.TipoUsuario.ToString()),
-                    new Claim(ClaimTypes.Role, "Rol1"),
-                    new Claim(ClaimTypes.Role, "Rol2"),
+
+                    Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, userLogIn.FirstName.ToString()),
+                    new Claim(ClaimTypes.Email, userLogIn.LastName.ToString()),
+                    new Claim(ClaimTypes.MobilePhone, userLogIn.TipoUsuario.ToString()),
+                    //new Claim(ClaimTypes.Role, "Rol1"),
+                    //new Claim(ClaimTypes.Role, "Rol2"),
+                    new Claim(ClaimTypes.Role, "admin"),
+                    //new Claim(ClaimTypes.Role, "Cliente"),
+                    //new Claim(ClaimTypes.Role, "Recepcionista"), 
                 }),
 
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
 
-            };
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                userResponse.Token = tokenHandler.WriteToken(token);
+                return userResponse;
+            }else 
+            if(userLogIn.TipoUsuario == "recepcionista")
+            {
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            userResponse.Token = tokenHandler.WriteToken(token);
-            return userResponse;
+                    Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, userLogIn.FirstName.ToString()),
+                    new Claim(ClaimTypes.Email, userLogIn.LastName.ToString()),
+                    new Claim(ClaimTypes.MobilePhone, userLogIn.TipoUsuario.ToString()),
+                    //new Claim(ClaimTypes.Role, "Rol1"),
+                    //new Claim(ClaimTypes.Role, "Rol2"),
+                    //new Claim(ClaimTypes.Role, "admin"),
+                    //new Claim(ClaimTypes.Role, "Cliente"),
+                    new Claim(ClaimTypes.Role, "recepcionista"), 
+                }),
+
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                userResponse.Token = tokenHandler.WriteToken(token);
+                return userResponse;
+            }
+            else 
+            {
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+
+                    Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(ClaimTypes.Name, userLogIn.FirstName.ToString()),
+                    new Claim(ClaimTypes.Email, userLogIn.LastName.ToString()),
+                    new Claim(ClaimTypes.MobilePhone, userLogIn.TipoUsuario.ToString()),
+                    //new Claim(ClaimTypes.Role, "Rol1"),
+                    //new Claim(ClaimTypes.Role, "Rol2"),
+                    //new Claim(ClaimTypes.Role, "admin"),
+                    new Claim(ClaimTypes.Role, "Cliente"),
+                    //new Claim(ClaimTypes.Role, "recepcionista"), 
+                }),
+
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                userResponse.Token = tokenHandler.WriteToken(token);
+                return userResponse;
+            }
+
+
+            
+
+
 
         }
 

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-admin',
@@ -15,10 +19,21 @@ export class InicioAdminComponent implements OnInit {
   clienteRegistroc: boolean;
   alternkey: boolean = false;
   inicioo: boolean = true;
-  constructor() { }
+  loading = false;
+  submitted = false;
+  constructor(
+    private authenticationService: AuthenticationService,private router: Router
+  ) { }
 
   ngOnInit(): void {
     document.getElementById("ini").style.backgroundColor = '#a53cb580';
+    
+      
+  }
+
+  CerrarSesion(){
+    this.authenticationService.logout();
+    this.router.navigate(['login']);
   }
 
   

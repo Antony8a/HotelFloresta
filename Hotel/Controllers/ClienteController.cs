@@ -27,6 +27,7 @@ namespace Hotel.Controllers
             _clienteService = new ClienteService(context);
         }
         // GET: api/Cliente
+        
         [HttpGet]
         public IEnumerable<ClienteViewModel> Gets()
         {

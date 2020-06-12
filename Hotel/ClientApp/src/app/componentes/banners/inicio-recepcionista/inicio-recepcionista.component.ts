@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-inicio-recepcionista',
@@ -15,10 +17,17 @@ export class InicioRecepcionistaComponent implements OnInit {
   clienteRegistroc: boolean;
   alternkey: boolean = false;
   inicioo: boolean = true;
-  constructor() { }
+  constructor(
+    private authenticationService: AuthenticationService,private router: Router
+  ) { }
 
   ngOnInit(): void {
     document.getElementById("ini").style.backgroundColor = '#a53cb580';
+  }
+
+  CerrarSesion(){
+    this.authenticationService.logout();
+    this.router.navigate(['login']);
   }
 
   Close() {

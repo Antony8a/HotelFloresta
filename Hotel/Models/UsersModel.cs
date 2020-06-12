@@ -6,33 +6,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace Hotel.Models
 {
     public class UsersInputModel
     {
-        [Required(ErrorMessage = "El Usuario es requerido")]
-        public string Usuario { get; set; }
+        [Required]
+        public string UserName { get; set; }
 
-        [Required(ErrorMessage = "La contraseña es requerida")]
-        [StringLength(20, MinimumLength = 4, ErrorMessage = "La contraseña debe tener como maximo 20 y minimo 4 caracteres")]
+        [Required]
+        //[RegularExpression(@"^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$", ErrorMessage ="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico.")]        
         public string Password { get; set; }
+ 
 
-        [Required(ErrorMessage = "El Tipo de usuario es requerido")]
-        [TipoUsuarioValidacion( ErrorMessage="El Tipo de usuario debe ser cliente, recepcionista o admin")]
-        public string TipoUsuario { get; set; }
-
-        [Required(ErrorMessage = "La identificacion es requerida")]
-        public string Identificacion { get; set; }
-        
-        [Required(ErrorMessage = "La identificacion es requerida")]
-        public string Token { get; set; }
     }
-
-    public class TipoUsuarioValidacion : ValidationAttribute{
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext) 
+    
+/*
+    public class TipoUsuarioValidacion : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if ((value.ToString().ToUpper() == "CLIENTE") || (value.ToString().ToUpper() == "RECEPCIONISTA") || (value.ToString().ToUpper() == "ADMIN"))
+            if ((value.ToString().ToUpper() == "Cliente") || (value.ToString().ToUpper() == "Recepcionista") || (value.ToString().ToUpper() == "Administrador"))
             {
                 return ValidationResult.Success;
             }
@@ -43,19 +38,26 @@ namespace Hotel.Models
         }
     }
 
+*/
     public class UsersViewModel : UsersInputModel
     {
-        public UsersViewModel()
-        {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Estado { get; set; }
+        public string TipoUsuario { get; set; }
+        public string Token { get; set; }
 
-        }
+        public UsersViewModel(){}
+
         public UsersViewModel(Users users)
         {
-            Usuario = users.Usuario;
+            UserName = users.UserName;
             Password = users.Password;
-            TipoUsuario = users.TipoUsuario;
-            Identificacion = users.Identificacion;
-            Token = users.Token;
+            FirstName = users.FirstName;
+            LastName = users.LastName;
+            Estado = users.Estado;
+            TipoUsuario =  users.TipoUsuario;
         }
+
     }
 }

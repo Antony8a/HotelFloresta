@@ -14,9 +14,12 @@ namespace Logica
         {
             _context=context;
         }
+
+        
         public Users Validate(string usuario, string password)
         {
-            return _context.Userss.FirstOrDefault(t => t.Usuario == usuario && t.Password == password );
+            
+            return _context.Userss.Where(u => u.UserName == usuario && u.Password == password && u.Estado== "AC").FirstOrDefault();
         }
 
 
@@ -24,7 +27,7 @@ namespace Logica
         {
             try
             {
-                var userBuscado = _context.Userss.Find(user.Usuario);
+                var userBuscado = _context.Userss.Find(user.UserName);
                 if (userBuscado != null)
                 {
                     return new GuardarUsersResponse("Error el usuario ya se encuentra registrado");
@@ -54,7 +57,7 @@ namespace Logica
                 {
                     _context.Userss.Remove(users);
                     _context.SaveChanges();
-                    return ($"El registro {users.Usuario} se ha eliminado satisfactoriamente.");
+                    return ($"El registro {users.UserName} se ha eliminado satisfactoriamente.");
                 }
                 else
                 {
@@ -67,33 +70,7 @@ namespace Logica
             }
         }
 
-        public ModificarUsersResponse Modificar(Users usersNuevo)
-        {
-            try
-            {
-                var usersViejo = _context.Userss.Find(usersNuevo.Usuario);
-                if (usersViejo != null)
-                {
-                    usersViejo.Usuario = usersNuevo.Usuario;
-                    usersViejo.Password = usersNuevo.Password;
-                    usersViejo.TipoUsuario = usersNuevo.TipoUsuario;
-                    usersViejo.Identificacion = usersNuevo.Identificacion;
-                    _context.Userss.Update(usersViejo);
-                    _context.SaveChanges();
-                    return new ModificarUsersResponse(usersViejo);
-                }
-                else
-                {
-                    return new ModificarUsersResponse($"Lo sentimos, {usersNuevo.Usuario} no se encuentra registrada.");
-                }
-            }
-            catch (Exception e)
-            {
-
-                return new ModificarUsersResponse($"Error de la Aplicación: {e.Message}");
-            }
-        }
-
+        
         public Users BuscarxIdentificacion(string identificacion)
         {
             Users users = _context.Userss.Find(identificacion);
@@ -117,21 +94,6 @@ namespace Logica
             public Users Users { get; set; }
         }
 
-        public class ModificarUsersResponse
-        {
-            public ModificarUsersResponse(Users users)
-            {
-                Error = false;
-                Users = users;
-            }
-            public ModificarUsersResponse(string mensaje)
-            {
-                Error = true;
-                Mensaje = mensaje;
-            }
-            public bool Error { get; set; }
-            public string Mensaje { get; set; }
-            public Users Users { get; set; }
-        }
+        
     }
 }

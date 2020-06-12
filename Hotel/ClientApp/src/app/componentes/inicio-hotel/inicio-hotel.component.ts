@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-hotel',
@@ -14,11 +14,22 @@ export class InicioHotelComponent implements OnInit {
   pmes:string;
   paño:string;
   
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(){
     this.asignarfecha();
   }
+
+  RedirigirReserva(){
+    this.router.navigate(['realizarReserva']);
+  }
+  
+  RedirigirLogin(){
+    this.router.navigate(['login']);
+  }
+
   asignarfecha(){
     var toma = new Date();
     this.pdia = toma.getDate().toString();

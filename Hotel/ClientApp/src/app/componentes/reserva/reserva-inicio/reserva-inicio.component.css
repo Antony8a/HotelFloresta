@@ -10,6 +10,10 @@
     width: 90%;
 }
 
+.nav-link{
+    cursor: pointer;
+}
+
 .container-1{
     width: 60%;
     margin: auto;

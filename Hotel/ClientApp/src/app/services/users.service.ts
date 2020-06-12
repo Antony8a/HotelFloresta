@@ -31,7 +31,7 @@ export class UsersService {
       return this.http.get<Users[]>(this.baseUrl + 'api/Users')
       .pipe(
           catchError(this.handleErrorService.handleError<Users[]>('Consulta usuarios', null))
-      );
+      ); 
     }
 
     /** GET profesor by identificacion. Will 404 if id not found */
@@ -52,7 +52,7 @@ export class UsersService {
 
      /** PUT: update the profesor on the server */
     put(users: Users): Observable<any> {
-      const url = `${this.baseUrl}api/Users/${users.usuario}`;
+      const url = `${this.baseUrl}api/Users/${users.userName}`;
       return this.http.put(url, users, httpOptions)
       .pipe(
         catchError(this.handleErrorService.handleError<any>('Editar Usuario'))
@@ -62,7 +62,7 @@ export class UsersService {
     
   /** DELETE: delete the hero from the server */
   delete (users: Users | string): Observable<string> {
-    const id = typeof users === 'string' ? users : users.usuario;
+    const id = typeof users === 'string' ? users : users.userName;
     return this.http.delete<string>(this.baseUrl + 'api/users/'+ id)
     .pipe(
       catchError(this.handleErrorService.handleError<string>('Elimiar Usuario', null))

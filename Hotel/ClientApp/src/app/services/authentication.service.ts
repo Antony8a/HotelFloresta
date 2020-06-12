@@ -16,29 +16,26 @@ export class AuthenticationService {
 
   constructor(
     private http: HttpClient,
-    @Inject('BASE_URL') baseUrl: string,
+    @Inject('BASE_URL') _baseUrl: string,
     private handleErrorService: HandleHttpErrorService){
     this.currentUserSubject = new BehaviorSubject<Users>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
-    this.baseUrl = baseUrl;
+    this.baseUrl = _baseUrl;
   }
 
   public get currentUserValue(): Users {
     return this.currentUserSubject.value;
   }
 
-  login(username:string, password:string) {
-    return this.http.post<any>(`${this.baseUrl}api/login`, { username, password })
-      .pipe(map(user => {
-        if (user && user.token) {
+  login(username, password) {
+    return this.http.post<Users>(this.baseUrl+'api/Users', { username, password }).pipe(map(users => {
           // store user and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-        }
-        return user;
+          localStorage.setItem('currentUser', JSON.stringify(users));
+          this.currentUserSubject.next(users);
+        return users; 
       }));
 
-  }
+  } 
 
   logout() {
     // remove user from local storage and set current user to null

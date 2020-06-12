@@ -9,6 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { Router } from '@angular/router';
 
 interface Food {
   value: string;
@@ -61,12 +62,17 @@ export class ReservaInicioComponent implements OnInit {
     private clienteService: ClienteService,
     private habitacionService: HabitacionService,
     private formBuilder: FormBuilder,
+    private router: Router,
     private modalService: NgbModal) { }
 
   ngOnInit() {
     this.traerHabitaciones();
     this.traerReservas();
     this.esconderDiv();
+  }
+
+  RedirigirInicoi(){
+    this.router.navigate(['inicioHotel']);
   }
 
   traerHabitaciones() {
