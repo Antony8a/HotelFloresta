@@ -90,7 +90,7 @@ namespace Hotel.Service
                     //new Claim(ClaimTypes.Role, "Rol1"),
                     //new Claim(ClaimTypes.Role, "Rol2"),
                     //new Claim(ClaimTypes.Role, "admin"),
-                    new Claim(ClaimTypes.Role, "Cliente"),
+                    new Claim(ClaimTypes.Role, "cliente"),
                     //new Claim(ClaimTypes.Role, "recepcionista"), 
                 }),
 

@@ -56,12 +56,12 @@ export class ClienteRegistroComponent implements OnInit {
     this.user = new Users();
     this.user.userName = this.cliente.usuario;
     this.user.password = this.cliente.password;
-    this.user.tipoUsuario = 'cliente';
+    this.user.tipoUsuario = 'Cliente';
     this.usersService.post(this.user).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'Usuario creado!!! :-)';
+        messageBox.componentInstance.message = 'Rol Cliente creado!!! :-)';
         this.user = p;
       }
     });

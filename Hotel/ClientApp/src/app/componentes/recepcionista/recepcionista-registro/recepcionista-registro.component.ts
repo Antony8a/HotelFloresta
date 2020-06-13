@@ -54,12 +54,12 @@ export class RecepcionistaRegistroComponent implements OnInit {
     this.user = new Users();
     this.user.userName = this.recepcionista.usuario;
     this.user.password = this.recepcionista.password;
-    this.user.tipoUsuario = 'recepcionista';
+    this.user.tipoUsuario = 'Recepcionista';
     this.usersService.post(this.user).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'Usuario creado!!! :-)';
+        messageBox.componentInstance.message = 'Rol Recepcionista creado!!! :-)';
         this.user = p;
       }
     });
@@ -72,7 +72,7 @@ export class RecepcionistaRegistroComponent implements OnInit {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.message = 'recepcionista creada!!! :D';
+        messageBox.componentInstance.message = 'Recepcionista creado!!! :D';
         this.recepcionista = p;
       }
     });

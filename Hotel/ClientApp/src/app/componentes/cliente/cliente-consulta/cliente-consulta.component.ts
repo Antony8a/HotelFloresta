@@ -110,7 +110,7 @@ export class ClienteConsultaComponent implements OnInit {
     this.users = new Users();
     this.users.userName = this.cliente.usuario;
     this.users.password = this.cliente.password;
-    this.users.tipoUsuario = 'cliente';
+    this.users.tipoUsuario = 'Cliente';
     this.usersService.put(this.users).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
