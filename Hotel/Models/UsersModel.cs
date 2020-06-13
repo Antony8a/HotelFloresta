@@ -18,6 +18,7 @@ namespace Hotel.Models
         [Required]
         //[RegularExpression(@"^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$", ErrorMessage ="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula, al menos una mayúscula y al menos un caracter no alfanumérico.")]        
         public string Password { get; set; }
+        public string TipoUsuario { get; set; }
  
 
     }
@@ -44,7 +45,6 @@ namespace Hotel.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Estado { get; set; }
-        public string TipoUsuario { get; set; }
         public string Token { get; set; }
 
         public UsersViewModel(){}
@@ -57,6 +57,7 @@ namespace Hotel.Models
             LastName = users.LastName;
             Estado = users.Estado;
             TipoUsuario =  users.TipoUsuario;
+            Token = "Telakreiste";
         }
 
     }

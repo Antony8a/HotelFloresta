@@ -44,7 +44,7 @@ export class UsersService {
     }
 
     post(Users: Users): Observable<Users> {
-      return this.http.post<Users>(this.baseUrl + 'api/Users', Users)
+      return this.http.post<Users>(this.baseUrl + 'api/UserCliente', Users)
         .pipe(
           catchError(this.handleErrorService.handleError<Users>('Registrar Usuario', null))
         );
