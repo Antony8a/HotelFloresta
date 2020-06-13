@@ -70,6 +70,14 @@
                         
                         
                     </li>
+                    <li class="nav-item active" id="fact">
+                        <a class="nav-link" (click)=changeFactura()>
+                            <i class="material-icons">deck</i>
+                            <p>Facturas</p>
+                        </a>
+                        
+                        
+                    </li>
                     <!-- your sidebar here -->
                 </ul>
             </div>
@@ -175,6 +183,9 @@
                         </div>
                         <div class="cliRec" *ngIf="clienteRegistroc">
                             <app-cliente-registro></app-cliente-registro>
+                        </div>
+                        <div class="factu" *ngIf="facturaC">
+                            <app-factura></app-factura>
                         </div>
                         
                     </div>

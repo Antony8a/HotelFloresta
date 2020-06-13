@@ -26,6 +26,7 @@ import { InicioClienteComponent } from './componentes/banners/inicio-cliente/ini
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 
 import { AuthGuard } from './services/auth.guard';
+import { FacturaComponent } from './componentes/factura/factura.component';
 
 const routes: Routes = [
   { 
@@ -138,6 +139,10 @@ const routes: Routes = [
   {
     path: 'inicioRecepcionista',
     component: InicioRecepcionistaComponent,canActivate: [AuthGuard] 
+  },
+  {
+    path: 'facturaConsulta',
+    component: FacturaComponent,canActivate: [AuthGuard] 
   },
 
 
