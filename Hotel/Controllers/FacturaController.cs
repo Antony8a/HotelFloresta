@@ -85,7 +85,7 @@ namespace Hotel.Controllers
 
         // PUT: api/Factura/5
         [HttpPut("{identificacion}")]
-        public ActionResult<FacturaViewModel> Put(string identificacion, FacturaInputModel facturaInput)
+        public ActionResult<FacturaViewModel> Put(int identificacion, FacturaInputModel facturaInput)
         {
             Factura factura = MapearFactura(facturaInput);
             var id=_facturaService.BuscarxIdentificacion(factura.IdFactura);
