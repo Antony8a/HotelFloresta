@@ -21,12 +21,10 @@ namespace Hotel.Models
         public decimal Total            { get; set; }
     
     }
-
     public class FacturaViewModel : FacturaInputModel
     {
         public FacturaViewModel()
         {
-
         }
         public FacturaViewModel(Factura factura)
         {
