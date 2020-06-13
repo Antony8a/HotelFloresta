@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { HabitacionService } from 'src/app/services/habitacion.service';
 import { ReservaService } from 'src/app/services/reserva.service';
@@ -10,6 +10,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Router } from '@angular/router';
+import * as jsPDF from  'jspdf';
 
 interface Food {
   value: string;
@@ -22,6 +23,8 @@ interface Food {
   styleUrls: ['./reserva-inicio.component.css']
 })
 export class ReservaInicioComponent implements OnInit {
+
+  @ViewChild('htmlData') htmlData:ElementRef;
 
   modal: boolean = false;
   prueba1:Date;
@@ -264,5 +267,33 @@ export class ReservaInicioComponent implements OnInit {
   esconderDiv(){    
     this.clienteR=false;    
   }
+
+  //esto es una prueba para generar pdfs
+
+  public openPDF():void {
+    let DATA = this.htmlData.nativeElement;
+    let doc = new jsPDF('p','pt', 'a4');
+    doc.fromHTML(DATA.innerHTML,15,15);
+    doc.output('dataurlnewwindow');
+  }
+
+
+  public downloadPDF():void {
+    let DATA = this.htmlData.nativeElement;
+    let doc = new jsPDF('p','pt', 'a4');
+
+    let handleElement = {
+      '#editor':function(element,renderer){
+        return true;
+      }
+    };
+    doc.fromHTML(DATA.innerHTML,15,15,{
+      'width': 200,
+      'elementHandlers': handleElement
+    });
+
+    doc.save('angular-demo.pdf');
+  }
+  //aqui finaliza la prueba para generar pdfs
 
 }

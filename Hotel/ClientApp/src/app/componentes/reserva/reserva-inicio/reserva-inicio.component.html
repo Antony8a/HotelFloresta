@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="site-section bg-light">
-        <div class="container" >
+        <div class="container text-center" id="htmlData" #htmlData>
             <div class="row mb-5" *ngIf='habitaciones && habitaciones.length'>
                 <div class="col-md-12 mb-5" *ngFor="let habitacion of habitaciones; index as i" >
                     <div class="block-3 d-md-flex">
@@ -62,6 +62,11 @@
                         </div>
                     </div>
                 </div>
+
+            <div class="col-md-4 text-right">
+                <button class="btn btn-success btn-block" (click)="openPDF()">Open PDF</button>
+                <button class="btn btn-danger btn-block" (click)="downloadPDF()">Download PDF</button>
+            </div>
 
             <div class="row mb-5 pt-5 justify-content-center">
                 <div class="col-md-7 text-center section-heading">
