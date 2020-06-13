@@ -74,8 +74,10 @@ namespace Datos.Migrations
 
             modelBuilder.Entity("Entity.Factura", b =>
                 {
-                    b.Property<string>("IdFactura")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdFactura")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("IdReserva")
                         .HasColumnType("nvarchar(max)");

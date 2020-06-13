@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Datos.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class cambioFactura : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,7 +44,8 @@ namespace Datos.Migrations
                 name: "Facturas",
                 columns: table => new
                 {
-                    IdFactura = table.Column<string>(nullable: false),
+                    IdFactura = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IdReserva = table.Column<string>(nullable: true),
                     SubTotal = table.Column<decimal>(nullable: false),
                     Total = table.Column<decimal>(nullable: false)

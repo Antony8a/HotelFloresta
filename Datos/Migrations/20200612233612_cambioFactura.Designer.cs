@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(HotelContext))]
-    [Migration("20200611192647_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200612233612_cambioFactura")]
+    partial class cambioFactura
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -76,8 +76,10 @@ namespace Datos.Migrations
 
             modelBuilder.Entity("Entity.Factura", b =>
                 {
-                    b.Property<string>("IdFactura")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdFactura")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("IdReserva")
                         .HasColumnType("nvarchar(max)");
