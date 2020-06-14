@@ -88,7 +88,7 @@ import { FacturaComponent } from './componentes/factura/factura.component';
     InicioInicioComponent,
     ReservaInicioComponent,
     InicioClienteComponent,
-
+    FacturaComponent,
     InicioRecepcionistaComponent
 
   ],

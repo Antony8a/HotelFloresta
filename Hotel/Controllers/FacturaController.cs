@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Hotel.Models;
-using Datos;
+using Datos; 
 using Microsoft.Extensions.Options;
 using Hotel.ClientApp.Config;
 using Hotel.Service;
