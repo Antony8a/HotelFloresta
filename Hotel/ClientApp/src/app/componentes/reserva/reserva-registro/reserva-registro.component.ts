@@ -156,7 +156,7 @@ export class ReservaRegistroComponent implements OnInit {
       return this.validadorFechasIguales;
     }
 
-  //esto pertenece a la generacion automatica de la reserva
+  //esto pertenece a la generacion automatica de la Factura
  
   GenerarFactura(){
     alert('entra aquí');
@@ -185,10 +185,8 @@ export class ReservaRegistroComponent implements OnInit {
           this.factura = p;      
         }
       });
-
       }
-    });
-      
+    });      
   }
 
 }
