@@ -145,8 +145,6 @@ const routes: Routes = [
     component: FacturaComponent,canActivate: [AuthGuard] 
   },
 
-
-
 ]
 
 @NgModule({

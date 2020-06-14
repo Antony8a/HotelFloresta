@@ -51,6 +51,8 @@ import { InicioClienteComponent } from './componentes/banners/inicio-cliente/ini
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 import { FacturaComponent } from './componentes/factura/factura.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,8 +88,9 @@ import { FacturaComponent } from './componentes/factura/factura.component';
     InicioInicioComponent,
     ReservaInicioComponent,
     InicioClienteComponent,
-    InicioRecepcionistaComponent,
-    FacturaComponent,
+
+    InicioRecepcionistaComponent
+
   ],
   imports: [
     ReactiveFormsModule,
