@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zcXPdj1VFoubpJTvpP8/GyrATpICWq6x5w/oATYBlyJ6nCnYsznznM228+glSpSHn8y6it7kiziopZ5x6eazGw==",
+  "dgSpecHash": "OMt2gq/5DIrRjGEXqVIo4+aZceRkSGkT5wxCHHNWRl6Ue3LpWHqj1COu4wLqMEfC7SeaUQSAcY7/wGXmQudv+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj",
+  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\Prueba-Hotel\\Logica\\Logica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\anton\\.nuget\\packages\\microsoft.data.sqlclient\\1.0.19249.1\\microsoft.data.sqlclient.1.0.19249.1.nupkg.sha512",

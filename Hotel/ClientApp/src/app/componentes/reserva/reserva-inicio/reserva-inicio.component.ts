@@ -11,6 +11,9 @@ import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.compo
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Router } from '@angular/router';
 import * as jsPDF from  'jspdf';
+import * as html2canvas from 'html2canvas';
+import * as html2pdf from 'html2pdf.js';
+
 
 interface Food {
   value: string;
@@ -270,15 +273,55 @@ export class ReservaInicioComponent implements OnInit {
 
   //esto es una prueba para generar pdfs
 
+  
+
   public openPDF():void {
     let DATA = this.htmlData.nativeElement;
-    let doc = new jsPDF('p','pt', 'a4');
+    let doc = new jsPDF({format:'carta'});
+    //line(x1, y1, x2, y2, style)
+    doc.line(100, 100, 123, 124, 'DF');
     doc.fromHTML(DATA.innerHTML,15,15);
     doc.output('dataurlnewwindow');
+    
   }
 
+//prubaantony-alv-inservivle
+  generarPDF(){
+    let DATA = this.htmlData.nativeElement;
+    html2canvas(document.getElementById('htmlData'), {
+      
+       // Opciones
+       allowTaint: true,
+       useCORS: false,
+       // Calidad del PDF
+       scale: 1
+    }).then(function(canvas) {
+    var img = canvas.toDataURL('/assets/inicioHotel/images/img_1.jpg');
+    var doc = new jsPDF();
+    doc.addImage(img,'JPG',7, 20, 195, 105);
+    //doc.save('postres.pdf');
+    doc.fromHTML(DATA.innerHTML,15,15);
+    doc.output('dataurlnewwindow');
+   });
+}
 
+//prueba pdf servivle alv que hermosura alv alv alv uwuwu
   public downloadPDF():void {
+
+    const options ={
+      output:'docant.pdf',
+      image:{type:'png'},
+      html2canvas:{},
+      jsPDF:{orientation:'landscape'}
+    }
+
+    const element:Element=document.getElementById('htmlData');
+    html2pdf()
+          .from(element)
+          .set(options)
+          .save()
+
+    /*
     let DATA = this.htmlData.nativeElement;
     let doc = new jsPDF('p','pt', 'a4');
 
@@ -292,7 +335,7 @@ export class ReservaInicioComponent implements OnInit {
       'elementHandlers': handleElement
     });
 
-    doc.save('angular-demo.pdf');
+    doc.save('angular-demo.pdf');*/
   }
   //aqui finaliza la prueba para generar pdfs
 

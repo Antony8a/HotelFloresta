@@ -140,8 +140,6 @@ const routes: Routes = [
     component: InicioRecepcionistaComponent,canActivate: [AuthGuard] 
   },
 
-
-
 ]
 
 @NgModule({

@@ -50,6 +50,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioClienteComponent } from './componentes/banners/inicio-cliente/inicio-cliente.component';
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +87,7 @@ import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recep
     InicioInicioComponent,
     ReservaInicioComponent,
     InicioClienteComponent,
-    InicioRecepcionistaComponent,
+    InicioRecepcionistaComponent
   ],
   imports: [
     ReactiveFormsModule,
