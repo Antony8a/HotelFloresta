@@ -49,6 +49,7 @@ import { ReservaInicioComponent } from './componentes/reserva/reserva-inicio/res
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioClienteComponent } from './componentes/banners/inicio-cliente/inicio-cliente.component';
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
+import { FacturaComponent } from './componentes/factura/factura.component';
 
 
 
@@ -87,7 +88,9 @@ import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recep
     InicioInicioComponent,
     ReservaInicioComponent,
     InicioClienteComponent,
+
     InicioRecepcionistaComponent
+
   ],
   imports: [
     ReactiveFormsModule,

@@ -1,0 +1,83 @@
+<div>
+    <div>
+        <div><br>
+            <div>
+                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+            </div>
+        </div><br>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-primary">
+                    <h4 class="card-title ">Facturas</h4>
+                    <p class="card-category">Facturas registradas en el hotel la floresta</p>
+                </div>
+                <div  class="card-body">
+                    <div class="table-responsive">
+                        <table class="table " *ngIf='facturas && facturas.length'>
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col">Codigo factura</th>
+                                    <th class="text-center" scope="col">Código de reserva</th>
+                                    <th class="text-center" scope="col">Total</th>
+                                    <th class="text-center" scope="col">Ver</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let factura of facturas|filtroFactura:searchText; index as i">
+                                    <td class="text-center" >{{ factura.idFactura }} </td>
+                                    <td class="text-center" >{{ factura.idReserva }}</td>
+                                    <td class="text-center" >{{ factura.total }}</td>
+                                    <td class="text-center"><i class="material-icons"
+                                        (click)="openScrollableContent(longContent)" 
+                                        (click)="consultaId(factura.idFactura)" >visibility</i></td>
+  
+                    <!----------------------------------------------Modal Ver----------------------------------------------->
+                    <ng-template #longContent let-modal>
+                        <div class="card">
+                        <div class="modal-header">
+                            <div class="card-header card-header-primary" id="pruebaxd">
+                              <h4 class="card-title heading text-center">Ver factura</h4>
+                              <p class="card-category heading text-center">Datos del la factura {{factura.idFactura}}</p>
+                          </div>
+                          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        </div>
+                        <div class="modal-body">
+                        <div class="container-1">
+                                          
+                          <form [formGroup]="formGroup">
+          
+                            <div class="form-group">
+                                <label><h3 class="card-title modal-title heading text-center">Código factura: </h3></label><br>
+                                <label> {{_idFactura}}</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label><h3 class="card-title modal-title heading text-center">Código reserva: </h3></label><br>
+                                <label> {{_idReserva}}</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label><h3 class="card-title modal-title heading text-center">Total factura: </h3></label><br>
+                                <label> {{_total}}</label>
+                            </div>
+                              
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark" >Imprimir/Descargar</button>   
+                            </div>
+                        </form>
+                     </div>
+                        </div>
+                    </ng-template>
+                    <!--------------------------------------------Fin modal ver--------------------------------------------->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

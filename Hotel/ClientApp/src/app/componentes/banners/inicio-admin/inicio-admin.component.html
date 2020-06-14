@@ -70,10 +70,10 @@
                         
                         
                     </li>
-                    <li class="nav-item active" id="repo">
-                        <a class="nav-link">
-                            <i class="material-icons">local_printshop</i>
-                            <p>Reportes</p>
+                    <li class="nav-item active" id="fact">
+                        <a class="nav-link" (click)=changeFactura()>
+                            <i class="material-icons">deck</i>
+                            <p>Facturas</p>
                         </a>
                         
                         
@@ -183,6 +183,9 @@
                         </div>
                         <div class="cliRec" *ngIf="clienteRegistroc">
                             <app-cliente-registro></app-cliente-registro>
+                        </div>
+                        <div class="factu" *ngIf="facturaC">
+                            <app-factura></app-factura>
                         </div>
                         
                     </div>

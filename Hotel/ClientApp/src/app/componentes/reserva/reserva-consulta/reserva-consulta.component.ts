@@ -6,6 +6,7 @@ import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.compo
 import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/forms';
 import { HabitacionService } from 'src/app/services/habitacion.service';
 import { Habitacion } from 'src/app/models/habitacion';
+import { Factura } from 'src/app/models/factura';
 
 @Component({
   selector: 'app-reserva-consulta',
@@ -17,6 +18,7 @@ export class ReservaConsultaComponent implements OnInit {
   reservas:Reserva[];
   habitaciones:Habitacion[];
   reserva:Reserva;
+  factura:Factura;
   searchText:string;
   closeResult: string;
 
@@ -186,5 +188,4 @@ export class ReservaConsultaComponent implements OnInit {
     }
     return this.validadorFechasIguales;
   }
-
 }

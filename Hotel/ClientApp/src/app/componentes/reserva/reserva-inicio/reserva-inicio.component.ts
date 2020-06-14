@@ -11,8 +11,12 @@ import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.compo
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Router } from '@angular/router';
 import * as jsPDF from  'jspdf';
+
 import * as html2canvas from 'html2canvas';
 import * as html2pdf from 'html2pdf.js';
+
+import { Factura } from 'src/app/models/factura';
+import { FacturaService } from 'src/app/services/factura.service';
 
 
 interface Food {
@@ -61,12 +65,14 @@ export class ReservaInicioComponent implements OnInit {
     {value: 'pizza-1', viewValue: 'KingDoble'},
     {value: 'tacos-2', viewValue: 'KingKing'}
   ];
+  factura: Factura;
 
   constructor(
     private location: Location,
     private reservaService: ReservaService,
     private clienteService: ClienteService,
     private habitacionService: HabitacionService,
+    private facturaService: FacturaService,
     private formBuilder: FormBuilder,
     private router: Router,
     private modalService: NgbModal) { }
@@ -338,5 +344,36 @@ export class ReservaInicioComponent implements OnInit {
     doc.save('angular-demo.pdf');*/
   }
   //aqui finaliza la prueba para generar pdfs
+
+    //esto pertenece a la generacion automatica de la reserva
+ 
+    GenerarFactura(){
+      var hab;
+      this.reserva = this.formGroup.value;
+      this.habitacionService.getId(this.reserva.idHabitacion).subscribe(p=>{
+        if (p != null) {
+          hab = p;
+        }
+      });
+        var dfi = new Date(this.reserva.fechaInicio).getTime();
+        var dff = new Date(this.reserva.fechaFin).getTime();
+        var diff = (dff - dfi);
+        var totalPagar = (diff/(1000*60*60*24))+1;
+  
+      var _idReserva = this.reserva.idReserva.toString();
+      var _total = hab.Precio * totalPagar;
+  
+      this.factura.idReserva = _idReserva;
+      this.factura.total = _total;
+  
+      this.facturaService.post(this.factura).subscribe(p=>{
+        if (p != null) {
+          const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Resultado Operación";
+          messageBox.componentInstance.message = 'Factura creada!!! :D';
+          this.factura = p;      
+        }
+      });
+    }
 
 }
