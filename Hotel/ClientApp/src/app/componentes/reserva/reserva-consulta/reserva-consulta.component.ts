@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/f
 import { HabitacionService } from 'src/app/services/habitacion.service';
 import { Habitacion } from 'src/app/models/habitacion';
 import { Factura } from 'src/app/models/factura';
+import { FacturaService } from 'src/app/services/factura.service';
 
 @Component({
   selector: 'app-reserva-consulta',
@@ -17,6 +18,7 @@ export class ReservaConsultaComponent implements OnInit {
 
   reservas:Reserva[];
   habitaciones:Habitacion[];
+  facturas:Factura[];
   reserva:Reserva;
   factura:Factura;
   searchText:string;
@@ -36,6 +38,7 @@ export class ReservaConsultaComponent implements OnInit {
   constructor(
     private reservaService: ReservaService,
     private habitacionService: HabitacionService,
+    private facturaService: FacturaService,
     private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
@@ -187,5 +190,54 @@ export class ReservaConsultaComponent implements OnInit {
       this.validadorFechasIguales=this.validadorFechasIguales+1;
     }
     return this.validadorFechasIguales;
+  }
+
+  //generador de facturas, prueba
+
+  GenerarFactura(_idReservaVenidera:number){
+    this.factura = new Factura();
+    var uwu=""+_idReservaVenidera;
+    var contador = 0;
+
+    this.facturaService.get().subscribe(result=>{
+      result.forEach(item=>{
+        if(item.idReserva==uwu){
+          contador=contador+1;
+        }
+      });
+
+      if(contador!=0){
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "¡Vaya!";
+        messageBox.componentInstance.message = 'No se puede generar la factura: '+uwu+' debido a que esta reserva ya está facturada.';
+      }else{
+        this.reservaService.getId(_idReservaVenidera).subscribe(p=>{
+          if (p != null) { 
+            alert('id reserva'+ p.idReserva)
+            this.habitacionService.getId(p.idHabitacion).subscribe(q=>{
+              if (q != null) {
+                var dfi = new Date(p.fechaInicio).getTime();
+                var dff = new Date(p.fechaFin).getTime();
+                var diff = (dff - dfi);
+                var totalPagar = (diff/(1000*60*60*24))+1;
+    
+                this.factura.idReserva = ""+_idReservaVenidera;
+                alert('id reserva'+ this.factura.idReserva)
+                this.factura.total = q.precio * totalPagar;
+    
+                this.facturaService.post(this.factura).subscribe(p=>{
+                  if (p != null) {
+                    const messageBox = this.modalService.open(AlertModalComponent)
+                    messageBox.componentInstance.title = "Operación realizada con éxito";
+                    messageBox.componentInstance.message = 'Factura creada!!! :D';
+                    this.factura = p;      
+                  }
+                });
+              }
+            });       
+          }
+        });
+      }
+    });
   }
 }

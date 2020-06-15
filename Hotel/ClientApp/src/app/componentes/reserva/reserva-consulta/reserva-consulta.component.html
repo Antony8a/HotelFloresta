@@ -24,6 +24,7 @@
                                     <th class="text-center" scope="col">Habitacion</th>
                                     <th class="text-center" scope="col">Ver</th>
                                     <th class="text-center" scope="col">Eliminar</th>
+                                    <th class="text-center" scope="col">Facturar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -172,6 +173,25 @@
                           (click)="modal.close('Close click')">Eliminar</button>
                       </div>
                     </ng-template>
+                    <!---------------------------------------------Fin modal------------------------------------------------>
+                    <td class="text-center"><i class="material-icons" (click)=" openSm(contentFactura)">how_to_vote</i></td>
+                    <!-----------------------------------Modal confirmación de Facturación---------------------------------->
+                    <ng-template #contentFactura let-modal>
+                        <div class="card">
+                          <div class="modal-header">
+                              <div class="card-header card-header-primary" id="pruebaxd">
+                                <h4 class="card-title ">Facturar reserva?</h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-body">
+                          <p>seguro que desea facturar la reserva: {{reserva.idReserva}}&hellip;</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-dark" (click)=" GenerarFactura(reserva.idReserva)"
+                            (click)="modal.close('Close click')">Facturar</button>
+                        </div>
+                      </ng-template>
                     <!---------------------------------------------Fin modal------------------------------------------------>
                                 </tr>
                             </tbody>
