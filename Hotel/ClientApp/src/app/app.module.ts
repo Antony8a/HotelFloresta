@@ -50,7 +50,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioClienteComponent } from './componentes/banners/inicio-cliente/inicio-cliente.component';
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 import { FacturaComponent } from './componentes/factura/factura.component';
-
+import { FiltroFacturaPipe } from './pipe/filtro-factura.pipe';
 
 
 @NgModule({
@@ -89,7 +89,8 @@ import { FacturaComponent } from './componentes/factura/factura.component';
     ReservaInicioComponent,
     InicioClienteComponent,
     FacturaComponent,
-    InicioRecepcionistaComponent
+    InicioRecepcionistaComponent,
+    FiltroFacturaPipe
 
   ],
   imports: [
