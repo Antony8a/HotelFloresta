@@ -55,14 +55,19 @@ namespace Datos.Migrations
 
             modelBuilder.Entity("Entity.Compra", b =>
                 {
-                    b.Property<string>("IdCompra")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdCompra")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("CantidadProductos")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("CantidadProductos")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("Fecha")
+                    b.Property<DateTime>("FechaCompra")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("IdProducto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalCompra")
                         .HasColumnType("decimal(18,2)");

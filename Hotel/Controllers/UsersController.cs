@@ -52,6 +52,7 @@ namespace Hotel.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [Authorize]
         public ActionResult<UsersViewModel> Login([FromBody]UsersInputModel model)
         {
             var user = _usersService.Validate(model.UserName, model.Password);

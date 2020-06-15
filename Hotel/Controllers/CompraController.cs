@@ -29,6 +29,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Compra
+        [Authorize]
         [HttpGet]
         public IEnumerable<CompraViewModel> Gets()
         {
@@ -37,6 +38,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Compra/5
+        [Authorize]
         [HttpGet("{identificacion}")]
         public ActionResult<CompraViewModel> Get(int identificacion)
         {
@@ -47,6 +49,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Compra
+        [Authorize]
         [HttpPost]
         public ActionResult<CompraViewModel> Post(CompraInputModel compraInput)
         {
@@ -65,6 +68,7 @@ namespace Hotel.Controllers
         }
 
         // DELETE: api/Compra/5
+        [Authorize]
         [HttpDelete("{identificacion}")]
         public ActionResult<int> Delete(int identificacion)
         {
@@ -86,6 +90,7 @@ namespace Hotel.Controllers
         }
 
         // PUT: api/Compra/5
+        [Authorize]
         [HttpPut("{identificacion}")]
         public ActionResult<CompraViewModel> Put(int identificacion, CompraInputModel compraInput)
         {
