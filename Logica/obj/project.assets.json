@@ -6790,19 +6790,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Logica\\Logica.csproj",
       "projectName": "Logica",
       "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Logica\\Logica.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Logica\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj",
-      "projectName": "Logica",
-      "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj",
-      "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\obj\\",
->>>>>>> 0309d2c5e97a98f48e56dac8c1c0425b83cc923a
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6816,19 +6808,11 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Datos\\Datos.csproj": {
               "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Datos\\Datos.csproj"
             },
             "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj": {
               "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj"
-=======
-            "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj": {
-              "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj"
-            },
-            "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj"
->>>>>>> 0309d2c5e97a98f48e56dac8c1c0425b83cc923a
             }
           }
         }
@@ -6859,5 +6843,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Logica\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

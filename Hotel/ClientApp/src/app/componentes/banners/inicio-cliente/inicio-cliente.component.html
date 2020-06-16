@@ -19,7 +19,7 @@
                     Hotel la floresta 
                 </a>
                 <a class="simple-text logo-normal">
-                    Cliente
+                    Cliente: {{sisepuede}}
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -79,33 +79,23 @@
             <div class="content">
                 <div class="container-fluid">
                     <div>
-                        <div class="clic" *ngIf="clientec">
-                            <div class="return-1">
-                                <button class="button type1" id="boton-registrar-atras"
-                                    (click)=altern()>Registrar / Consultar</button>
-                            </div>
-                            
+                        <div class="clic" *ngIf="clientec">                            
                             <div class="reg" *ngIf="alternkey">
-                                <app-cliente-registro></app-cliente-registro>
+                                <app-cliente-sub></app-cliente-sub>
                             </div>
                             <div class="search" *ngIf="!alternkey">
-                                <app-cliente-consulta></app-cliente-consulta>
+                                <app-cliente-sub></app-cliente-sub>
                             </div>
                         </div>
                         
                         
                         <div class="resc" *ngIf="reservasc">
-                            <div class="return-1">
-                                <button class="button type1" id="boton-registrar-atras"
-                                    (click)=altern()>Registrar / Consultar</button>
-                            </div>
                             <div class="reg" *ngIf="alternkey">
-                                <app-reserva-registro></app-reserva-registro>
+                                <app-reserva-cliente></app-reserva-cliente>
                             </div>
                             <div class="search" *ngIf="!alternkey">
-                                <app-reserva-consulta></app-reserva-consulta>
-                            </div>
-                            
+                                <app-reserva-cliente></app-reserva-cliente>
+                            </div>                            
                         </div>
                         
                         <div class="cliRec" *ngIf="clienteRegistroc">

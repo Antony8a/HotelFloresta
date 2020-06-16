@@ -72,7 +72,7 @@ namespace Logica
                     clienteViejo.Identificacion=clienteNuevo.Identificacion;
                     clienteViejo.Nombre=clienteNuevo.Nombre;
                     clienteViejo.Edad=clienteNuevo.Edad;
-                    clienteViejo.Sexo=clienteNuevo.Sexo;
+                    clienteViejo.Sexo=clienteNuevo.Sexo;                    
                     clienteViejo.Direccion=clienteNuevo.Direccion;
                     clienteViejo.Celular=clienteNuevo.Celular;
                     clienteViejo.Correo=clienteNuevo.Correo;

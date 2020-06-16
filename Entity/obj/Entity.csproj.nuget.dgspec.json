@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\obj\\",
-=======
-    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
-        "projectName": "Entity",
-        "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\obj\\",
->>>>>>> 0309d2c5e97a98f48e56dac8c1c0425b83cc923a
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config"

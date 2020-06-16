@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "Da5iIL9W/Me6GBEp3Gc9XTz0FvJruMtF+AG1lTyvqDK/u9/EWNbBYU9EO3QhQu62QgYBCMwaEeVqd/SFBilPuQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Logica\\Logica.csproj",
-=======
-  "dgSpecHash": "zcXPdj1VFoubpJTvpP8/GyrATpICWq6x5w/oATYBlyJ6nCnYsznznM228+glSpSHn8y6it7kiziopZ5x6eazGw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Logica\\Logica.csproj",
->>>>>>> 0309d2c5e97a98f48e56dac8c1c0425b83cc923a
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.data.sqlclient\\1.0.19249.1\\microsoft.data.sqlclient.1.0.19249.1.nupkg.sha512",
@@ -132,5 +126,12 @@
     "C:\\Users\\Acer\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Logica\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

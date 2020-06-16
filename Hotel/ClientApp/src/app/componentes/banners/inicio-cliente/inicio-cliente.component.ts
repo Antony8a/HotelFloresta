@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { Cliente } from 'src/app/models/cliente';
 
 @Component({
   selector: 'app-inicio-cliente',
@@ -18,18 +20,35 @@ export class InicioClienteComponent implements OnInit {
   alternkey: boolean = false;
   inicioo: boolean = true;
 
+  sisepuede:string;
+
+  clientes:Cliente[];
+
   constructor(
     private authenticationService: AuthenticationService,
+    private clienteService: ClienteService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     document.getElementById("client").style.backgroundColor = '#a53cb580';
+    this.consultarUsuario();
   }
 
   CerrarSesion(){
     this.authenticationService.logout();
     this.router.navigate(['login']);
+  }
+
+  consultarUsuario(){
+    var user = this.authenticationService.currentUserValue;
+    this.clienteService.get().subscribe(result=>{
+      result.forEach(client => {
+        if(user.userName==client.usuario){
+          this.sisepuede=client.identificacion;
+        }
+      });
+    });
   }
 
   changeCliente() {
