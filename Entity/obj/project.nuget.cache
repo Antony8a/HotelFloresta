@@ -1,16 +1,10 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "i8kqDRxT5r+EQ6PGCIk4QMMmwBCjDIVmXrlBbHH66da4o0w/tfyZwotgjqEvemrsU06t6zVJKK15lADS/w4TIQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj",
-=======
-  "dgSpecHash": "o51xlWOJJTFEwWi1gQFqvzuuy0e4cUfiyr6CVg9k3dfGLFwtS05EEMuHCZUOwRSlxjv/cg8vv1lBZ3VyF2toAw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj",
->>>>>>> dbf73c7d35348a49e189e3629c8ad8f19f3ad842
   "expectedPackageFiles": [
-    "C:\\Users\\anton\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+    "C:\\Users\\Acer\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
   ],
   "logs": [
     {

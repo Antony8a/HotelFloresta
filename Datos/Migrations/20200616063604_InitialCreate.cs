@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Datos.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -79,6 +79,7 @@ namespace Datos.Migrations
                 columns: table => new
                 {
                     IdInventario = table.Column<string>(nullable: false),
+                    IdProducto = table.Column<string>(nullable: true),
                     Fecha = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

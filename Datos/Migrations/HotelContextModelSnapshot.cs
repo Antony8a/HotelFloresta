@@ -134,6 +134,9 @@ namespace Datos.Migrations
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("IdProducto")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("IdInventario");
 
                     b.ToTable("Inventarios");

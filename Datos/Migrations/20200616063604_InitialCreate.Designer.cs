@@ -10,13 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(HotelContext))]
-<<<<<<< HEAD:Datos/Migrations/20200615035050_InitialCreate.Designer.cs
-    [Migration("20200615035050_InitialCreate")]
+    [Migration("20200616063604_InitialCreate")]
     partial class InitialCreate
-=======
-    [Migration("20200615050451_Inicial")]
-    partial class Inicial
->>>>>>> dbf73c7d35348a49e189e3629c8ad8f19f3ad842:Datos/Migrations/20200615050451_Inicial.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -140,6 +135,9 @@ namespace Datos.Migrations
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("IdProducto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdInventario");
 

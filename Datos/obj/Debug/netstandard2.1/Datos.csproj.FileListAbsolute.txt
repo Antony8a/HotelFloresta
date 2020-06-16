@@ -9,3 +9,15 @@ C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Dato
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.dll
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfo.cs
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.dll
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Datos.deps.json
+C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
