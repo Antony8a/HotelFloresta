@@ -88,6 +88,7 @@ export class ReservaInicioComponent implements OnInit {
       this.habitaciones = result;
     });
   }
+  //todo esta bien
 
   traerReservas(){
     this.reservaService.get().subscribe(result =>{
