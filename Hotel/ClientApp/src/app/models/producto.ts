@@ -3,5 +3,5 @@ export class Producto {
     nombre:string;
     tipo:string;
     precio:number;
-    cantidad:number;
+    cantidad:number; 
 }

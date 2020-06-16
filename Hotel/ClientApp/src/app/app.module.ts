@@ -54,6 +54,8 @@ import { FiltroFacturaPipe } from './pipe/filtro-factura.pipe';
 import { ClienteInformacionComponent } from './componentes/cliente/cliente-informacion/cliente-informacion.component';
 import { ReservaClienteComponent } from './componentes/reserva/reserva-cliente/reserva-cliente.component';
 import { ClienteSubComponent } from './componentes/cliente/cliente-sub/cliente-sub.component';
+import { InventarioComponent } from './componentes/inventario/inventario.component';
+import { FiltroInventarioPipe } from './pipe/filtro-inventario.pipe';
 
 
 @NgModule({
@@ -96,7 +98,9 @@ import { ClienteSubComponent } from './componentes/cliente/cliente-sub/cliente-s
     FiltroFacturaPipe,
     ClienteInformacionComponent,
     ReservaClienteComponent,
-    ClienteSubComponent
+    ClienteSubComponent,
+    InventarioComponent,
+    FiltroInventarioPipe
 
   ],
   imports: [

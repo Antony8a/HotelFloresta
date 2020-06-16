@@ -64,7 +64,7 @@
                     </li>
                     <li class="nav-item active" id="prod">
                         <a class="nav-link" (click)=changeProducto()>
-                            <i class="material-icons">deck</i>
+                            <i class="material-icons">add_business</i>
                             <p>Productos</p>
                         </a>
                         
@@ -72,8 +72,16 @@
                     </li>
                     <li class="nav-item active" id="fact">
                         <a class="nav-link" (click)=changeFactura()>
-                            <i class="material-icons">deck</i>
+                            <i class="material-icons">receipt_long</i>
                             <p>Facturas</p>
+                        </a>
+                        
+                        
+                    </li>
+                    <li class="nav-item active" id="inventa">
+                        <a class="nav-link" (click)=changeInventario()>
+                            <i class="material-icons">all_inbox</i>
+                            <p>Movimientos</p>
                         </a>
                         
                         
@@ -187,6 +195,9 @@
                         </div>
                         <div class="factu" *ngIf="facturaC">
                             <app-factura></app-factura>
+                        </div>
+                        <div class="inventa" *ngIf="incentac">
+                            <app-inventario></app-inventario>
                         </div>
                         
                     </div>

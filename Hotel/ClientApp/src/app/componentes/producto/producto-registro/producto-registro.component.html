@@ -45,6 +45,16 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" formControlName="cantidad"
+                            class="form-control" [ngClass]="{'is-invalid':control.cantidad.errors}" />
+
+                        <div *ngIf="control.cantidad.errors" class="invalid-feedback">
+                            <div *ngIf="control.cantidad.errors.required">La cantidad es requerido</div>
+                        </div>
+                    </div>
+
                     <div class="text-center">
                         <button class="btn btn-outline-dark" (click)=" onSubmit()"
                             [disabled]="formGroup.invalid">Registrar</button>

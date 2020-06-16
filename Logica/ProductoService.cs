@@ -103,6 +103,7 @@ namespace Logica
                     productoViejo.Nombre = productoNuevo.Nombre;
                     productoViejo.Tipo = productoNuevo.Tipo;
                     productoViejo.Precio = productoNuevo.Precio;
+                    productoViejo.Cantidad=productoNuevo.Cantidad;
                     _context.Productos.Update(productoViejo);
                     _context.SaveChanges();
                     return new ModificarProductoResponse(productoViejo);

@@ -48,7 +48,7 @@ export class CompraServiceService {
       } */
   
       post(Compra: Compra): Observable<Compra> {
-        return this.http.post<Compra>(this.baseUrl + 'api/Producto', Compra)
+        return this.http.post<Compra>(this.baseUrl + 'api/Compra', Compra)
           .pipe(
             catchError(this.handleErrorService.handleError<Compra>('Registrar Compra', null))
           );

@@ -1,8 +1,8 @@
 export class Compra {
     
-    idProductos:string;
+    idProducto:string;
     nombre:string;
-    tipo:Date;
+    tipo:string;
     precio:number;
     cantidadProductos:number;
     

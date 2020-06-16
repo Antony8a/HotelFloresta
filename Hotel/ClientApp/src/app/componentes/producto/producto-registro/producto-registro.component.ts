@@ -29,6 +29,7 @@ export class ProductoRegistroComponent implements OnInit {
         nombre: [this.producto.nombre, Validators.required],
         tipo: [this.producto.tipo, Validators.required],
         precio: [this.producto.precio, Validators.required],
+        cantidad: [this.producto.cantidad, Validators.required]
       });
     }
   
