@@ -26,12 +26,12 @@ export class ProductoService {
     private handleErrorService: HandleHttpErrorService)
     {
       this.baseUrl = baseUrl;
-    }
+    } 
     
     get(): Observable<Producto[]> {
       return this.http.get<Producto[]>(this.baseUrl + 'api/Producto')
       .pipe(
-          catchError(this.handleErrorService.handleError<Producto[]>('Consulta Producto', null))
+          catchError(this.handleErrorService.handleError<Producto[]>('Consulta Producto', null)) 
       );
     }
 

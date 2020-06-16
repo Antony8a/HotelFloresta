@@ -26,7 +26,7 @@ export class HabitacionService {
     @Inject('BASE_URL') baseUrl: string,
     private handleErrorService: HandleHttpErrorService)
     {
-      this.baseUrl = baseUrl;
+      this.baseUrl = baseUrl; 
     }
 
     get(): Observable<Habitacion[]> {

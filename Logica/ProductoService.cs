@@ -2,17 +2,47 @@ using Entity;
 using System;
 using System.Collections.Generic;
 using Datos;
-using System.Linq;
+using System.Linq;
 
 namespace Logica
 {
     public class ProductoService
     {
-        private readonly HotelContext _context;
+        private readonly HotelContext _context;
 
         public ProductoService(HotelContext context)
         {
-            _context=context;
+            _context = context;
+        }
+
+        public GuardarProductoResponse Comprar(Producto producto, int cantidad)
+        {
+            try
+            {
+                var productoBuscado = _context.Productos.Find(producto.IdProducto);
+                if (productoBuscado != null)
+                {   
+                    productoBuscado.Cantidad -= cantidad;
+                    _context.Productos.Update(productoBuscado);
+                    
+                    Inventario inventario = new Inventario(productoBuscado.Precio,productoBuscado.IdProducto,cantidad,productoBuscado.Precio);
+                    _context.Inventarios.Add(inventario);
+                    
+                    _context.SaveChanges();
+                    return new GuardarProductoResponse("Compra realizada con exito");
+                }
+                else
+                {
+
+                    return new GuardarProductoResponse($"No se pudo comprar:");
+
+                }
+            }
+            catch (Exception e)
+            {
+                return new GuardarProductoResponse($"Error de la Aplicacion: {e.Message}");
+            }
+
         }
 
         public GuardarProductoResponse Guardar(Producto producto)
@@ -63,16 +93,16 @@ namespace Logica
         }
 
         public ModificarProductoResponse Modificar(Producto productoNuevo)
-        {            
+        {
             try
             {
                 var productoViejo = _context.Productos.Find(productoNuevo.IdProducto);
                 if (productoViejo != null)
                 {
-                    productoViejo.IdProducto=productoNuevo.IdProducto;
-                    productoViejo.Nombre=productoNuevo.Nombre;
-                    productoViejo.Tipo=productoNuevo.Tipo;
-                    productoViejo.Precio=productoNuevo.Precio;
+                    productoViejo.IdProducto = productoNuevo.IdProducto;
+                    productoViejo.Nombre = productoNuevo.Nombre;
+                    productoViejo.Tipo = productoNuevo.Tipo;
+                    productoViejo.Precio = productoNuevo.Precio;
                     _context.Productos.Update(productoViejo);
                     _context.SaveChanges();
                     return new ModificarProductoResponse(productoViejo);

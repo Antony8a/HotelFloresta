@@ -14,7 +14,7 @@ namespace Logica
         {
             _context=context;
         }
-
+/*
         public GuardarCompraResponse Guardar(Compra compra)
         {
             try
@@ -128,7 +128,7 @@ namespace Logica
             public bool Error { get; set; }
             public string Mensaje { get; set; }
             public Compra Compra { get; set; }
-        }
+        }*/
         
     }
 }

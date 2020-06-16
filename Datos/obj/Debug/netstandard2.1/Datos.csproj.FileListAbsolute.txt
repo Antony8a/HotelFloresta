@@ -9,3 +9,4 @@ C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Dato
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.dll
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.pdb
+C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache

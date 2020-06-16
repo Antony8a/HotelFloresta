@@ -19,15 +19,55 @@ namespace Hotel.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompraController: ControllerBase
+    public class CompraController : ControllerBase 
     {
-        private readonly CompraService _compraService;
+        private readonly ProductoService _productoService;
 
         public CompraController(HotelContext context)
         {
-            _compraService = new CompraService(context);
+            _productoService = new ProductoService(context);
         }
 
+        // POST: api/Producto
+        [HttpPost]
+        public ActionResult<ProductoViewModel> Post(ProductoInputModel productoInput)
+        {
+            Producto producto = MapearProducto(productoInput);
+            producto.IdProducto= productoInput.IdProducto;
+            producto.Nombre=productoInput.Nombre;
+            producto.Tipo=productoInput.Tipo;
+            producto.Precio=productoInput.Precio;
+            //var enviarAInventario = _inventarioService.Guardar(producto,productoInput.Cantidad);
+            var response = _productoService.Comprar(producto, productoInput.Cantidad);
+            if (response.Error)
+            {
+                ModelState.AddModelError("Guardar producto", response.Mensaje);
+                var problemDetails = new ValidationProblemDetails(ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                };
+                return BadRequest(problemDetails);
+            }
+            return Ok(response.Producto);
+        }
+        private Producto MapearProducto(ProductoInputModel productoInput)
+        {
+            var producto = new Producto
+            {
+                IdProducto = productoInput.IdProducto,
+                Nombre = productoInput.Nombre,
+                Tipo = productoInput.Tipo,
+                Precio = productoInput.Precio,
+                Cantidad=productoInput.Cantidad
+            };
+            return producto;
+        }
+
+
+
+
+
+        /*
         // GET: api/Compra
         [Authorize]
         [HttpGet]
@@ -112,8 +152,8 @@ namespace Hotel.Controllers
                 }
                 return Ok(response.Compra);                
             }
-        }
+        }*/
 
-        
+
     }
 }

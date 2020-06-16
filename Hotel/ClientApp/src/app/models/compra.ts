@@ -1,7 +1,9 @@
 export class Compra {
-    idCompra:number;
+    
     idProductos:string;
-    fechaCompra:Date;
+    nombre:string;
+    tipo:Date;
+    precio:number;
     cantidadProductos:number;
-    totalCompra:number;
+    
 }
