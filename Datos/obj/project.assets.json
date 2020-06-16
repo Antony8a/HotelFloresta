@@ -6766,31 +6766,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Acer\\.nuget\\packages\\": {}
+    "C:\\Users\\anton\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Datos\\Datos.csproj",
+      "projectUniqueName": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
       "projectName": "Datos",
-      "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Datos\\Datos.csproj",
-      "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Datos\\obj\\",
+      "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\Datos.csproj",
+      "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Datos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Entity\\Entity.csproj"
+            "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\anton\\Desktop\\Proyecto\\prueba-hotel\\Entity\\Entity.csproj"
             }
           }
         }
@@ -6832,16 +6834,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Acer\\Documents\\GitHub\\hotel\\Datos\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

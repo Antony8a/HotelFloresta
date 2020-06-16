@@ -22,6 +22,10 @@ namespace Hotel.Models
 
         [Required(ErrorMessage = "El Precio es requerido")]
         public decimal Precio { get; set; }
+        
+        [Required(ErrorMessage = "la cantidad es requerida")]
+        public int Cantidad {get;set;}
+
     }
 
     public class ProductoViewModel : ProductoInputModel
@@ -36,6 +40,7 @@ namespace Hotel.Models
             Nombre = producto.Nombre;
             Tipo = producto.Tipo;
             Precio = producto.Precio;
+            Cantidad=producto.Cantidad;
         }
     }
 }

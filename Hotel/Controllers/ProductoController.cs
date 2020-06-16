@@ -12,11 +12,11 @@ using Datos;
 using Microsoft.Extensions.Options;
 using Hotel.ClientApp.Config;
 using Hotel.Service;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization; 
 
 namespace Hotel.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ProductoController : ControllerBase
@@ -28,7 +28,6 @@ namespace Hotel.Controllers
             _productoService = new ProductoService(context);
         }
         // GET: api/Producto
-        [Authorize]
         [HttpGet]
         public IEnumerable<ProductoViewModel> Gets()
         {
@@ -48,7 +47,6 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Producto
-        [Authorize]
         [HttpPost]
         public ActionResult<ProductoViewModel> Post(ProductoInputModel productoInput)
         {
@@ -83,6 +81,7 @@ namespace Hotel.Controllers
                 Nombre = productoInput.Nombre,
                 Tipo = productoInput.Tipo,
                 Precio = productoInput.Precio,
+                Cantidad= productoInput.Cantidad
             };
             return producto;
         }

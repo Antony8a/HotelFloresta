@@ -31,7 +31,7 @@ export class InicioClienteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    document.getElementById("client").style.backgroundColor = '#a53cb580';
+    //document.getElementById("client").style.backgroundColor = '#a53cb580';
     this.consultarUsuario();
   }
 

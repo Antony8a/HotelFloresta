@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Datos.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class cambioLogin : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,22 +24,6 @@ namespace Datos.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clientes", x => x.Identificacion);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Compras",
-                columns: table => new
-                {
-                    IdCompra = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdProducto = table.Column<string>(nullable: true),
-                    FechaCompra = table.Column<DateTime>(nullable: false),
-                    CantidadProductos = table.Column<int>(nullable: false),
-                    TotalCompra = table.Column<decimal>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Compras", x => x.IdCompra);
                 });
 
             migrationBuilder.CreateTable(
@@ -78,9 +62,13 @@ namespace Datos.Migrations
                 name: "Inventarios",
                 columns: table => new
                 {
-                    IdInventario = table.Column<string>(nullable: false),
+                    IdInventario = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FechaCompra = table.Column<DateTime>(nullable: false),
+                    CostoProducto = table.Column<decimal>(nullable: false),
                     IdProducto = table.Column<string>(nullable: true),
-                    Fecha = table.Column<DateTime>(nullable: false)
+                    CantidadComprada = table.Column<int>(nullable: false),
+                    TotalCompra = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -94,7 +82,8 @@ namespace Datos.Migrations
                     IdProducto = table.Column<string>(nullable: false),
                     Nombre = table.Column<string>(nullable: true),
                     Tipo = table.Column<string>(nullable: true),
-                    Precio = table.Column<decimal>(nullable: false)
+                    Precio = table.Column<decimal>(nullable: false),
+                    Cantidad = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -161,9 +150,6 @@ namespace Datos.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Clientes");
-
-            migrationBuilder.DropTable(
-                name: "Compras");
 
             migrationBuilder.DropTable(
                 name: "Facturas");

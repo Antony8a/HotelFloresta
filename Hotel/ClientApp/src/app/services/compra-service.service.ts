@@ -28,9 +28,9 @@ export class CompraServiceService {
       @Inject('BASE_URL') baseUrl: string,
       private handleErrorService: HandleHttpErrorService)
       {
-        this.baseUrl = baseUrl;
-      }
-      
+        this.baseUrl = baseUrl; 
+      } 
+      /*
       get(): Observable<Compra[]> {
         return this.http.get<Compra[]>(this.baseUrl + 'api/Compra')
         .pipe(
@@ -38,38 +38,38 @@ export class CompraServiceService {
         );
       }
   
-      /** GET Compra by identificacion. Will 404 if id not found */
+      * GET Compra by identificacion. Will 404 if id not found
       getId(id: number): Observable<Compra> {
         const url = `${this.baseUrl + 'api/Compra'}/${id}`;
           return this.http.get<Compra>(url, httpOptions)
           .pipe(
             catchError(this.handleErrorService.handleError<Compra>('Buscar Compra', null))
           );
-      }
+      } */
   
       post(Compra: Compra): Observable<Compra> {
-        return this.http.post<Compra>(this.baseUrl + 'api/Compra', Compra)
+        return this.http.post<Compra>(this.baseUrl + 'api/Producto', Compra)
           .pipe(
             catchError(this.handleErrorService.handleError<Compra>('Registrar Compra', null))
           );
       }
   
-       /** PUT: update the profesor on the server */
+       /** PUT: update the profesor on the server
       put(compra: Compra): Observable<any> {
         const url = `${this.baseUrl}api/Compra/${compra.idCompra}`;
         return this.http.put(url, compra, httpOptions)
         .pipe(
           catchError(this.handleErrorService.handleError<any>('Editar compra'))
         );
-      }
+      } */
   
       
-    /** DELETE: delete the hero from the server */
+    /** DELETE: delete the hero from the server 
     delete (compra: Compra | number): Observable<number> {
       const id = typeof compra === 'number' ? compra : compra.idCompra;
       return this.http.delete<number>(this.baseUrl + 'api/compra/'+ id)
       .pipe(
         catchError(this.handleErrorService.handleError<number>('Elimiar compra', null))
       );
-    }
+    }*/
 }

@@ -53,30 +53,6 @@ namespace Datos.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("Entity.Compra", b =>
-                {
-                    b.Property<int>("IdCompra")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CantidadProductos")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaCompra")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("IdProducto")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("TotalCompra")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("IdCompra");
-
-                    b.ToTable("Compras");
-                });
-
             modelBuilder.Entity("Entity.Factura", b =>
                 {
                     b.Property<int>("IdFactura")
@@ -128,14 +104,25 @@ namespace Datos.Migrations
 
             modelBuilder.Entity("Entity.Inventario", b =>
                 {
-                    b.Property<string>("IdInventario")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdInventario")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("Fecha")
+                    b.Property<int>("CantidadComprada")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("CostoProducto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("FechaCompra")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("IdProducto")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalCompra")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("IdInventario");
 
@@ -146,6 +133,9 @@ namespace Datos.Migrations
                 {
                     b.Property<string>("IdProducto")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");

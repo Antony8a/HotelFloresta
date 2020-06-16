@@ -9,6 +9,9 @@ C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Dato
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.dll
 C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.pdb
+<<<<<<< HEAD
+C:\Users\anton\Desktop\Proyecto\prueba-hotel\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
+=======
 C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
 C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
 C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
@@ -21,3 +24,4 @@ C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Datos.pdb
 C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Entity.dll
 C:\Users\Acer\Documents\GitHub\hotel\Datos\bin\Debug\netstandard2.1\Entity.pdb
 C:\Users\Acer\Documents\GitHub\hotel\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
+>>>>>>> 9f1e4753f12cbdb5274b5a56f7aa88d42abad67d
