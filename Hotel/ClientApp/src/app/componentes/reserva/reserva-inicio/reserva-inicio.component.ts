@@ -83,7 +83,7 @@ export class ReservaInicioComponent implements OnInit {
     this.router.navigate(['inicioHotel']);
   }
 
-  traerHabitaciones() {
+  traerHabitaciones(){
     this.habitacionService.get().subscribe(result => {
       this.habitaciones = result;
     });
@@ -122,7 +122,6 @@ export class ReservaInicioComponent implements OnInit {
     this.traerReservas();    
     this.traerHabitaciones();
     this.habitaciones.forEach(hab=>{
-      
         this.reservas.forEach(res => {  
           var toma1 =new Date(this.prueba1);
           var toma2 =new Date(this.prueba2);
