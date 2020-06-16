@@ -2,11 +2,11 @@
     <div><label>Total facturado: {{totalFacturas}}</label>
         <div><br>
             <div>
-<<<<<<< HEAD
-               90000000000<input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">-
-=======
-                <input [(ngModel)]="searchText" type="text" class="form-control">
->>>>>>> 13d075b5d3e99a4770f60d44cb5055bd39d0315f
+            
+                <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Filtrar">
+
+              
+
             </div>
         </div><br>
         <div class="col-md-12">
@@ -48,31 +48,44 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container-1">
-                                    <table class="table table-striped">
-                                        <tbody>
-                                            <tr>
-                                              <th>Código factura:              </th><td>{{_idFactura}}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Identificación de cliente: </th><td>{{_idCliente}}</td>
-                                                <th>Nombre completo:           </th><td>{{_nombre}}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Código reserva:            </th><td>{{_idReserva}}</td>
-                                                <th>Fecha de inicio:           </th><td>{{_fechaI}}</td>
-                                                <th>Fecha fin:                 </th><td>{{_fechaF}}</td>
-                                                <th>Días reservados:           </th><td>{{_dias}}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Código de habitación:      </th><td>{{_idHabitacion}}</td>
-                                                <th>Tipo de habitación:        </th><td>{{_tipo}}</td>
-                                                <th>Valor por día:             </th><td>{{_precio}}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Total factura:             </th><td>${{_total}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <div class="row">
+                                        <div class="col-sm-10">Código factura:  </div>
+                                        <div class="col-sm-2">{{_idFactura}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">Identificación de cliente:</div>
+                                        <div class="col-sm-2">{{_idCliente}}</div>                                    
+                                        <div class="col-sm-4">Nombre completo: </div>
+                                        <div class="col-sm-2">{{_nombre}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">Código reserva:</div>
+                                        <div class="col-sm-2">{{_idReserva}}</div>                                    
+                                        <div class="col-sm-4">Días reservados:  </div>
+                                        <div class="col-sm-2">{{_dias}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">Fecha de inicio:</div>
+                                        <div class="col-sm-2">{{_fechaI}}</div>                                    
+                                        <div class="col-sm-4">Fecha fin:</div>
+                                        <div class="col-sm-2">{{_fechaF}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">Código de habitación:</div>
+                                        <div class="col-sm-2">{{_idHabitacion}}</div>                                    
+                                        <div class="col-sm-4">Tipo de habitación:</div>
+                                        <div class="col-sm-2">{{_tipo}}</div>
+
+                                        <!-- Force next columns to break to new line -->
+                                        <div class="w-100"></div>
+
+                                        <div class="col-sm-10">Valor por día:</div>
+                                        <div class="col-sm-2">{{_precio}}</div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col-sm-10">Total factura:  </div>
+                                        <div class="col-sm-2">${{_total}}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

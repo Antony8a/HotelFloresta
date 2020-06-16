@@ -35,7 +35,6 @@ export class ReservaRegistroComponent implements OnInit {
   constructor(
     private reservaService: ReservaService,
     private habitacionService: HabitacionService,
-    private facturaService: FacturaService,
     private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
@@ -97,7 +96,6 @@ export class ReservaRegistroComponent implements OnInit {
           this.reserva = p;
         }
       });
-      this.GenerarFactura();
       this.traerReservas();
     }
   
@@ -155,38 +153,5 @@ export class ReservaRegistroComponent implements OnInit {
       }
       return this.validadorFechasIguales;
     }
-
-  //esto pertenece a la generacion automatica de la Factura
- 
-  GenerarFactura(){
-    alert('entra aquí');
-    this.traerReservas();
-    this.reserva = this.formGroup.value;
-    this.habitacionService.getId(this.reserva.idHabitacion).subscribe(p=>{
-      if (p != null) {
-        var dfi = new Date(this.reserva.fechaInicio).getTime();
-        var dff = new Date(this.reserva.fechaFin).getTime();
-        var diff = (dff - dfi);
-        var totalPagar = (diff/(1000*60*60*24))+1;
-
-      alert('entra aquí'+p.precio);
-      var _idReserva = this.reservas[this.reservas.length-1].idReserva;
-      alert('entra aquí'+this.reservas[this.reservas.length-1].idReserva);
-      var _total = p.precio * totalPagar;
-
-      this.factura.idReserva = _idReserva.toString();
-      this.factura.total = _total;
-
-      this.facturaService.post(this.factura).subscribe(p=>{
-        if (p != null) {
-          const messageBox = this.modalService.open(AlertModalComponent)
-          messageBox.componentInstance.title = "Resultado Operación";
-          messageBox.componentInstance.message = 'Factura creada!!! :D';
-          this.factura = p;      
-        }
-      });
-      }
-    });      
-  }
 
 }

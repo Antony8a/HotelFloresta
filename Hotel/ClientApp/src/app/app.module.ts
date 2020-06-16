@@ -51,6 +51,9 @@ import { InicioClienteComponent } from './componentes/banners/inicio-cliente/ini
 import { InicioRecepcionistaComponent } from './componentes/banners/inicio-recepcionista/inicio-recepcionista.component';
 import { FacturaComponent } from './componentes/factura/factura.component';
 import { FiltroFacturaPipe } from './pipe/filtro-factura.pipe';
+import { ClienteInformacionComponent } from './componentes/cliente/cliente-informacion/cliente-informacion.component';
+import { ReservaClienteComponent } from './componentes/reserva/reserva-cliente/reserva-cliente.component';
+import { ClienteSubComponent } from './componentes/cliente/cliente-sub/cliente-sub.component';
 
 
 @NgModule({
@@ -90,7 +93,10 @@ import { FiltroFacturaPipe } from './pipe/filtro-factura.pipe';
     InicioClienteComponent,
     FacturaComponent,
     InicioRecepcionistaComponent,
-    FiltroFacturaPipe
+    FiltroFacturaPipe,
+    ClienteInformacionComponent,
+    ReservaClienteComponent,
+    ClienteSubComponent
 
   ],
   imports: [

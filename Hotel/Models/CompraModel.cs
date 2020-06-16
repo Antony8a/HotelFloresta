@@ -6,10 +6,13 @@ namespace Hotel.Models
 {
     public class CompraInputModel
     {
+        [Required(ErrorMessage = "La identificacion es requerida")]
         public int IdCompra { get; set; }
 
+        [Required(ErrorMessage = "La identificacion del producto es requerida")]
         public string IdProducto { get; set; }
 
+        
         public DateTime FechaCompra { get; set; }
 
         public int CantidadProductos { get; set; }

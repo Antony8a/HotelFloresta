@@ -69,7 +69,6 @@ export class ReservaInicioComponent implements OnInit {
     private reservaService: ReservaService,
     private clienteService: ClienteService,
     private habitacionService: HabitacionService,
-    private facturaService: FacturaService,
     private formBuilder: FormBuilder,
     private router: Router,
     private modalService: NgbModal) { }
@@ -131,24 +130,20 @@ export class ReservaInicioComponent implements OnInit {
         if(toma1 > fechaI && toma1 < fechaF && hab.idHabitacion==res.idHabitacion ||
            toma2 > fechaI && toma2 < fechaF && hab.idHabitacion==res.idHabitacion ||
            toma1 < fechaI && toma2 > fechaF && hab.idHabitacion==res.idHabitacion){
-              this.cumpleCondicion=this.cumpleCondicion+1;              
-              alert('entró aquí en la condicion'+hab.idHabitacion);
+              this.cumpleCondicion=this.cumpleCondicion+1;            
           }
       });
       if(this.cumpleCondicion==0){
-        alert('entra a condicion');  
         var probador = 0;
         this.habitacionesDisponibles.forEach(habdis=>{
           if(habdis.idHabitacion==hab.idHabitacion){
             probador = probador+1;
           }
         });
-        if(probador==0){
-          alert('si agrega');  
+        if(probador==0){ 
           this.habitacionesDisponibles.push(hab);
         }             
        }else{
-        alert('no agrega');  
           this.cumpleCondicion=0;
         }
     });
@@ -201,9 +196,36 @@ export class ReservaInicioComponent implements OnInit {
   onSubmit() {
     if (this.formGroup.invalid) {
       return;
-    }else{
-      this.add();
     }
+    var unu = this.validadorFechas();
+      if(unu>=1){
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Resultado Operación";
+        messageBox.componentInstance.message = 'Ya hay una reserva en esta fecha :c';        
+      }else{
+        this.add();
+      }
+  }
+
+  validadorFechas(): number {
+    this.traerReservas();
+    this.reserva = this.formGroup.value;
+    var idhab = this.reserva.idHabitacion;
+
+    this.reservas.forEach(item => {
+        
+      var toma1 =new Date(this.prueba1);
+      var toma2 =new Date(this.prueba2);
+      var fechaI = new Date(item.fechaInicio);
+      var fechaF = new Date(item.fechaFin);        
+      if(toma1 > fechaI && toma1 < fechaF && idhab==item.idHabitacion ||
+         toma2 > fechaI && toma2 < fechaF && idhab==item.idHabitacion){
+        return this.baderilla=this.baderilla+1;
+        }else{
+          return this.baderilla=this.baderilla+0;
+        }
+     });
+     return this.baderilla;    
   }
 
   //todo lo del formGroup
@@ -294,36 +316,5 @@ export class ReservaInicioComponent implements OnInit {
 
   }
   //aqui finaliza la prueba para generar pdfs
-
-    //esto pertenece a la generacion automatica de la reserva
- 
-    GenerarFactura(){
-      var hab;
-      this.reserva = this.formGroup.value;
-      this.habitacionService.getId(this.reserva.idHabitacion).subscribe(p=>{
-        if (p != null) {
-          hab = p;
-        }
-      });
-        var dfi = new Date(this.reserva.fechaInicio).getTime();
-        var dff = new Date(this.reserva.fechaFin).getTime();
-        var diff = (dff - dfi);
-        var totalPagar = (diff/(1000*60*60*24))+1;
-  
-      var _idReserva = this.reserva.idReserva.toString();
-      var _total = hab.Precio * totalPagar;
-  
-      this.factura.idReserva = _idReserva;
-      this.factura.total = _total;
-  
-      this.facturaService.post(this.factura).subscribe(p=>{
-        if (p != null) {
-          const messageBox = this.modalService.open(AlertModalComponent)
-          messageBox.componentInstance.title = "Resultado Operación";
-          messageBox.componentInstance.message = 'Factura creada!!! :D';
-          this.factura = p;      
-        }
-      });
-    }
 
 }
