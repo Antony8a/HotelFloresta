@@ -11,7 +11,9 @@ export class FiltroInventarioPipe implements PipeTransform {
     if (searchText == null) return inventario;
         return inventario.filter(p =>
         p.idProducto.toLowerCase()
-        .indexOf(searchText.toLowerCase()) !== -1);
+        .indexOf(searchText.toLowerCase()) !== -1||
+        p.fechaCompra.toDateString()
+        .indexOf(searchText.toLowerCase()) !== -1 );
     }
 
 }

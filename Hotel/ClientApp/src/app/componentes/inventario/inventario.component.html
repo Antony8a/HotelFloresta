@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <div><label>Total movimientos: {{totalFacturas}}</label>
         <div><br>
             <div>
                 <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Identificacion de producto">
@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title ">Inventario</h4>
+                    <h4 class="card-title ">Movimientos</h4>
                     <p class="card-category">Productos comprados en el hotel la floresta</p>
                 </div>
                 <div class="card-body">
@@ -17,7 +17,7 @@
                         <table class="table" *ngIf='inventarios && inventarios.length'>
                             <thead>
                                 <tr>
-                                    <th class="text-center" scope="col">Codigo Producto</th>
+                                    <th class="text-center" scope="col">Codigo movimiento</th>
                                     <th class="text-center" scope="col">Fecha </th>
                                     <th class="text-center" scope="col">Costo</th>
                                     <th class="text-center" scope="col">IdProducto</th>

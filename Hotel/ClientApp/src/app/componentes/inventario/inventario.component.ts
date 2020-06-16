@@ -15,6 +15,7 @@ export class InventarioComponent implements OnInit {
   inventario:Inventario;
   searchText: string;
   closeResult: string;
+  totalFacturas:number=0;
   constructor(
     private modalService: NgbModal,
     private inventarioService:InventarioServiceService
@@ -23,6 +24,18 @@ export class InventarioComponent implements OnInit {
   ngOnInit(): void {
     this.inventarioService.get().subscribe(result => {
       this.inventarios = result;
+    });
+
+    this.traerFacturas();
+
+  }
+
+  traerFacturas(){
+    this.inventarioService.get().subscribe(result => {
+      this.inventarios = result;
+      this.inventarios.forEach(movi=>{
+        this.totalFacturas=this.totalFacturas+movi.totalCompra;
+      });
     });
   }
 

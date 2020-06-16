@@ -83,8 +83,8 @@ export class ReservaInicioComponent implements OnInit {
     this.router.navigate(['inicioHotel']);
   }
 
-  traerHabitaciones() {
-    this.habitacionService.get().subscribe(result => {
+  traerHabitaciones(){
+    this.habitacionService.get().subscribe(result =>{
       this.habitaciones = result;
     });
   }
