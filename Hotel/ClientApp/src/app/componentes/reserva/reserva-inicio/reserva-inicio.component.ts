@@ -14,6 +14,7 @@ import * as html2pdf from 'html2pdf.js';
 
 import { Factura } from 'src/app/models/factura';
 import { FacturaService } from 'src/app/services/factura.service';
+import { Cliente } from 'src/app/models/cliente';
 
 
 interface Food {
@@ -50,6 +51,7 @@ export class ReservaInicioComponent implements OnInit {
   habitacionesDisponibles:Habitacion[] = [];
   habitacion:Habitacion;
   reservas:Reserva[];
+  equisde:Cliente;
     //
       eventsInicio: string[] = [];
       eventsFin: string[] = [];
