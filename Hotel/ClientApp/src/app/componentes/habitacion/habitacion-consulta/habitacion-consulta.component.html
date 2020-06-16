@@ -71,10 +71,14 @@
                               value={{_tipo}} 
                               [ngClass]="{'is-invalid':control.tipo.errors}">
                               <option selected></option>
-                              <option value="King Doble">King Doble cama</option>
-                              <option value="Sencilla Doble">Sencilla Doble cama</option>
+                              <option value="Doble">Doble</option>
+                              <option value="Para pareja">Para pareja</option>
                               <option value="King">King</option>
                               <option value="Sencilla">Sencilla</option>
+                              <option value="Triple">Triple</option>
+                              <option value="Simple+">Simple+</option>
+                              <option value="Ligth">Ligth</option>
+                              <option value="Soltero">Soltero</option>
                             </select>
                             <div *ngIf="control.tipo.errors" class="invalid-feedback">
                               <div *ngIf="control.tipo.errors.required">Debe Seleccionar una opción</div>

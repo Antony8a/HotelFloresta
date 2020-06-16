@@ -122,17 +122,18 @@ export class ReservaInicioComponent implements OnInit {
     this.traerReservas();    
     this.traerHabitaciones();
     this.habitaciones.forEach(hab=>{
-      this.reservas.forEach(res => {  
-        var toma1 =new Date(this.prueba1);
-        var toma2 =new Date(this.prueba2);
-        var fechaI = new Date(res.fechaInicio);
-        var fechaF = new Date(res.fechaFin);        
-        if(toma1 > fechaI && toma1 < fechaF && hab.idHabitacion==res.idHabitacion ||
-           toma2 > fechaI && toma2 < fechaF && hab.idHabitacion==res.idHabitacion ||
-           toma1 < fechaI && toma2 > fechaF && hab.idHabitacion==res.idHabitacion){
-              this.cumpleCondicion=this.cumpleCondicion+1;            
-          }
-      });
+      
+        this.reservas.forEach(res => {  
+          var toma1 =new Date(this.prueba1);
+          var toma2 =new Date(this.prueba2);
+          var fechaI = new Date(res.fechaInicio);
+          var fechaF = new Date(res.fechaFin);        
+          if(toma1 > fechaI && toma1 < fechaF && hab.idHabitacion==res.idHabitacion ||
+             toma2 > fechaI && toma2 < fechaF && hab.idHabitacion==res.idHabitacion ||
+             toma1 < fechaI && toma2 > fechaF && hab.idHabitacion==res.idHabitacion){
+                this.cumpleCondicion=this.cumpleCondicion+1;            
+            }
+          });
       if(this.cumpleCondicion==0){
         var probador = 0;
         this.habitacionesDisponibles.forEach(habdis=>{
@@ -166,12 +167,17 @@ export class ReservaInicioComponent implements OnInit {
   }
   
   fechaCorrecta(){ 
+    var fechaActual = new Date();
     var toma1 =new Date(this.prueba1);
     var toma2 =new Date(this.prueba2);
     if(toma1>toma2){
       const messageBox = this.modalService.open(AlertModalComponent)
-      messageBox.componentInstance.title = "Resultado Operación";
-      messageBox.componentInstance.message = 'la fecha final debe ser mayor a la fecha inicial';
+      messageBox.componentInstance.title = "¡Problemas!";
+      messageBox.componentInstance.message = 'La fecha final debe ser mayor a la fecha inicial';
+    }else if(fechaActual>toma1||fechaActual>toma2){
+      const messageBox = this.modalService.open(AlertModalComponent)
+      messageBox.componentInstance.title = "¡Problemas!";
+      messageBox.componentInstance.message = 'No se puede reservar en fechas anterioreas a la actual :c';      
     }else{
       this.comprobadorfechas();
     }
