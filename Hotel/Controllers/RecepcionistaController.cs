@@ -28,6 +28,7 @@ namespace Hotel.Controllers
              _recepcionistaService = new RecepcionistaService(context);
         }
         // GET: api/Recepcionista
+        [Authorize]
         [HttpGet]
         public IEnumerable<RecepcionistaViewModel> Gets()
         {
@@ -36,6 +37,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Recepcionista/5
+        [Authorize]
         [HttpGet("{identificacion}")]
         public ActionResult<RecepcionistaViewModel> Get(string identificacion)
         {
@@ -46,6 +48,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Recepcionista
+        [Authorize]
         [HttpPost]
         public ActionResult<RecepcionistaViewModel> Post(RecepcionistaInputModel recepcionistaInput)
         {
@@ -64,6 +67,7 @@ namespace Hotel.Controllers
         }
         
         // DELETE: api/Recepcionista/5
+        [Authorize]
         [HttpDelete("{identificacion}")]
         public ActionResult<string> Delete(string identificacion)
         {
@@ -89,6 +93,7 @@ namespace Hotel.Controllers
         }
         
         // PUT: api/Recepcionista/5
+        [Authorize]
         [HttpPut("{identificacion}")]
         public ActionResult<RecepcionistaViewModel> Put(string identificacion, RecepcionistaInputModel recepcionistaInput)
         {

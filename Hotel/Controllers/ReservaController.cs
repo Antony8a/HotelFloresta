@@ -27,6 +27,7 @@ namespace Hotel.Controllers
             _reservaService = new ReservaService(context);
         }
         // GET: api/Reserva
+        [Authorize]
         [HttpGet]
         public IEnumerable<ReservaViewModel> Gets()
         {
@@ -35,6 +36,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Recepcionista/5
+        [Authorize]
         [HttpGet("{identificacion}")]
         public ActionResult<ReservaViewModel> Get(int identificacion)
         {
@@ -45,6 +47,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Reserva
+        [Authorize]
         [HttpPost]
         public ActionResult<ReservaViewModel> Post(ReservaInputModel reservaInput)
         {
@@ -63,6 +66,7 @@ namespace Hotel.Controllers
         }
         
         // DELETE: api/Reserva/5
+        [Authorize]
         [HttpDelete("{identificacion}")]
         public ActionResult<int> Delete(int identificacion)
         {
@@ -85,6 +89,7 @@ namespace Hotel.Controllers
         }
         
         // PUT: api/Reserva/5
+        [Authorize]
         [HttpPut("{identificacion}")]
         public ActionResult<ReservaViewModel> Put(string identificacion, ReservaInputModel reservaInput)
         {

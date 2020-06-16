@@ -35,6 +35,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Habitacion/5
+        [Authorize]
         [HttpGet("{IdHabitacion}")]
         public ActionResult<HabitacionViewModel> Get(string IdHabitacion)
         {
@@ -45,6 +46,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Habitacion
+        [Authorize]
         [HttpPost]
         public ActionResult<HabitacionViewModel> Post(HabitacionInputModel habitacionInput)
         {
@@ -63,6 +65,7 @@ namespace Hotel.Controllers
         }
         
         // DELETE: api/Habitacion/5
+        [Authorize]
         [HttpDelete("{IdHabitacion}")]
         public ActionResult<string> Delete(string IdHabitacion)
         {
@@ -86,6 +89,7 @@ namespace Hotel.Controllers
         }
         
         // PUT: api/Habitacion/5
+        [Authorize]
         [HttpPut("{IdHabitacion}")]
         public ActionResult<HabitacionViewModel> Put(string IdHabitacion, HabitacionInputModel habitacionInput)
         {

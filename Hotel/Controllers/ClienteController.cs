@@ -26,8 +26,9 @@ namespace Hotel.Controllers
         {
             _clienteService = new ClienteService(context);
         }
-        // GET: api/Cliente
         
+        // GET: api/Cliente
+        [Authorize]
         [HttpGet]
         public IEnumerable<ClienteViewModel> Gets()
         {
@@ -36,6 +37,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Cliente/5
+        [Authorize]
         [HttpGet("{identificacion}")]
         public ActionResult<ClienteViewModel> Get(string identificacion)
         {
@@ -46,6 +48,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Cliente
+        [Authorize]
         [HttpPost]
         public ActionResult<ClienteViewModel> Post(ClienteInputModel clienteInput)
         {
@@ -64,6 +67,7 @@ namespace Hotel.Controllers
         }
         
         // DELETE: api/Cliente/5
+        [Authorize]
         [HttpDelete("{identificacion}")]
         public ActionResult<string> Delete(string identificacion)
         {
@@ -90,6 +94,7 @@ namespace Hotel.Controllers
         
         // PUT: api/Cliente/5
         [HttpPut("{identificacion}")]
+        [Authorize]
         public ActionResult<ClienteViewModel> Put(string identificacion, ClienteInputModel clienteInput)
         {
             Cliente cliente = MapearCliente(clienteInput);

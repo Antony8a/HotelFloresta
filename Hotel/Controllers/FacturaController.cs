@@ -29,6 +29,7 @@ namespace Hotel.Controllers
 
         // GET: api/Factura
         [HttpGet]
+        [Authorize]
         public IEnumerable<FacturaViewModel> Gets()
         {
             var facturas = _facturaService.ConsultarTodos().Select(p=> new FacturaViewModel(p));
@@ -36,6 +37,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Factura/5
+        [Authorize]
         [HttpGet("{identificacion}")]
         public ActionResult<FacturaViewModel> Get(int identificacion)
         {
@@ -46,6 +48,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Factura
+        [Authorize]
         [HttpPost]
         public ActionResult<FacturaViewModel> Post(FacturaInputModel facturaInput)
         {
@@ -64,6 +67,7 @@ namespace Hotel.Controllers
         }
 
         // DELETE: api/Factura/5
+        [Authorize]
         [HttpDelete("{identificacion}")]
         public ActionResult<int> Delete(int identificacion)
         {
@@ -84,6 +88,7 @@ namespace Hotel.Controllers
         }
 
         // PUT: api/Factura/5
+        [Authorize]
         [HttpPut("{identificacion}")]
         public ActionResult<FacturaViewModel> Put(int identificacion, FacturaInputModel facturaInput)
         {

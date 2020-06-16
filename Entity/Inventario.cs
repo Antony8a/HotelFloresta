@@ -7,6 +7,7 @@ namespace Entity
     {
         [Key]
         public string IdInventario { get; set; }
+        public string IdProducto { get; set; }
         public DateTime Fecha      { get; set; }
     }
 }

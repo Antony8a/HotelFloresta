@@ -34,6 +34,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Cliente
+        [Authorize]
         [HttpPost]
         public ActionResult<ClienteViewModel> Post(ClienteInputModel clienteInput)
         {

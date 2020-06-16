@@ -23,6 +23,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/User
+        [Authorize]
         [HttpPost]
         public ActionResult<UsersViewModel> Post(UsersInputModel userInput)
         {

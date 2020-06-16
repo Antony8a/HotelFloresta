@@ -28,6 +28,7 @@ namespace Hotel.Controllers
             _productoService = new ProductoService(context);
         }
         // GET: api/Producto
+        [Authorize]
         [HttpGet]
         public IEnumerable<ProductoViewModel> Gets()
         {
@@ -36,6 +37,7 @@ namespace Hotel.Controllers
         }
 
         // GET: api/Producto/5
+        [Authorize]
         [HttpGet("{IdProducto}")]
         public ActionResult<ProductoViewModel> Get(string IdProducto)
         {
@@ -46,6 +48,7 @@ namespace Hotel.Controllers
         }
 
         // POST: api/Producto
+        [Authorize]
         [HttpPost]
         public ActionResult<ProductoViewModel> Post(ProductoInputModel productoInput)
         {
@@ -64,6 +67,7 @@ namespace Hotel.Controllers
         }
         
         // DELETE: api/Producto/5
+        [Authorize]
         [HttpDelete("{IdProducto}")]
         public ActionResult<string> Delete(string IdProducto)
         {
@@ -84,6 +88,7 @@ namespace Hotel.Controllers
         }
         
         // PUT: api/Producto/5
+        [Authorize]
         [HttpPut("{IdProducto}")]
         public ActionResult<ProductoViewModel> Put(string IdProducto, ProductoInputModel productoInput)
         {
