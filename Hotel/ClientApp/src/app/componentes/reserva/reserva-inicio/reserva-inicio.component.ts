@@ -122,6 +122,7 @@ export class ReservaInicioComponent implements OnInit {
     this.traerReservas();    
     this.traerHabitaciones();
     this.habitaciones.forEach(hab=>{
+      
       this.reservas.forEach(res => {  
         var toma1 =new Date(this.prueba1);
         var toma2 =new Date(this.prueba2);
@@ -132,7 +133,7 @@ export class ReservaInicioComponent implements OnInit {
            toma1 < fechaI && toma2 > fechaF && hab.idHabitacion==res.idHabitacion){
               this.cumpleCondicion=this.cumpleCondicion+1;            
           }
-      });
+        });
       if(this.cumpleCondicion==0){
         var probador = 0;
         this.habitacionesDisponibles.forEach(habdis=>{
