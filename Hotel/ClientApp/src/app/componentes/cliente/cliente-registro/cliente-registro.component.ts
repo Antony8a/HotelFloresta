@@ -70,6 +70,7 @@ export class ClienteRegistroComponent implements OnInit {
 
   addCliente() {
     this.cliente = this.formGroup.value;
+    
     this.clienteService.post(this.cliente).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)
