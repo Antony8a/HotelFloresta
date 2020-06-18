@@ -86,9 +86,7 @@ export class ReservaInicioComponent implements OnInit {
   }
 
   traerHabitaciones(){
-
-    this.habitacionService.get().subscribe(result =>{
-
+    this.habitacionService.get().subscribe(result => {
       this.habitaciones = result;
     });
   }

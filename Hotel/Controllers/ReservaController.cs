@@ -27,7 +27,6 @@ namespace Hotel.Controllers
             _reservaService = new ReservaService(context);
         }
         // GET: api/Reserva
-        [Authorize]
         [HttpGet]
         public IEnumerable<ReservaViewModel> Gets()
         {
